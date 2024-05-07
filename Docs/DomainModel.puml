@@ -12,7 +12,7 @@ object Race
 object profession
 object background
 object rules
-object maneuversAndMovement
+object maneuversMovementAndEncumbrance
 object developmentPoints
 object talents
 object culture
@@ -20,7 +20,6 @@ object CharacterSheet
 object skillCategories
 object dice
 object defense
-object encumbrence
 object weaponAttackSetup
 object skills
 object spells
@@ -45,8 +44,7 @@ characterInfo *-- culture
 CharacterSheet *-- talents
 CharacterSheet *-- defense
 inventory o-- equipped
-CharacterSheet *-- maneuversAndMovement
-CharacterSheet *-- encumbrence
+CharacterSheet *-- maneuversMovementAndEncumbrance
 CharacterSheet *-- weaponAttackSetup
 skillList *-- skillCategories
 skillCategories *-- skills
