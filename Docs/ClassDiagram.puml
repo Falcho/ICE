@@ -8,29 +8,90 @@ Class Main{
 }
 
 
+Class RoleMaster{}
 
-Class RoleMaster{
+Class Rules{}
+Class Dice{}
 
+package views{
+Class StartMenuView{}
+Class CharacterSheetView{}
+Class CharacterInfoView{}
+Class SkillListView{}
+Class SpellListView{}
+Class InventoryView{}
+Class TalentsView{}
+Class MovementView{}
+Class PrimaryStatsView{}
+Class WeaponAttackSetupView{}
+Class DefenseView{}
+Class MagicItemsView{}
 }
-Class CharacterSheet
+CharacterSheetView *-- CharacterInfoView
+CharacterSheetView *-- PrimaryStatsView
+CharacterSheetView *-- MovementView
+CharacterSheetView *-- WeaponAttackSetupView
+CharacterSheetView *-- DefenseView
+InventoryView o-- MagicItemsView
 
-Class CharacterInfo
+package models{
+Class CharacterSheet{
+- int level;
+- int xp
+- String name
+- String background;
+# Culture culture;
+# Race race;
+# Profession profession;
+# PrimaryStats stats;
+# Defense defense;
+# ManeuversMovementAndEncumbrance MME;
+# Inventory inventory;
+# Map SkillList <String, Skill>;
+# Map SpellList <String, Spell>;
+# Set <Talent> Talents;
+}
+Class Skill{}
+Class SkillCategory{}
+Class Spell{}
+Class SpellCategory{}
+Class Inventory{}
+Class Talent{}
+Class MME{}
+Class PrimaryStats{}
+Class Defense{}
+Class MagicItems{}
+Class Race{}
+Class Culture{}
+Class Profession{}
+}
 
-Class Race
-
-Class profession
-
-
-Class Rules
-
+CharacterSheet *-- PrimaryStats
+CharacterSheet *-- MME
+CharacterSheet *-- Defense
+Inventory o-- MagicItems
+CharacterSheet *-- Talent
+CharacterSheet *-- SkillCategory
+SkillCategory *-- Skill
+CharacterSheet *-- SpellCategory
+SpellCategory *-- Spell
+CharacterSheet *-- Inventory
+CharacterSheet *-- Race
+CharacterSheet *-- Culture
+CharacterSheet *-- Profession
 
 
 package util {
-    Class FileIO{
-}
-Class TextUI{
-}
+    Class FileIO{}
+    Class TextUI{}
+    Class dataLoader{}
 
+Main *--- RoleMaster
+RoleMaster *-- CharacterSheet
+RoleMaster *-- views
+RoleMaster *-- Dice
+RoleMaster *-- util
+RoleMaster *-- Rules
 @enduml
 
 implements ..|>
