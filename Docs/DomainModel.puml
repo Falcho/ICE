@@ -1,6 +1,7 @@
 @startuml
 'https://plantuml.com/object-diagram
-
+!pragma layout smetana
+object Rolemaster
 object inventory
 object PrimaryStats
 object skillList
@@ -11,36 +12,53 @@ object Race
 object profession
 object background
 object rules
-object maneuvers
+object maneuversAndMovement
 object developmentPoints
 object talents
 object culture
 object CharacterSheet
-object skillCategory
+object skillCategories
 object dice
-object resistance
-object encumbrenceAndMovement
-object combat
+object defense
+object encumbrence
+object weaponAttackSetup
+object skills
+object spells
+object magicItems
+object armor
+object weapon
+object level
+object xp
 
-CharacterSheet --* PrimaryStats
-CharacterSheet --* skillList
-CharacterSheet --* spellList
-CharacterSheet ---* characterInfo
-CharacterSheet --* inventory
-CharacterSheet <-> rules
-characterInfo --* Race
-characterInfo --* profession
-characterInfo --* background
-characterInfo --* culture
-characterInfo --* talents
-characterInfo --* resistance
-inventory --o equipped
-PrimaryStats --* developmentPoints
-rules <|-- maneuvers
-rules <|-- encumbrenceAndMovement
-rules <|-- combat
-CharacterSheet <-> dice
-skillList --o skillCategory
+Rolemaster o-- CharacterSheet
+Rolemaster *-- rules
+Rolemaster *-- dice
+CharacterSheet *-- PrimaryStats
+CharacterSheet *-- skillList
+CharacterSheet *-- spellList
+CharacterSheet *--- characterInfo
+CharacterSheet *-- inventory
+characterInfo *-- Race
+characterInfo *-- profession
+characterInfo *-- background
+characterInfo *-- culture
+CharacterSheet *-- talents
+CharacterSheet *-- defense
+inventory o-- equipped
+CharacterSheet *-- maneuversAndMovement
+CharacterSheet *-- encumbrence
+CharacterSheet *-- weaponAttackSetup
+skillList *-- skillCategories
+skillCategories *-- skills
+spellList o-- spells
+inventory o-- magicItems
+equipped o-- armor
+equipped o-- weapon
+weapon <--> weaponAttackSetup
+armor <--> defense
+characterInfo *-- level
+characterInfo *-- xp
+rules *-- developmentPoints
 
 @enduml
 extends <|-- (is-a)
