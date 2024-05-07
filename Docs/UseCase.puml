@@ -1,0 +1,46 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+actor user
+
+usecase "New Character" as UC1
+usecase "Existing Character" as UC2
+usecase "Choose race" as UC3
+usecase "Choose culture" as UC4
+usecase "Choose profession" as UC5
+usecase "Create character background" as UC6
+usecase "Generate character stats" as UC7
+usecase "Select talents" as UC8
+usecase "Purchase Starting Equipment" as UC9
+usecase "Open inventory" as UC10
+usecase "Open equipped items" as UC11
+usecase "Check spell book" as UC12
+usecase "Level up" as UC13
+usecase "Spend development points" as UC14
+usecase "Increase Stats" as UC15
+
+
+
+user --> UC1
+user --> UC2
+UC1 --> UC3
+UC3 --> UC4
+UC4 --> UC5
+UC5 --> UC6
+UC6 --> UC7
+UC7 --> UC8
+UC8 --> UC9
+UC9 --> UC2
+UC2 <--> UC10
+UC2 <--> UC11
+UC2 <--> UC12
+UC2 <--> UC13
+UC13 --> UC15
+UC15 --> UC14
+UC14 --> UC2
+
+@enduml
+extends <|-- (is-a)
+composition *-- (must-have)
+Aggregation o-- (can-have)
+Associering <--
