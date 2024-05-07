@@ -1,0 +1,40 @@
+@startuml
+'https://plantuml.com/class-diagram
+!pragma layout smetana
+
+
+Class Main{
++static void main(String[] args)
+}
+
+
+
+Class RoleMaster{
+
+}
+Class CharacterSheet
+
+Class CharacterInfo
+
+Class Race
+
+Class profession
+
+
+Class Rules
+
+
+
+package util {
+    Class FileIO{
+}
+Class TextUI{
+}
+
+@enduml
+
+implements ..|>
+extends <|-- (is-a)
+composition *-- (must-have)
+Aggregation o-- (can-have)
+Associering <--
