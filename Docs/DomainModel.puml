@@ -1,0 +1,49 @@
+@startuml
+'https://plantuml.com/object-diagram
+
+object inventory
+object PrimaryStats
+object skillList
+object spellList
+object equipped
+object characterInfo
+object Race
+object profession
+object background
+object rules
+object maneuvers
+object developmentPoints
+object talents
+object culture
+object CharacterSheet
+object skillCategory
+object dice
+object resistance
+object encumbrenceAndMovement
+object combat
+
+CharacterSheet --* PrimaryStats
+CharacterSheet --* skillList
+CharacterSheet --* spellList
+CharacterSheet ---* characterInfo
+CharacterSheet --* inventory
+CharacterSheet <-> rules
+characterInfo --* Race
+characterInfo --* profession
+characterInfo --* background
+characterInfo --* culture
+characterInfo --* talents
+characterInfo --* resistance
+inventory --o equipped
+PrimaryStats --* developmentPoints
+rules <|-- maneuvers
+rules <|-- encumbrenceAndMovement
+rules <|-- combat
+CharacterSheet <-> dice
+skillList --o skillCategory
+
+@enduml
+extends <|-- (is-a)
+composition *-- (must-have)
+Aggregation o-- (can-have)
+Associering <--
