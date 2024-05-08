@@ -51,6 +51,7 @@ Class CharacterSheet{
 # Map SpellList <String, Spell>;
 # Set <Talent> Talents;
 }
+
 Class Skill{}
 Class SkillCategory{}
 Class Spell{}
@@ -64,6 +65,17 @@ Class MagicItems{}
 Class Race{}
 Class Culture{}
 Class Profession{}
+Class Stat{
+String name
++ int bonus()
+- int potentionel()
+- int temp()
+- int racial()
+- int speciel()
++ int getTotal()
++ int getPotentionel()
++ getTemp()
+}
 }
 
 CharacterSheet *-- PrimaryStats
@@ -79,6 +91,7 @@ CharacterSheet *-- Inventory
 CharacterSheet *-- Race
 CharacterSheet *-- Culture
 CharacterSheet *-- Profession
+PrimaryStats *-- Stat
 
 
 package util {
