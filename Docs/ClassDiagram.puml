@@ -51,11 +51,36 @@ Class CharacterSheet{
 # Map SpellList <String, Spell>;
 # Set <Talent> Talents;
 }
-Class Skill{}
-Class SkillCategory{}
-Class Spell{}
-Class SpellCategory{}
-Class Inventory{}
+Class Skill{
+-String profession;
+-String skillCategory;
+-String specialization;
+-String culture;
+-String stats;
+}
+Class SkillCategory{
+-String name;
+-String skillCategory;
+-String specialization;
+-String culture;
+-String stats;
+}
+Class Spell{
+-String name;
+-String skillCategory;
+-String specialization;
+-String culture;
+-String stats;
+}
+Class SpellCategory{
+-String name;
+-String skillCategory;
+-String specialization;
+-String culture;
+-String stats;
+}
+Class Inventory{
+}
 Class Talent{}
 Class MME{}
 Class PrimaryStats{}
