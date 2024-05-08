@@ -64,6 +64,7 @@ Class MagicItems{}
 Class Race{}
 Class Culture{}
 Class Profession{}
+Class Stat{}
 }
 
 CharacterSheet *-- PrimaryStats
@@ -79,6 +80,7 @@ CharacterSheet *-- Inventory
 CharacterSheet *-- Race
 CharacterSheet *-- Culture
 CharacterSheet *-- Profession
+PrimaryStats *-- Stat
 
 
 package util {
