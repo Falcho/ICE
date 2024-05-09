@@ -20,7 +20,7 @@ Class CharacterInfoView{}
 Class SkillListView{}
 Class SpellListView{}
 Class InventoryView{}
-Class TalentAndFlawsView{}
+Class TalentsAndFlawsView{}
 Class MovementView{}
 Class PrimaryStatsView{}
 Class WeaponAttackSetupView{}
@@ -52,7 +52,7 @@ package models{
         # Inventory inventory;
         # Map SkillList <String, Skill>;
         # Map SpellList <String, Spell>;
-        # Set <TalentAndFlaws> Talents;
+        # Set <TalentsAndFlaws> TalentsAndFlaws;
     }
     Class GeneralEquipment{}
     Class Skill{
@@ -74,10 +74,32 @@ package models{
     -String name
     -String stats
     -int statBonus
-    -int DPCost
+    -int DPCostFirst
+    -int DPCostSecond
     }
-    Class Spell{}
-    Class SpellCategory{}
+    Class Spell{
+    -list<String>category<>
+    -boolean proffesionalSkill
+    -String name
+    -String specialization
+    -int cultureRanks
+    -String stats
+    -int statBonus
+    -int totalRanks
+    -int rankBonus
+    -int proffesionalBonus
+    -int knack
+    -int totalBonus
+    -boolean firstRankBought
+    -boolean secondRankBought
+    }
+    Class SpellCategory{
+    -String name
+    -String stats
+    -int statBonus
+    -int DPCostFirst
+    -int DPCostSecond
+    }
     Class Inventory{}
     Class MME{
         # Map<String,Pace> paces
@@ -106,23 +128,23 @@ package models{
     Class MagicItems{}
     Class Race{
     - String race
-    - int bonusDps;      
-    - int agility;       
-    - int constitution; 
-    - int empathy;       
-    - int intuition;     
-    - int memory;        
-    - int presence;      
-    - int quickness;     
-    - int reasoning;     
-    - int selfDisc;      
-    - int strength;      
-    - int channeling;    
-    - int essence;       
-    - int mentalism;     
-    - int physical;      
-    - int endurance;     
-    - int baseHits;      
+    - int bonusDps;
+    - int agility;
+    - int constitution;
+    - int empathy;
+    - int intuition;
+    - int memory;
+    - int presence;
+    - int quickness;
+    - int reasoning;
+    - int selfDisc;
+    - int strength;
+    - int channeling;
+    - int essence;
+    - int mentalism;
+    - int physical;
+    - int endurance;
+    - int baseHits;
     - int recoveryMult;
     + getBonusDps();
     + getAgility();
@@ -150,6 +172,7 @@ package models{
     + getSkillMap();
     }
     Class Profession{}
+    Class TalentsAndFlaws{}
     Class Stat{
         - String name
         - int potentional
@@ -168,7 +191,7 @@ CharacterSheet *-- MME
 CharacterSheet *-- Defense
 Inventory o-- MagicItems
 Inventory o-- GeneralEquipment
-CharacterSheet *-- TalentAndFlaws
+CharacterSheet *-- TalentsAndFlaws
 CharacterSheet *-- SkillCategory
 SkillCategory *-- Skill
 CharacterSheet *-- SpellCategory
