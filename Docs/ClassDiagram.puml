@@ -74,7 +74,8 @@ package models{
     -String name
     -String stats
     -int statBonus
-    -int DPCost
+    -int DPCostFirst
+    -int DPCostSecond
     }
     Class Spell{
     -list<String>category<>
