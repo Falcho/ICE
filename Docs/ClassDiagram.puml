@@ -62,7 +62,7 @@ Class MME{}
 Class PrimaryStats{}
 Class Defense{}
 Class MagicItems{}
-Class Models.{}
+Class Race{}
 Class Culture{}
 Class Profession{}
 Class Stat{
@@ -88,7 +88,7 @@ SkillCategory *-- Skill
 CharacterSheet *-- SpellCategory
 SpellCategory *-- Spell
 CharacterSheet *-- Inventory
-CharacterSheet *-- Models
+CharacterSheet *-- Race
 CharacterSheet *-- Culture
 CharacterSheet *-- Profession
 PrimaryStats *-- Stat
