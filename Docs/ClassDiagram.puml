@@ -35,47 +35,68 @@ CharacterSheetView *-- DefenseView
 InventoryView o-- MagicItemsView
 
 package models{
-Class CharacterSheet{
-- int level;
-- int xp
-- String name
-- String background;
-# Culture culture;
-# Models. race;
-# Profession profession;
-# PrimaryStats stats;
-# Defense defense;
-# ManeuversMovementAndEncumbrance MME;
-# Inventory inventory;
-# Map SkillList <String, Skill>;
-# Map SpellList <String, Spell>;
-# Set <Talent> Talents;
-}
+    Class CharacterSheet{
+        - int level;
+        - int xp
+        - String name
+        - String background;
+        # Culture culture;
+        # Models. race;
+        # Profession profession;
+        # PrimaryStats stats;
+        # Defense defense;
+        # ManeuversMovementAndEncumbrance MME;
+        # Inventory inventory;
+        # Map SkillList <String, Skill>;
+        # Map SpellList <String, Spell>;
+        # Set <Talent> Talents;
+    }
 
-Class Skill{}
-Class SkillCategory{}
-Class Spell{}
-Class SpellCategory{}
-Class Inventory{}
-Class Talent{}
-Class MME{}
-Class PrimaryStats{}
-Class Defense{}
-Class MagicItems{}
-Class Race{}
-Class Culture{}
-Class Profession{}
-Class Stat{
-- String name
-- int potentional
-- int temp
-# int bonus()
-# int racial()
-# int special()
-# int getTotal()
-# int getPotentional()
-# getTemp()
-}
+    Class Skill{}
+    Class SkillCategory{}
+    Class Spell{}
+    Class SpellCategory{}
+    Class Inventory{}
+    Class Talent{}
+    Class MME{
+        # Map<String,Pace> paces
+        # Map<String,double> featsOfStrength
+        # String size
+        # double wtAllowance
+        # double carried
+        # double encPenalty
+        # double maxPace
+        # double totalManeuverPenalty
+        # double bmr
+        # int initiative
+        # int hitPoints
+        # int endurance
+        # int power
+    }
+    Class Pace {
+        # String name
+        # double prRound
+        # double prPhase
+        # String penaltyAp
+        # String loadLimit
+    }
+    Class PrimaryStats{}
+    Class Defense{}
+    Class MagicItems{}
+    Class Race{}
+    Class Culture{}
+    Class Profession{}
+    Class Stat{
+        - String name
+        - int potentional
+        - int temp
+        # int bonus()
+        # int racial()
+        # int special()
+        # int getTotal()
+        # int getPotentional()
+        # getTemp()
+    }
 }
 
 CharacterSheet *-- PrimaryStats
