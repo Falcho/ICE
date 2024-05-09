@@ -120,14 +120,14 @@ public class Race {
         return switch (statName) {
             case "Agility", "Ag" -> getAgility();
             case "Constitution", "Co" -> getConstitution();
-            case "Empathy" -> getEmpathy();
-            case "Intuition" -> getIntuition();
-            case "Memory" -> getMemory();
-            case "Presence" -> getPresence();
-            case "Quickness" -> getQuickness();
-            case "Reasoning" -> getReasoning();
-            case "SelfDisc" -> getSelfDisc();
-            case "Strength" -> getStrength();
+            case "Empathy", "Em" -> getEmpathy();
+            case "Intuition", "In" -> getIntuition();
+            case "Memory", "Me" -> getMemory();
+            case "Presence", "Pr" -> getPresence();
+            case "Quickness", "Qu" -> getQuickness();
+            case "Reasoning", "Re" -> getReasoning();
+            case "SelfDisc", "SD" -> getSelfDisc();
+            case "Strength", "St" -> getStrength();
             case "Channeling" -> getChanneling();
             case "Essence" -> getEssence();
             case "Mentalism" -> getMentalism();
