@@ -1,4 +1,39 @@
 package Models;
 
+import java.util.Map;
+import java.util.Set;
+
 public class CharacterSheet {
+    private int level;
+    private int xp;
+    private String name;
+    private String background;
+    protected Culture culture;
+    protected Race race;
+    protected Profession profession;
+    protected PrimaryStats stats;
+    protected Defense defense;
+    protected ManeuversMovementAndEncumbrance MME;
+    protected Inventory inventory;
+    protected Map<String,Skill> skillList;
+    protected Map<String,Spell> spellList;
+    protected Set<TalentsAndFlaws>TalentsAndFLaws;
+
+
+    public CharacterSheet(int level, int xp, String name, String background, Culture culture, Race race, Profession profession, PrimaryStats stats, Defense defense, ManeuversMovementAndEncumbrance MME, Inventory inventory, Map skillList, Map spellList, Set<TalentsAndFlaws> talentsAndFLaws) {
+        this.level = level;
+        this.xp = xp;
+        this.name = name;
+        this.background = background;
+        this.culture = culture;
+        this.race = race;
+        this.profession = profession;
+        this.stats = stats;
+        this.defense = defense;
+        this.MME = MME;
+        this.inventory = inventory;
+        this.skillList = skillList;
+        this.spellList = spellList;
+        TalentsAndFLaws = talentsAndFLaws;
+    }
 }
