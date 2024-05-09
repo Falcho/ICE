@@ -20,19 +20,19 @@ public class Profession {
         this.description = description;
     }
 
-    public Map getSkillCost(){
-        return skillCost;
+    public Map<String,Integer>getSkillCost(){
+        return professions;
     }
 
-    public List getProfessionalSkill(){
-        return professionSkill;
+    public List<String>getProfessionalSkill(){
+        return professionSkills;
     }
 
-    public List getRealms(){
+    public List<String>getRealms(){
         return realms;
     }
 
-    public Map getSpellList(){
-        return spellList;
+    public Map<String,List>getSpellList(){
+        return professionSpell;
     }
 }
