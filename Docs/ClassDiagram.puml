@@ -52,7 +52,7 @@ package models{
         # Inventory inventory;
         # Map SkillList <String, Skill>;
         # Map SpellList <String, Spell>;
-        # Set <Talent> Talents;
+        # Set <TalentAndFlaws> Talents;
     }
     Class GeneralEquipment{}
     Class Skill{}
@@ -60,7 +60,6 @@ package models{
     Class Spell{}
     Class SpellCategory{}
     Class Inventory{}
-    Class Talent{}
     Class MME{
         # Map<String,Pace> paces
         # Map<String,double> featsOfStrength
@@ -106,9 +105,8 @@ CharacterSheet *-- PrimaryStats
 CharacterSheet *-- MME
 CharacterSheet *-- Defense
 Inventory o-- MagicItems
-CharacterSheet *-- TalentAndFlaws
 Inventory o-- GeneralEquipment
-CharacterSheet *-- Talent
+CharacterSheet *-- TalentAndFlaws
 CharacterSheet *-- SkillCategory
 SkillCategory *-- Skill
 CharacterSheet *-- SpellCategory
