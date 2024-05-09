@@ -20,7 +20,7 @@ Class CharacterInfoView{}
 Class SkillListView{}
 Class SpellListView{}
 Class InventoryView{}
-Class TalentAndFlawsView{}
+Class TalentsAndFlawsView{}
 Class MovementView{}
 Class PrimaryStatsView{}
 Class WeaponAttackSetupView{}
@@ -52,7 +52,7 @@ package models{
         # Inventory inventory;
         # Map SkillList <String, Skill>;
         # Map SpellList <String, Spell>;
-        # Set <TalentAndFlaws> Talents;
+        # Set <TalentsAndFlaws> TalentsAndFlaws;
     }
     Class GeneralEquipment{}
     Class Skill{}
@@ -102,6 +102,7 @@ package models{
     Class Race{}
     Class Culture{}
     Class Profession{}
+    Class TalentsAndFlaws{}
     Class Stat{
         - String name
         - int potentional
@@ -120,7 +121,7 @@ CharacterSheet *-- MME
 CharacterSheet *-- Defense
 Inventory o-- MagicItems
 Inventory o-- GeneralEquipment
-CharacterSheet *-- TalentAndFlaws
+CharacterSheet *-- TalentsAndFlaws
 CharacterSheet *-- SkillCategory
 SkillCategory *-- Skill
 CharacterSheet *-- SpellCategory
