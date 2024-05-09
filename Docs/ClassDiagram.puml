@@ -41,7 +41,7 @@ Class CharacterSheet{
 - String name
 - String background;
 # Culture culture;
-# Race race;
+# Models. race;
 # Profession profession;
 # PrimaryStats stats;
 # Defense defense;
@@ -62,19 +62,19 @@ Class MME{}
 Class PrimaryStats{}
 Class Defense{}
 Class MagicItems{}
-Class Race{}
+Class Models.{}
 Class Culture{}
 Class Profession{}
 Class Stat{
-String name
-+ int bonus()
-- int potentionel()
-- int temp()
-- int racial()
-- int speciel()
-+ int getTotal()
-+ int getPotentionel()
-+ getTemp()
+- String name
+- int potentional
+- int temp
+# int bonus()
+# int racial()
+# int special()
+# int getTotal()
+# int getPotentional()
+# getTemp()
 }
 }
 
@@ -88,7 +88,7 @@ SkillCategory *-- Skill
 CharacterSheet *-- SpellCategory
 SpellCategory *-- Spell
 CharacterSheet *-- Inventory
-CharacterSheet *-- Race
+CharacterSheet *-- Models
 CharacterSheet *-- Culture
 CharacterSheet *-- Profession
 PrimaryStats *-- Stat
