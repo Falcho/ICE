@@ -143,10 +143,12 @@ package models{
     + getBaseHits();
     + getRecoveryMult();
     + getRaceBonus(String statName);
-      }
-
-
-    Class Culture{}
+    }
+    Class Culture{
+    - String cultureName
+    - Map <String, Integer> skillMap;
+    + getSkillMap();
+    }
     Class Profession{}
     Class Stat{
         - String name
