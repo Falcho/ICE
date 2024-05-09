@@ -77,21 +77,28 @@ package models{
     -int DPCost
     }
     Class Spell{
-          -boolean proffesionalSkill
-          -String name
-          -String specialization
-          -int cultureRanks
-          -String stats
-          -int statBonus
-          -int totalRanks
-          -int rankBonus
-          -int proffesionalBonus
-          -int knack
-          -int totalBonus
-          -boolean firstRankBought
-          -boolean secondRankBought
+    -list<String>category<>
+    -boolean proffesionalSkill
+    -String name
+    -String specialization
+    -int cultureRanks
+    -String stats
+    -int statBonus
+    -int totalRanks
+    -int rankBonus
+    -int proffesionalBonus
+    -int knack
+    -int totalBonus
+    -boolean firstRankBought
+    -boolean secondRankBought
     }
-    Class SpellCategory{}
+    Class SpellCategory{
+    -String name
+    -String stats
+    -int statBonus
+    -int DPCostFirst
+    -int DPCostSecond
+    }
     Class Inventory{}
     Class MME{
         # Map<String,Pace> paces
