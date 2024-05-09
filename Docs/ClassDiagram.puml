@@ -184,6 +184,7 @@ package util {
     Class FileIO{}
     Class TextUI{}
     Class dataLoader{}
+    Class parseJson
 }
 
 Main *--- RoleMaster
