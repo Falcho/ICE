@@ -26,6 +26,7 @@ Class PrimaryStatsView{}
 Class WeaponAttackSetupView{}
 Class DefenseView{}
 Class MagicItemsView{}
+Class GeneralEquipmentView{}
 }
 CharacterSheetView *-- CharacterInfoView
 CharacterSheetView *-- PrimaryStatsView
@@ -33,25 +34,52 @@ CharacterSheetView *-- MovementView
 CharacterSheetView *-- WeaponAttackSetupView
 CharacterSheetView *-- DefenseView
 InventoryView o-- MagicItemsView
+InventoryView o-- GeneralEquipmentView
+
 
 package models{
-    Class CharacterSheet{
-        - int level;
-        - int xp
-        - String name
-        - String background;
-        # Culture culture;
-        # Models. race;
-        # Profession profession;
-        # PrimaryStats stats;
-        # Defense defense;
-        # ManeuversMovementAndEncumbrance MME;
-        # Inventory inventory;
-        # Map SkillList <String, Skill>;
-        # Map SpellList <String, Spell>;
-        # Set <Talent> Talents;
-    }
+Class CharacterSheet{
+- int level;
+- int xp
+- String name
+- String background;
+# Culture culture;
+# Race race;
+# Profession profession;
+# PrimaryStats stats;
+# Defense defense;
+# ManeuversMovementAndEncumbrance MME;
+# Inventory inventory;
+# Map SkillList <String, Skill>;
+# Map SpellList <String, Spell>;
+# Set <Talent> Talents;
+}
 
+Class Skill{}
+Class SkillCategory{}
+Class Spell{}
+Class SpellCategory{}
+Class Inventory{}
+Class Talent{}
+Class MME{}
+Class PrimaryStats{}
+Class Defense{}
+Class MagicItems{}
+Class GeneralEquipment{}
+Class Race{}
+Class Culture{}
+Class Profession{}
+Class Stat{
+String name
++ int bonus()
+- int potentionel()
+- int temp()
+- int racial()
+- int speciel()
++ int getTotal()
++ int getPotentionel()
++ getTemp()
+}
     Class Skill{}
     Class SkillCategory{}
     Class Spell{}
@@ -104,6 +132,8 @@ CharacterSheet *-- MME
 CharacterSheet *-- Defense
 Inventory o-- MagicItems
 CharacterSheet *-- TalentAndFlaws
+Inventory o-- GeneralEquipment
+CharacterSheet *-- Talent
 CharacterSheet *-- SkillCategory
 SkillCategory *-- Skill
 CharacterSheet *-- SpellCategory
