@@ -20,43 +20,43 @@ public class Stat {
             bonus = -11;
         else if (this.temp == 6)
             bonus = -10;
-        else if(this.temp== 7||temp==8)
+        else if(this.temp >= 7 && temp<=8)
             bonus = -9;
-        else if (this.temp== 9||temp==11)
+        else if (this.temp >= 9 && temp<=11)
             bonus = -8;
-        else if (this.temp == 12||temp==14)
+        else if (this.temp >= 12 && temp<=14)
             bonus = -7;
-        else if (this.temp == 15||temp==17)
+        else if (this.temp >= 15 && temp<=17)
             bonus = -6;
-        else if (this.temp == 18||temp==23)
+        else if (this.temp >= 18 && temp<=23)
             bonus = -5;
-        else if (this.temp == 24||temp==29)
+        else if (this.temp >= 24 && temp<=29)
             bonus = -4;
-        else if (this.temp == 30||temp==35)
+        else if (this.temp >= 30 && temp<=35)
             bonus = -3;
-        else if (this.temp == 36||temp==41)
+        else if (this.temp >= 36 && temp<=41)
             bonus = -2;
-        else if (this.temp == 42||temp==47)
+        else if (this.temp >= 42 && temp<=47)
             bonus = -1;
-        else if (this.temp == 48||temp==53)
+        else if (this.temp >= 48 && temp<=53)
             bonus = 0;
-        else if (this.temp == 54||temp==59)
+        else if (this.temp >= 54 && temp<=59)
             bonus = 1;
-        else if (this.temp == 60||temp==65)
+        else if (this.temp >= 60 && temp<=65)
             bonus = 2;
-        else if (this.temp == 66||temp==71)
+        else if (this.temp >= 66 && temp<=71)
             bonus = 3;
-        else if (this.temp == 72||temp==77)
+        else if (this.temp >= 72 && temp<=77)
             bonus = 4;
-        else if (this.temp == 78||temp==83)
+        else if (this.temp >= 78 && temp<=83)
             bonus = 5;
-        else if (this.temp == 84||temp==86)
+        else if (this.temp >= 84 && temp<=86)
             bonus = 6;
-        else if (this.temp == 87||temp==89)
+        else if (this.temp >= 87 && temp<=89)
             bonus = 7;
-        else if (this.temp == 90||temp==92)
+        else if (this.temp >= 90 && temp<=92)
             bonus = 8;
-        else if (this.temp == 93||temp==94)
+        else if (this.temp >= 93 && temp<=94)
             bonus = 9;
         else if (this.temp == 95)
             bonus = 10;
