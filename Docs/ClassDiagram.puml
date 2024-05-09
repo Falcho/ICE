@@ -20,7 +20,7 @@ Class CharacterInfoView{}
 Class SkillListView{}
 Class SpellListView{}
 Class InventoryView{}
-Class TalentsView{}
+Class TalentAndFlawsView{}
 Class MovementView{}
 Class PrimaryStatsView{}
 Class WeaponAttackSetupView{}
@@ -57,7 +57,7 @@ Class SkillCategory{}
 Class Spell{}
 Class SpellCategory{}
 Class Inventory{}
-Class Talent{}
+Class TalentAndFlaws{}
 Class MME{}
 Class PrimaryStats{}
 Class Defense{}
@@ -82,7 +82,7 @@ CharacterSheet *-- PrimaryStats
 CharacterSheet *-- MME
 CharacterSheet *-- Defense
 Inventory o-- MagicItems
-CharacterSheet *-- Talent
+CharacterSheet *-- TalentAndFlaws
 CharacterSheet *-- SkillCategory
 SkillCategory *-- Skill
 CharacterSheet *-- SpellCategory
