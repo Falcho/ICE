@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+participant main
+participant user
+participant view
+participant controller
+participant model
+
+
+main -> view: new
+main -> model: new
+main -> controller: new
+main-> model:new
+controller --> view: Vis start
+user -> view: Opret ny
+view -> controller: "Opret ny" tryk
+controller -> model: Be om race
+model -> controller
+controller -> view: ""Vis vælg race"
+user -> view: valgt "High elf"
+view -> controller: race = High "High elf"
+controller -> model: setRace(""High elf")
+controller -> controller: Get cultures
+controller -> view: Vis vælg culture
+
+@enduml
