@@ -1,4 +1,4 @@
-import java.awt.*;
+package Models;
 
 public class Race {
     private String race;
@@ -8,18 +8,18 @@ public class Race {
     private int empathy;
     private int intuition;
     private int memory;
-   private int presence;
-   private int quickness;
-   private int reasoning;
-   private int selfDisc;
-   private int strength;
-   private int channeling;
-   private int essence;
-   private int mentalism;
-   private int physical;
-   private int endurance;
-   private int baseHits;
-   private int recoveryMult;
+    private int presence;
+    private int quickness;
+    private int reasoning;
+    private int selfDisc;
+    private int strength;
+    private int channeling;
+    private int essence;
+    private int mentalism;
+    private int physical;
+    private int endurance;
+    private int baseHits;
+    private int recoveryMult;
 
     public Race(String race, int bonusDps, int agility, int constitution, int empathy, int intuition, int memory, int presence, int quickness, int reasoning, int selfDisc, int strength, int channeling, int essence, int mentalism, int physical, int endurance, int baseHits, int recoveryMult) {
         this.race = race;
@@ -43,7 +43,6 @@ public class Race {
         this.recoveryMult = recoveryMult;
     }
 
-}
 
     public int getBonusDps() {
         return bonusDps;
@@ -117,63 +116,27 @@ public class Race {
         return recoveryMult;
     }
 
-    public int getRaceBonus(String statName){
-        String choice = statName;
-        switch (choice) {
-            case "Agility":
-                return getAgility();
-            break;
-            case "Constitution":
-                return getConstitution();
-            break;
-            case "Empathy":
-                return getEmpathy();
-            break;
-            case "Intuition":
-                return getIntuition();
-            break;
-            case "Memory":
-                return getMemory();
-            break;
-            case "Presence":
-                return getPresence();
-            break;
-            case "Quickness":
-                return getQuickness();
-            break;
-            case "Reasoning":
-                return getReasoning();
-            break;
-            case "SelfDisc":
-                return getSelfDisc();
-            break;
-            case "Strength":
-                return getStrength();
-            break;
-            case "Channeling":
-                return getChanneling();
-            break;
-            case "Essence":
-                return getEssence();
-            break;
-            case "Mentalism":
-                return getMentalism();
-            break;
-            case "Physical":
-                return getPhysical();
-            break;
-            case "Endurance ":
-                return getEndurance();
-            break;
-            case "Base Hits":
-                return getBaseHits();
-            break;
-            case "Recovery Mult":
-                return getRecoveryMult();
-            break;
+    public int getRaceBonus(String statName) {
+        return switch (statName) {
+            case "Agility", "Ag" -> getAgility();
+            case "Constitution", "Co" -> getConstitution();
+            case "Empathy" -> getEmpathy();
+            case "Intuition" -> getIntuition();
+            case "Memory" -> getMemory();
+            case "Presence" -> getPresence();
+            case "Quickness" -> getQuickness();
+            case "Reasoning" -> getReasoning();
+            case "SelfDisc" -> getSelfDisc();
+            case "Strength" -> getStrength();
+            case "Channeling" -> getChanneling();
+            case "Essence" -> getEssence();
+            case "Mentalism" -> getMentalism();
+            case "Physical" -> getPhysical();
+            case "Endurance " -> getEndurance();
+            case "Base Hits" -> getBaseHits();
+            case "Recovery Mult" -> getRecoveryMult();
+            default -> 0;
+        };
 
-        }
-
-        return 0;
     }
 }
