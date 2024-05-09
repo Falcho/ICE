@@ -8,11 +8,11 @@ public class Profession {
 
     private Map<String,Integer> professions;
     private List<String>realms;
-    private List<String>professionSkills;
-    private Map<String,List>professionSpell;
+    private List<Skill>professionSkills;
+    private Map<String,List<Spell>>professionSpell;
     String description;
 
-    public Profession(Map<String, Integer> professions, List<String> realms, List<String> professionSkills, Map<String, List> professionSpell, String description) {
+    public Profession(Map<String, Integer> professions, List<String> realms, List<Skill> professionSkills, Map<String, List<Spell>> professionSpell, String description) {
         this.professions = professions;
         this.realms = realms;
         this.professionSkills = professionSkills;
@@ -24,7 +24,7 @@ public class Profession {
         return professions;
     }
 
-    public List<String>getProfessionalSkill(){
+    public List<Skill>getProfessionalSkill(){
         return professionSkills;
     }
 
@@ -32,7 +32,7 @@ public class Profession {
         return realms;
     }
 
-    public Map<String,List>getSpellList(){
+    public Map<String,List<Spell>>getSpellList(){
         return professionSpell;
     }
 }
