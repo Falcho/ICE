@@ -38,48 +38,23 @@ InventoryView o-- GeneralEquipmentView
 
 
 package models{
-Class CharacterSheet{
-- int level;
-- int xp
-- String name
-- String background;
-# Culture culture;
-# Race race;
-# Profession profession;
-# PrimaryStats stats;
-# Defense defense;
-# ManeuversMovementAndEncumbrance MME;
-# Inventory inventory;
-# Map SkillList <String, Skill>;
-# Map SpellList <String, Spell>;
-# Set <Talent> Talents;
-}
-
-Class Skill{}
-Class SkillCategory{}
-Class Spell{}
-Class SpellCategory{}
-Class Inventory{}
-Class Talent{}
-Class MME{}
-Class PrimaryStats{}
-Class Defense{}
-Class MagicItems{}
-Class GeneralEquipment{}
-Class Race{}
-Class Culture{}
-Class Profession{}
-Class Stat{
-String name
-+ int bonus()
-- int potentionel()
-- int temp()
-- int racial()
-- int speciel()
-+ int getTotal()
-+ int getPotentionel()
-+ getTemp()
-}
+    Class CharacterSheet{
+        - int level;
+        - int xp
+        - String name
+        - String background;
+        # Culture culture;
+        # Race race;
+        # Profession profession;
+        # PrimaryStats stats;
+        # Defense defense;
+        # ManeuversMovementAndEncumbrance MME;
+        # Inventory inventory;
+        # Map SkillList <String, Skill>;
+        # Map SpellList <String, Spell>;
+        # Set <Talent> Talents;
+    }
+    Class GeneralEquipment{}
     Class Skill{}
     Class SkillCategory{}
     Class Spell{}
@@ -149,6 +124,7 @@ package util {
     Class FileIO{}
     Class TextUI{}
     Class dataLoader{}
+}
 
 Main *--- RoleMaster
 RoleMaster *-- CharacterSheet
