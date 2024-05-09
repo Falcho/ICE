@@ -3,8 +3,8 @@ package Models;
 import java.util.Map;
 
 public class Culture {
-    String cultureName;
-    Map<String, Integer> skillMap;
+    private String cultureName;
+    private Map<String, Integer> skillMap;
 
     public Culture(String cultureName, Map<String, Integer> skillMap) {
         this.cultureName = cultureName;
