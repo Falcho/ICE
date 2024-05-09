@@ -104,7 +104,48 @@ package models{
     Class PrimaryStats{}
     Class Defense{}
     Class MagicItems{}
-    Class Race{}
+    Class Race{
+    - String race
+    - int bonusDps;      
+    - int agility;       
+    - int constitution; 
+    - int empathy;       
+    - int intuition;     
+    - int memory;        
+    - int presence;      
+    - int quickness;     
+    - int reasoning;     
+    - int selfDisc;      
+    - int strength;      
+    - int channeling;    
+    - int essence;       
+    - int mentalism;     
+    - int physical;      
+    - int endurance;     
+    - int baseHits;      
+    - int recoveryMult;
+    + getBonusDps();
+    + getAgility();
+    + getConstitution();
+    + getEmpathy();
+    + getIntuition();
+    + getMemory();
+    + getPresence();
+    + getQuickness();
+    + getReasoning();
+    + getSelfDisc();
+    + getStrength();
+    + getChanneling();
+    + getEssence();
+    + getMentalism();
+    + getPhysical();
+    + getEndurance();
+    + getBaseHits();
+    + getRecoveryMult();
+    + getRaceBonus(String statName);
+      }
+
+
     Class Culture{}
     Class Profession{}
     Class Stat{
