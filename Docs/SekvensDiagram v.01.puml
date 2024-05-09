@@ -2,27 +2,27 @@
 'https://plantuml.com/sequence-diagram
 
 autonumber
-participant main
-participant user
-participant view
-participant controller
-participant model
+participant Main
+participant User
+participant View
+participant Controller
+participant Model
 
 
-main -> view: new
-main -> model: new
-main -> controller: new
-main-> model:new
-controller --> view: Vis start
-user -> view: Opret ny
-view -> controller: "Opret ny" tryk
-controller -> model: Be om race
-model -> controller
-controller -> view: ""Vis vælg race"
-user -> view: valgt "High elf"
-view -> controller: race = High "High elf"
-controller -> model: setRace(""High elf")
-controller -> controller: Get cultures
-controller -> view: Vis vælg culture
+Main -> View: new
+Main -> Model: new
+Main -> Controller: new
+Main-> Model:new
+Controller --> View: Vis start
+User -> View: Opret ny
+View -> Controller: "Opret ny" tryk
+Controller -> Model: Be om race
+Model -> Controller
+Controller -> View: ""Vis vælg race"
+User -> View: valgt "High elf"
+View -> Controller: race = High "High elf"
+Controller -> Model: setRace(""High elf")
+Controller -> Controller: Get cultures
+Controller -> View: Vis vælg culture
 
 @enduml
