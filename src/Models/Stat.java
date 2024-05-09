@@ -78,6 +78,6 @@ public class Stat {
     }
 
     protected int getRaceBonus(){
-        return characterSheet.race.getBonus(this.name);
+        return characterSheet.race.getRaceBonus(this.name);
     }
 }
