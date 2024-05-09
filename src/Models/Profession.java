@@ -1,38 +1,61 @@
 package Models;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public class Profession {
 
-    private Map<String,Integer> professions;
-    private List<String>realms;
-    private List<Skill>professionSkills;
-    private Map<String,List<Spell>>professionSpell;
-    String description;
+    protected String name;
+    protected String description;
+    protected Map<String, List<Integer>> professionSkillCost;
+    protected List<String> availableRealms;
+    protected List<Skill> availableProfessionalSkillList;
+    protected Map<String, List<Spell>> professionSpell;
+    protected List<Skill> chosenProfessionalSkills;
+    protected List<Skill> chosenKnacks;
+    protected List<Skill> chosenRealms;
 
-    public Profession(Map<String, Integer> professions, List<String> realms, List<Skill> professionSkills, Map<String, List<Spell>> professionSpell, String description) {
-        this.professions = professions;
-        this.realms = realms;
-        this.professionSkills = professionSkills;
-        this.professionSpell = professionSpell;
+    public Profession(String name, String description, Map<String, List<Integer>> professionSkillCost, List<String> realms, List<Skill> availableProfessionalSkillList) {
+        this.name = name;
         this.description = description;
+        this.professionSkillCost = professionSkillCost;
+        this.availableRealms = realms;
+        this.availableProfessionalSkillList = availableProfessionalSkillList;
     }
 
-    public Map<String,Integer>getSkillCost(){
-        return professions;
+    public Map<String, List<Integer>> getSkillCost() {
+        return professionSkillCost;
     }
 
-    public List<Skill>getProfessionalSkill(){
-        return professionSkills;
+    public List<Skill> getProfessionalSkill() {
+        return availableProfessionalSkillList;
     }
 
-    public List<String>getRealms(){
-        return realms;
+    public List<String> getAvailableRealms() {
+        return availableRealms;
     }
 
-    public Map<String,List<Spell>>getSpellList(){
+    public Map<String, List<Spell>> getSpellList() {
         return professionSpell;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public List<Skill> getChosenProfessionalSkills() {
+        return chosenProfessionalSkills;
+    }
+
+    public List<Skill> getChosenKnacks() {
+        return chosenKnacks;
+    }
+
+    public List<Skill> getChosenRealms() {
+        return chosenRealms;
     }
 }
