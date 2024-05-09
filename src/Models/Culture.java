@@ -11,6 +11,10 @@ public class Culture {
         this.skillMap = skillMap;
     }
 
+    public String getCultureName() {
+        return cultureName;
+    }
+
     public Map<String, Integer> getSkillMap() {
         return skillMap;
     }
