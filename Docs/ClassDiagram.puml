@@ -57,7 +57,21 @@ package models{
     Class GeneralEquipment{}
     Class Skill{}
     Class SkillCategory{}
-    Class Spell{}
+    Class Spell{
+          -boolean proffesionalSkill
+          -String name
+          -String specialization
+          -int cultureRanks
+          -String stats
+          -int statBonus
+          -int totalRanks
+          -int rankBonus
+          -int proffesionalBonus
+          -int knack
+          -int totalBonus
+          -boolean firstRankBought
+          -boolean secondRankBought
+    }
     Class SpellCategory{}
     Class Inventory{}
     Class MME{
