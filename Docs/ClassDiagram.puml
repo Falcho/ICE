@@ -80,30 +80,31 @@ package models{
         #String[] getStats()
         #int getDPcostFirst()
         #int getDPcostSedond()
-        #getSkills()
+        #Map<String, Skill> getSkills()
+        #void addSkill()
     }
     Class Spell{
-    -list<String>category<>
-    -boolean proffesionalSkill
-    -String name
-    -String specialization
-    -int cultureRanks
-    -String stats
-    -int statBonus
-    -int totalRanks
-    -int rankBonus
-    -int proffesionalBonus
-    -int knack
-    -int totalBonus
-    -boolean firstRankBought
-    -boolean secondRankBought
+        -list<String>category<>
+        -boolean proffesionalSkill
+        -String name
+        -String specialization
+        -int cultureRanks
+        -String stats
+        -int statBonus
+        -int totalRanks
+        -int rankBonus
+        -int proffesionalBonus
+        -int knack
+        -int totalBonus
+        -boolean firstRankBought
+        -boolean secondRankBought
     }
     Class SpellCategory{
-    -String name
-    -String stats
-    -int statBonus
-    -int DPCostFirst
-    -int DPCostSecond
+        -String name
+        -String stats
+        -int statBonus
+        -int DPCostFirst
+        -int DPCostSecond
     }
     Class Inventory{}
     Class MME{
