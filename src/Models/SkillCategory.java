@@ -41,8 +41,12 @@ public class SkillCategory {
     public int getDPCostSecond(){
         return DPCostSecond;
     }
-    public void getSkills(){
-        return skills;
+    public Map<String,Skill> getSkills(){
+        return skillList;
     }
+    public void addSkill(String name,Skill skill) {
+        skillList.put(name,skill);
+
+
 }
 }
