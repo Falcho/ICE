@@ -4,9 +4,9 @@ import java.util.TreeMap;
 import java.util.Map;
 
 public class Rules {
-    public Map<String, Skill> getEmptySkillList() {
-        Map<String, Skill> emptySkillList = new TreeMap<>();
-
+    public static Map<String, SkillCategory> getEmptySkillList() {
+        Map<String, SkillCategory> emptySkillList = new TreeMap<>();
+        emptySkillList.put("Delving", new SkillCategory("Delving") );
         return emptySkillList;
     }
 }
