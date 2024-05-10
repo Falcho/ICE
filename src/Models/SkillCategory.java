@@ -19,6 +19,13 @@ public class SkillCategory {
         this.skillList=new HashMap<>();
 
     }
+    public SkillCategory(String name,String[] stats){
+        this.name=name;
+        this.stats=stats;
+        this.DPCostFirst= 0;
+        this.DPCostSecond=0;
+        this.skillList=new HashMap<>();
+    }
     public SkillCategory(String name,String[]stats,int DPCostFirst,int DPCostSecond, Map<String,Skill> skillList){
         this.name=name;
         this.stats=stats;
