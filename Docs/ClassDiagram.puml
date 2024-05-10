@@ -105,6 +105,12 @@ package models{
         -int statBonus
         -int DPCostFirst
         -int DPCostSecond
+        +String getName()
+        +String[] getStats()
+        +int getDPCostFirst()
+        +int getDPCostSecond()
+        +Map<String, Spell> getSkills()
+        +void addSpell()
     }
     Class Inventory{}
     Class MME{
