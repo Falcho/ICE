@@ -73,7 +73,6 @@ package models{
     Class SkillCategory{
         #String name
         #String[] stats
-        #int statBonus
         #int DPCostFirst
         #int DPCostSecond
         #Map<String,Skill> skillList
