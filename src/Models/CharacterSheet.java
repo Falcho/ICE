@@ -20,6 +20,13 @@ public class CharacterSheet {
     protected Set<TalentsAndFlaws>TalentsAndFLaws;
 
 
+    public CharacterSheet() {
+        this.level = 0;
+        this.xp = 0;
+        this.name = "";
+        this.background = "";
+        this.stats = new PrimaryStats();
+    }
     public CharacterSheet(int level, int xp, String name, String background, Culture culture, Race race, Profession profession, PrimaryStats stats, Defense defense, ManeuversMovementAndEncumbrance MME, Inventory inventory, Map skillList, Map spellList, Set<TalentsAndFlaws> talentsAndFLaws) {
         this.level = level;
         this.xp = xp;
