@@ -27,6 +27,28 @@ Class WeaponAttackSetupView{}
 Class DefenseView{}
 Class MagicItemsView{}
 Class GeneralEquipmentView{}
+Class ChooseProffessionView{
+-JLabel title;
+-String[] proffessionList
+-JList<String>proffessionJList
+-List<SkillCategory>skillAndCostList
+-List<Skill>proffessionalSkill
+-JTextArea proffessionDescription
+-JCheckBox proffessionalBonusButton
+-JCheckBox KnackButton
+-JButton returnToCharacterName
+-JButton saveAndContinueToRace
++ChooseProffessionView()
+-createTopPanel()
+-createLeftPanel()
+-createRightPanel()
+-createRightTopPanel()
+-createRightTopLeftPanel()
+-createRightTopRightPanel()
+-createRightBottomPanel()
+-createBottomPanel()
+
+}
 }
 CharacterSheetView *-- CharacterInfoView
 CharacterSheetView *-- PrimaryStatsView
