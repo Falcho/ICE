@@ -1,0 +1,37 @@
+{
+  "header": "High Elf",
+  "description": "Though similar to mortal men in most ways, all types of Elves share several important, if subtle, differences. As a race, they are taller than most humans, although slender. Elven men have no facial hair, and as a rule, they have less body hair than humans. Generally, Elves are fairer in appearance than their mortal brothers, having finer features, unmarred skin, and pointed ears with no earlobes. Elven sight is extremely keen; they are able to see on a clear night as if in full daylight. Their vision is correspondingly restricted with less light, and they cannot see at all in total darkness. Perhaps most importantly, Elves do not age once adult or grow old, and their bodies are immune to all non-magical bacterial and viral infections. Thus, they are virtually immortal (excepting violent death). The most otherworldly of all Elves, Fair Elves have golden hair, blue eyes, pale skin, and prefer garments of white, silver, and gold. Whether it is derived from divine favor or fey heritage, they have a visible aura which awes allies and intimidates foes. They are seldom seen beyond the borders of the elven lands, where they inspire their kin with their music, magic, and wisdom. Melody and song frequent their gatherings, because even the least of them can play the harp or sing, while the more talented compose music or delight the ear with expertise on several instruments. Grey elves are almost always intermediate between their more extreme brethren. Most have fair hair and blue or grey eyes. They are neither as artistic as the fair elves, as cunning and warlike as the high elves, or as sedate and rustic as the wood elves. They form the middle ground with their pleasant company and their love of art and craft. When war calls, they will take up arms, but mostly they will settle down, raise a family and do as they please. They build no marble cities, but love open cities amongst a lovely landscape which connects them closer to nature. Some live under the rule of High Elves, while others take to the seas as merchants and travelers. They are not the most magical elves, but they are no strangers to magic either. Raven-black hair distinguishes the High Elves from their fairer kin, and brown and hazel are their usual eye colors. A love of beautiful things, expressed by skill in building and crafting, unites with a curiosity about the nature of all creation to lure the most ambitious from the path of nature. Yet, the superb armor, the bright weapons, and the lovely jewelry cherished within their graceful, marble-walled cities seem almost worth the price. Some of the most powerful artifacts known to exist come from the forges of these elven craftsmen. When they live among other elves, they take inspiration from the Fair Elves but willingly accept the day-to-day burden of ruling their kin. Wood Elves wear greens and greys to blend with their surroundings. Sandy hair and light blue, green, or grey eyes complement their rustic demeanor. They are slightly shorter than other elves, though taller than humans. These Elves are the most common of all elvenkind and can be found in almost any forest across the world. Wood Elves are often quite distant from other elves and have been known to disagree openly with the policies of the High Elves and Fair Elves. Most attuned to the subtle tides of forests, streams, and the creatures who roam the sylvan realm, Wood Elves are adept at moving silently, their presence in the wood frequently going unnoticed among the shadows of swaying branches.",
+  "race_sizes": {
+    "size": "M",
+    "weight_male": "215 lbs",
+    "stride": "+2'",
+    "weight_female": "175 lbs",
+    "height_male": "6'7\"",
+    "variance": "+/- 4 lbs/in.",
+    "height_female": "6'3\""
+  },
+  "stat_bonuses": {
+    "agility": 3,
+    "constitution": -1,
+    "empathy": 2,
+    "intuition": 0,
+    "memory": 2,
+    "presence": 3,
+    "quickness": 2,
+    "reasoning": 1,
+    "self_discipline": -5,
+    "strength": -1
+  },
+  "resistances": {
+    "channeling": -5,
+    "mentalism": -5,
+    "essence": -5,
+    "physical": 10
+  },
+  "health_and_dev": {
+    "endurance": 10,
+    "recovery_multiplier": "2x",
+    "base_hits": 25,
+    "bonus_dev_points": 3
+  }
+}
