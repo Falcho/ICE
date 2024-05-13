@@ -27,7 +27,7 @@ public class ChooseProffessionView extends JPanel {
         title = new JLabel("Choose Proffession");
         proffessionList = new String[]{"Fighter", "Magician","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test"};
         proffessionJList = new JList(proffessionList);
-        skillAndCostList = new JList;
+        skillAndCostList = new JList(proffessionList);
         proffessionalSkill = new ArrayList<>();
         proffessionDescription = new JTextArea("Description Description Description Description \n" +
                 "Description Description Description Description \n" +
@@ -98,6 +98,13 @@ public class ChooseProffessionView extends JPanel {
 
     private JPanel createRightTopRightPanel() {
         JPanel panel = new JPanel();
+        JList list = new JList();
+        list.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+        list.setLayoutOrientation(JList.HORIZONTAL_WRAP);
+        list.setVisibleRowCount(10);
+        JScrollPane scrollPane = new JScrollPane(list);
+        list.setPreferredSize(new Dimension(250,250));
+        panel.add(scrollPane);
         return panel;
     }
 
