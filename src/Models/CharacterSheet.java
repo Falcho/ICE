@@ -15,9 +15,9 @@ public class CharacterSheet {
     protected Defense defense;
     protected ManeuversMovementAndEncumbrance MME;
     protected Inventory inventory;
-    protected Map<String,SkillCategory> skillList;
-    protected Map<String,Spell> spellList;
-    protected Set<TalentsAndFlaws>TalentsAndFLaws;
+    protected Map<String, SkillCategory> skillList;
+    protected Map<String, Spell> spellList;
+    protected Set<TalentsAndFlaws> TalentsAndFLaws;
 
 
     public CharacterSheet() {
@@ -28,6 +28,7 @@ public class CharacterSheet {
         this.stats = new PrimaryStats();
         this.skillList = Rules.getEmptySkillList();
     }
+
     public CharacterSheet(int level, int xp, String name, String background, Culture culture, Race race, Profession profession, PrimaryStats stats, Defense defense, ManeuversMovementAndEncumbrance MME, Inventory inventory, Map skillList, Map spellList, Set<TalentsAndFlaws> talentsAndFLaws) {
         this.level = level;
         this.xp = xp;
@@ -43,5 +44,13 @@ public class CharacterSheet {
         this.skillList = skillList;
         this.spellList = spellList;
         TalentsAndFLaws = talentsAndFLaws;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
