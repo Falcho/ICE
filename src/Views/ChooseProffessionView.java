@@ -1,6 +1,6 @@
 package Views;
 
-import Models.Profession;
+import Models.Skill;
 import Models.SkillCategory;
 
 import javax.swing.*;
@@ -9,15 +9,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ChooseProffessionView extends JFrame {
+public class ChooseProffessionView extends JPanel {
 
     private JLabel title;
-    private JLabel proffessionalBonus;
-    private JLabel knack;
-    private JList<Profession> proffessionList;
-    private List<SkillCategory> skillList;
+    private List<String> proffessionList;
+    private List<SkillCategory> skillAndCostList;
+    private List<Skill> proffessionalSkill;
     private JTextArea proffessionDescription;
-    private JCheckBox ProffessionalAndKnack;
+    private JCheckBox proffessionalBonusButton;
+    private JCheckBox knackButton;
 
 
     private JButton returnToCharacterName;
@@ -26,12 +26,14 @@ public class ChooseProffessionView extends JFrame {
     public ChooseProffessionView() {
         //Initialize all components
         title = new JLabel("Choose Proffession");
-        proffessionalBonus = new JLabel("Bonus");
-        knack = new JLabel("Knack");
-        proffessionList = new JList<>();
-        skillList = new ArrayList<>();
+        proffessionList = new ArrayList<>();
+        skillAndCostList = new ArrayList<>();
+        proffessionalSkill = new ArrayList<>();
         proffessionDescription = new JTextArea();
-        ProffessionalAndKnack = new JCheckBox();
+        proffessionalBonusButton = new JCheckBox("Bonus");
+        knackButton = new JCheckBox("Knack");
+
+
 
         returnToCharacterName = new JButton("Return to Character Name");
         saveAndContinueToRace = new JButton("Save and Continue to Race");
@@ -53,7 +55,7 @@ public class ChooseProffessionView extends JFrame {
 
     private JPanel createLeftPanel() {
         JPanel panel = new JPanel();
-        panel.add(proffessionList);
+        //panel.add(proffessionList);
         return panel;
     }
 
@@ -61,25 +63,38 @@ public class ChooseProffessionView extends JFrame {
         JPanel panel = new JPanel();
         BorderLayout layout = new BorderLayout();
         panel.setLayout(layout);
+        panel.add(createRightTopPanel(), BorderLayout.NORTH);
+        panel.add(createRightBottomPanel(), BorderLayout.SOUTH);
         return panel;
     }
 
     private JPanel createRightTopPanel() {
         JPanel panel = new JPanel();
+        BorderLayout layout = new BorderLayout();
+        panel.setLayout(layout);
+        panel.add(createRightTopLeftPanel(), BorderLayout.WEST);
+        panel.add(createRightTopRightPanel(), BorderLayout.EAST);
         return panel;
     }
 
     private JPanel createRightTopLeftPanel(){
         JPanel panel = new JPanel();
+        panel.add(proffessionDescription);
         return panel;
     }
     private JPanel createRightTopRightPanel(){
         JPanel panel = new JPanel();
+        //panel.add((Component) skillAndCostList);
         return panel;
     }
 
     private JPanel createRightBottomPanel() {
         JPanel panel = new JPanel();
+        proffessionalBonusButton.setSelected(false);
+        knackButton.setSelected(false);
+        //panel.add((Component) proffessionalSkill);
+        panel.add(proffessionalBonusButton);
+        panel.add(knackButton);
         return panel;
     }
 
@@ -90,6 +105,7 @@ public class ChooseProffessionView extends JFrame {
         panel.add(saveAndContinueToRace);
         return panel;
     }
+
 
 }
 

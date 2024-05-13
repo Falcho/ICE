@@ -1,7 +1,5 @@
 package Views;
 
-import Controllers.CharacterSheetController;
-
 import javax.swing.*;
 import java.awt.*;
 
