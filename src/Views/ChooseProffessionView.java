@@ -14,7 +14,7 @@ public class ChooseProffessionView extends JPanel {
     private JLabel title;
     private String[] proffessionList;
     private JList<String> proffessionJList;
-    private List<SkillCategory> skillAndCostList;
+    private JList<SkillCategory> skillAndCostList;
     private List<Skill> proffessionalSkill;
     private JTextArea proffessionDescription;
     private JCheckBox proffessionalBonusButton;
@@ -25,8 +25,9 @@ public class ChooseProffessionView extends JPanel {
     public ChooseProffessionView() {
         //Initialize all components
         title = new JLabel("Choose Proffession");
-        proffessionList = new String[]{"Fighter", "Magician"};
-        proffessionJList = new JList<>(proffessionList);
+        proffessionList = new String[]{"Fighter", "Magician","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test"};
+        proffessionJList = new JList(proffessionList);
+        skillAndCostList = new JList;
         proffessionalSkill = new ArrayList<>();
         proffessionDescription = new JTextArea("Description Description Description Description \n" +
                 "Description Description Description Description \n" +
@@ -61,7 +62,13 @@ public class ChooseProffessionView extends JPanel {
 
     private JPanel createLeftPanel() {
         JPanel panel = new JPanel();
-        panel.add(new JScrollPane(proffessionJList));
+        JList list = new JList(proffessionList);
+        list.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+        list.setLayoutOrientation(JList.VERTICAL);
+        list.setVisibleRowCount(30);
+        JScrollPane scrollPane = new JScrollPane(list);
+        list.setPreferredSize(new Dimension(300,500));
+        panel.add(scrollPane);
         return panel;
     }
 
