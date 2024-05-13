@@ -27,7 +27,6 @@ public class ChooseProffessionView extends JPanel {
         title = new JLabel("Choose Proffession");
         proffessionList = new String[]{"Fighter", "Magician"};
         proffessionJList = new JList<>(proffessionList);
-        skillAndCostList = new ArrayList<>();
         proffessionalSkill = new ArrayList<>();
         proffessionDescription = new JTextArea("Description Description Description Description \n" +
                 "Description Description Description Description \n" +
