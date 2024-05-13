@@ -1,0 +1,78 @@
+{
+  "header": "Common Humans",
+  "description": "description", "Common mortal men are the same race we are familiar with in the real world and come in the same variations of size, build, skin/hair colors, and facial features as the humans we know. Highly adaptable, they can be found in just about any climate or environment and develop widely varied cultures. Skin color tends to be darker in sunny climates and lighter as one moves towards the poles, but these shifts take millennia and large-scale migrations and individual travel may result in notable exceptions and mixed populations. Cave men are the isolated remnants of the ancestors of common men. Muscular with sloping foreheads and oversized jaws, cave men have brown or ginger hair and eyes, and tan skin, but are shorter than their common kin. Simple garments made of animal skins are the normal garb. Their intellect is not powerful, but a cooperative, good-tempered disposition makes their company a pleasant experience. Cave men band together to form tribes, each with its own complex set of social rituals and religious beliefs. Their average life span is 50 years. Rough spears or clubs are their usual weaponry. Those who came into conflict with common men were conquered, killed, or absorbed, so those who remain are the tribes who live in isolation. High men are taller and stronger than common men, more lordly in appearance, longer lived, and tend to be more daring and ambitious. They are also notoriously stiff and rigid, not as flexible or adaptable as their common brethren, and more easily swayed by their own pride or the lure of magic and power. They build great empires, but those empires often collapse spectacularly due to their own hubris. High men are more feared than loved, and often considered domineering. They may have the blood of gods or giants explaining both their strength and their pride. Mixed men are the offspring of High and Common parents. They are intermediate in features and can be difficult to distinguish from either kin. Societies where High and Common humans have frequent contact may have significant populations of mixed men.",
+  "subraces": [
+    {
+      "name": "Human, average",
+      "race_sizes": {
+        "size": "M",
+        "weight_male": "185 lbs",
+        "stride": "0'",
+        "weight_female": "154 lbs",
+        "height_male": "5'10\"",
+        "variance": "+/- 5 lbs/in.",
+        "height_female": "5'5\""
+      },
+      "stat_bonuses": {
+        "agility": 0,
+        "constitution": 0,
+        "empathy": 0,
+        "intuition": 0,
+        "memory": 0,
+        "presence": 0,
+        "quickness": 0,
+        "reasoning": 0,
+        "self_discipline": 0,
+        "strength": 0
+      },
+      "resistances": {
+        "channeling": 0,
+        "mentalism": 0,
+        "essence": 0,
+        "physical": 0
+      },
+      "health_and_dev": {
+        "endurance": 0,
+        "recovery_multiplier": "1x",
+        "base_hits": 25,
+        "bonus_dev_points": 50
+      }
+    },
+    {
+      "name": "Human, large",
+      "race_sizes": {
+        "size": "M",
+        "weight_male": "230 lbs",
+        "stride": "+1'",
+        "weight_female": "180 lbs",
+        "height_male": "6'4\"",
+        "variance": "+/- 5 lbs/in.",
+        "height_female": "5'9\""
+      },
+      "stat_bonuses": {
+        "agility": 0,
+        "constitution": 1,
+        "empathy": 0,
+        "intuition": 0,
+        "memory": 0,
+        "presence": 1,
+        "quickness": 0,
+        "reasoning": 0,
+        "self_discipline": 0,
+        "strength": 1
+      },
+      "resistances": {
+        "channeling": 0,
+        "mentalism": 0,
+        "essence": 0,
+        "physical": 0
+      },
+      "health_and_dev": {
+        "endurance": 0,
+        "recovery_multiplier": "1x",
+        "base_hits": 30,
+        "bonus_dev_points": 34
+      }
+    }
+  ]
+}
