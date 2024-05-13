@@ -184,7 +184,10 @@ package models{
     + getSkillMap();
     }
     Class Profession{}
-    Class TalentsAndFlaws{}
+    Class TalentsAndFlaws{
+    - String name
+
+    }
     Class Stat{
         - String name
         - int potentional
