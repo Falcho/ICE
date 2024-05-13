@@ -77,7 +77,7 @@ public class ChooseProffessionView extends JPanel {
     }
 
     private JPanel createRightTopLeftPanel(){
-        JPanel panel = new JPanel(new FlowLayout(),true);
+        JPanel panel = new JPanel();
         panel.add(proffessionDescription);
         return panel;
     }
