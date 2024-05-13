@@ -15,6 +15,7 @@ public class MainFrame extends JFrame {
         cardLayout = new CardLayout();
 
         CreateStatsView statsView = new CreateStatsView();
+        ChooseProffessionView proffView = new ChooseProffessionView();
         // sets our layout as a card layout
         setLayout(cardLayout);
 
@@ -22,7 +23,7 @@ public class MainFrame extends JFrame {
         //new CharacterSheetController(statsView);
 
         // adds view to card layout with unique constraints
-        add(statsView, "myView");
+        add(proffView, "myView");
         cardLayout.show(this.getContentPane(), "myView");
         // switch view according to its constraints on click
 
