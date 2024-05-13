@@ -12,21 +12,20 @@ import java.util.List;
 public class ChooseProffessionView extends JPanel {
 
     private JLabel title;
-    private List<String> proffessionList;
+
+    private JList proffessionList;
     private List<SkillCategory> skillAndCostList;
     private List<Skill> proffessionalSkill;
     private JTextArea proffessionDescription;
     private JCheckBox proffessionalBonusButton;
     private JCheckBox knackButton;
-
-
     private JButton returnToCharacterName;
     private JButton saveAndContinueToRace;
 
     public ChooseProffessionView() {
         //Initialize all components
         title = new JLabel("Choose Proffession");
-        proffessionList = new ArrayList<>();
+        proffessionList = new JList();
         skillAndCostList = new ArrayList<>();
         proffessionalSkill = new ArrayList<>();
         proffessionDescription = new JTextArea();
@@ -34,12 +33,12 @@ public class ChooseProffessionView extends JPanel {
         knackButton = new JCheckBox("Knack");
 
 
-
         returnToCharacterName = new JButton("Return to Character Name");
         saveAndContinueToRace = new JButton("Save and Continue to Race");
 
-        this.setLayout(new BorderLayout());
 
+
+        this.setLayout(new BorderLayout());
         this.add(createTopPanel(), BorderLayout.NORTH);
         this.add(createLeftPanel(), BorderLayout.WEST);
         this.add(createRightPanel(), BorderLayout.EAST);
@@ -55,7 +54,7 @@ public class ChooseProffessionView extends JPanel {
 
     private JPanel createLeftPanel() {
         JPanel panel = new JPanel();
-        //panel.add(proffessionList);
+        panel.add(proffessionList);
         return panel;
     }
 
@@ -78,13 +77,12 @@ public class ChooseProffessionView extends JPanel {
     }
 
     private JPanel createRightTopLeftPanel(){
-        JPanel panel = new JPanel();
+        JPanel panel = new JPanel(new FlowLayout(),true);
         panel.add(proffessionDescription);
         return panel;
     }
     private JPanel createRightTopRightPanel(){
         JPanel panel = new JPanel();
-        //panel.add((Component) skillAndCostList);
         return panel;
     }
 
@@ -92,7 +90,6 @@ public class ChooseProffessionView extends JPanel {
         JPanel panel = new JPanel();
         proffessionalBonusButton.setSelected(false);
         knackButton.setSelected(false);
-        //panel.add((Component) proffessionalSkill);
         panel.add(proffessionalBonusButton);
         panel.add(knackButton);
         return panel;
