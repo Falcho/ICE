@@ -20,9 +20,4 @@ public class TalentsAndFlawsController {
         this.rules = new Rules();
     }
 
-    public void addTalentsFromRules() {
-        Map<String, String> availableTalents = Rules.getTalentsAndFlaws();
-        //view.addTalent(availableTalents);
-
-    }
 }
