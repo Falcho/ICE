@@ -31,6 +31,10 @@ public class Profession {
         return availableProfessionalSkillList;
     }
 
+    public Map<String, List<Integer>> getProfessionSkillCost() {
+        return professionSkillCost;
+    }
+
     public List<String> getAvailableRealms() {
         return availableRealms;
     }

@@ -19,6 +19,7 @@ public class MainFrame extends JFrame {
 
         CreateStatsView newStatsView = new CreateStatsView();
         CreateNewCharView newCharView = new CreateNewCharView();
+        ChooseProfessionView profView = new ChooseProfessionView();
         TalentsAndFlawsView talentsAndFlawsView = new TalentsAndFlawsView(Rules.getTalentsAndFlaws());
         // sets our layout as a card layout
         setLayout(cardLayout);
@@ -31,9 +32,10 @@ public class MainFrame extends JFrame {
 
         // adds view to card layout with unique constraints
         add(newCharView, "myView");
+        add(profView, "profView");
         add(newStatsView, "newStats");
         add(talentsAndFlawsView, "talentsAndFlaws");
-        cardLayout.show(this.getContentPane(), "talentsAndFlaws");
+        cardLayout.show(this.getContentPane(), "profView");
         // switch view according to its constraints on click
         newCharView.saveAndContinue(e -> {
             if (newCharController.validateAndSave()) {
