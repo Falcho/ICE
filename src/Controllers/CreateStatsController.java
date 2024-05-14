@@ -5,6 +5,7 @@ import Views.CreateStatsView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class CreateStatsController {
     CharacterSheet model;
@@ -42,8 +43,11 @@ public class CreateStatsController {
 
     private int[] generateStat() {
         int[] stat = new int[3];
-        //Use Random to generate three random numbers between 11 and 100,
-        // and insert them into the stat array
+        Random random= new Random();
+        for(int i = 0; i<stat.length;i++)
+            stat[i]=random.nextInt(11,101);
+            //Use Random to generate three random numbers between 11 and 100,
+            // and insert them into the stat array
 
         return stat;
     }
