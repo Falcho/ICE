@@ -24,7 +24,7 @@ public class CreateNewCharController {
     public boolean validateAndSave() {
         String name = view.getNameField();
         if (validate(name)) {
-            model.setName(name);
+            saveDataToModel(name);
             System.out.println("Character name: "+ name);
             return true;
         }
