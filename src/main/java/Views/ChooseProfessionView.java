@@ -146,14 +146,12 @@ public class ChooseProfessionView extends JPanel {
         return panel;
     }
 
-
     private JPanel createButtonsPanel() {
         JPanel panel = new JPanel();
         panel.add(returnToCharacterName);
         panel.add(saveAndContinueToRace);
         return panel;
     }
-
 
     public List<Skill> getProfessionalSkill() {
         return professionalSkill;
