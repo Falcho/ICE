@@ -17,7 +17,7 @@ public class PrimaryStats {
 
     public PrimaryStats() {
         this.agility = new Stat("agility");
-        this.constitution = new Stat("contitition");
+        this.constitution = new Stat("constitution");
         this.empathy = new Stat("empathy");
         this.intuition = new Stat("intuition");
         this.memory = new Stat("memory");
@@ -32,7 +32,7 @@ public class PrimaryStats {
         if (statNavn.equals("agility")) {
             this.agility.setStat(values);
         }
-        if (statNavn.equals("contitition")) {
+        if (statNavn.equals("constitution")) {
             this.constitution.setStat(values);
         }
         if (statNavn.equals("empathy")) {
@@ -63,21 +63,18 @@ public class PrimaryStats {
 
 
     }
-    public void setStats(List<int[]> stats){
-            this.setStat("agility",stats.get(0));
-            this.setStat("contitition",stats.get(1));
-            this.setStat("empathy",stats.get(2));
-            this.setStat("intuition",stats.get(3));
-            this.setStat("memory",stats.get(4));
-            this.setStat("presence",stats.get(5));
-            this.setStat("quickness",stats.get(6));
-            this.setStat("reasoning",stats.get(7));
-            this.setStat("selfDiscipline", stats.get(8));
-            this.setStat("strength", stats.get(9));
-        }
 
-
-
+    public void setStats(List<int[]> stats) {
+        this.setStat("agility", stats.get(0));
+        this.setStat("constitution", stats.get(1));
+        this.setStat("empathy", stats.get(2));
+        this.setStat("intuition", stats.get(3));
+        this.setStat("memory", stats.get(4));
+        this.setStat("presence", stats.get(5));
+        this.setStat("quickness", stats.get(6));
+        this.setStat("reasoning", stats.get(7));
+        this.setStat("selfDiscipline", stats.get(8));
+        this.setStat("strength", stats.get(9));
 
     }
 
