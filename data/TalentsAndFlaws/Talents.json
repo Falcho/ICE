@@ -1,5 +1,4 @@
-{
-  "talents": [
+[
     {
       "name": "Deadeye",
       "description": "You have uncanny aim with a ranged weapon. All range penalties for a ranged Combat Training specialization may be reduced by up to 10/Tier."
@@ -424,5 +423,4 @@
       "name": "Revulsion",
       "description": "You have a strong aversion to a particular substance or condition."
     }
-  ]
-}
+ ]

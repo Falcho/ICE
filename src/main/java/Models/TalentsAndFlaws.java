@@ -1,8 +1,11 @@
 package Models;
 
 public class TalentsAndFlaws {
-    private final String name;
-    private final String description;
+    private String name;
+    private String description;
+
+    public TalentsAndFlaws() {
+    }
 
     public TalentsAndFlaws(String name, String description) {
         this.name = name;
@@ -15,5 +18,13 @@ public class TalentsAndFlaws {
 
     public String getDescription() {
         return description;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
