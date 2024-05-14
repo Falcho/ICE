@@ -1,12 +1,11 @@
 package Models;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.*;
 
 public class Rules {
@@ -23,9 +22,11 @@ public class Rules {
         CollectionType collectionType = objectMapper.getTypeFactory().constructCollectionType(List.class, TalentsAndFlaws.class);
 
         //Læs json filen
+        File json = new File("data/TalentsAndFlaws/Talents.json");
         //Konverter json til et array af TalentAndFlaws objekter
         try {
-            talentList = objectMapper.readValue(new File("data/TalentsAndFlaws/Talents.json"), collectionType);
+            talentList = objectMapper.readValue(json, collectionType);
+            //talentsAndFlaws = objectMapper.readValue(json, new TypeReference<Map<String,Object>>(){});
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
