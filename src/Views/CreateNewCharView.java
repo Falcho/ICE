@@ -86,4 +86,9 @@ public class CreateNewCharView extends JPanel {
             nameField.setText("");
         }
     }
+    public void setNameField(String setText){
+        this.nameField.setText(setText);
+
+    }
 }
+
