@@ -16,119 +16,22 @@ import java.util.Map;
 public class TalentsAndFlawsView extends JPanel {
 
     private List<JLabel> labels;
+    private List<JLabel> descriptions;
     private List<JTextField> fields;
     private JPanel detailPanel;
     private JSplitPane splitPane;
     private Map<String, Integer> selectedTalents;
     private JLabel pointsLabel;
     private int totalPoints = 10;
+    private Map<String, String> talentDescriptionMap;
 
-    public TalentsAndFlawsView() {
+    public TalentsAndFlawsView(Map<String, String> talentDescriptionMap) {
         labels = new ArrayList<>();
         fields = new ArrayList<>();
         selectedTalents = new HashMap<>();
+        this.talentDescriptionMap = talentDescriptionMap;
+        addTalents();
 
-        // Tilføj labels til listen i numerisk rækkefølge
-        labels.add(new JLabel("Slow on the Draw (-5)"));
-        labels.add(new JLabel("Heavy Sleeper (-5)"));
-        labels.add(new JLabel("Inglorious Failure (-6/Tier)"));
-        labels.add(new JLabel("Lesser Attack (-5 / Tier)"));
-        labels.add(new JLabel("Poor Hearing (-3 / Tier)"));
-        labels.add(new JLabel("Poor Smell (-2 / Tier)"));
-        labels.add(new JLabel("Poor Taste (-1 / Tier)"));
-        labels.add(new JLabel("Poor Touch (-1 / Tier)"));
-        labels.add(new JLabel("Poor Vision (-4 / Tier)"));
-        labels.add(new JLabel("Restricted Diet (-5)"));
-        labels.add(new JLabel("Light Sleeper (10)"));
-        labels.add(new JLabel("Quickdraw/Quickload (7)"));
-        labels.add(new JLabel("Deadeye (7/Tier)"));
-        labels.add(new JLabel("Pressing the Advantage (5/Tier)"));
-        labels.add(new JLabel("Sharpshooter (5/Tier)"));
-        labels.add(new JLabel("Sense Weakness (20)"));
-        labels.add(new JLabel("Fast Attack (10/Tier)"));
-        labels.add(new JLabel("Riposte (20)"));
-        labels.add(new JLabel("Opportunistic Strike (15)"));
-        labels.add(new JLabel("Frenzy (20)"));
-        labels.add(new JLabel("Quick-Caster (10/20)"));
-        labels.add(new JLabel("Scope Skills (20/Tier)"));
-        labels.add(new JLabel("Eloquence (15/Tier)"));
-        labels.add(new JLabel("Spatial Skills (10/Tier)"));
-        labels.add(new JLabel("Extended Reach (10 + 5/Tier)"));
-        labels.add(new JLabel("Subconscious Discipline (10/20)"));
-        labels.add(new JLabel("Graceful Recovery (8/Tier)"));
-        labels.add(new JLabel("Temporal Skills (10/Tier)"));
-        labels.add(new JLabel("Mumbler (-10/Tier)"));
-        labels.add(new JLabel("Power Recycling (10/20)"));
-        labels.add(new JLabel("Ambidextrous (10)"));
-        labels.add(new JLabel("Beast of Burden (10/Tier)"));
-        labels.add(new JLabel("Slow Bleeder (25/Tier)"));
-        labels.add(new JLabel("Uncoordinated (-10/-20)"));
-        labels.add(new JLabel("Darkvision (10 for Tier I, +5/Tier)"));
-        labels.add(new JLabel("Defensive Aura (6/Tier)"));
-        labels.add(new JLabel("Additional Limb Pair (20/Tier)"));
-        labels.add(new JLabel("Efficient Sleeper (5/10)"));
-        labels.add(new JLabel("Restless Sleeper (-4/-8)"));
-        labels.add(new JLabel("Breath Holding (10)"));
-        labels.add(new JLabel("Elemental Resistance (4/Tier)"));
-        labels.add(new JLabel("Elemental Susceptibility (4/Tier)"));
-        labels.add(new JLabel("Hearing Hare (20)"));
-        labels.add(new JLabel("Heatsense (10)"));
-        labels.add(new JLabel("Enhanced Attack (10 / Tier)"));
-        labels.add(new JLabel("Fast Healer (10)"));
-        labels.add(new JLabel("Slow Healer (-10)"));
-        labels.add(new JLabel("Hearing, Cat (10)"));
-        labels.add(new JLabel("Hearing, Dog (15)"));
-        labels.add(new JLabel("Hearing, Hare (20)"));
-        labels.add(new JLabel("Immune to Disease (10 / 30)"));
-        labels.add(new JLabel("Increased Size (30 / Tier)"));
-        labels.add(new JLabel("Decreased Size (-30 / Tier)"));
-        labels.add(new JLabel("Increased Stride (1 / Tier)"));
-        labels.add(new JLabel("Decreased Stride (-1 / Tier)"));
-        labels.add(new JLabel("Light-boned (-15 / Tier)"));
-        labels.add(new JLabel("Light Sensitivity (-10 / Tier)"));
-        labels.add(new JLabel("Magical Resistance (3 / Tier)"));
-        labels.add(new JLabel("Magical Vulnerability (-3 / Tier)"));
-        labels.add(new JLabel("Natural Armor (5 / Tier)"));
-        labels.add(new JLabel("Natural Weaponry (5)"));
-        labels.add(new JLabel("Nightvision (10)"));
-        labels.add(new JLabel("Physical Resistance (3 / Tier)"));
-        labels.add(new JLabel("Physical Vulnerability (-3 / Tier)"));
-        labels.add(new JLabel("Poison Injection (20)"));
-        labels.add(new JLabel("Recurved Musculature (30)"));
-        labels.add(new JLabel("Sight, Eagle (15)"));
-        labels.add(new JLabel("Sight, Gecko (10)"));
-        labels.add(new JLabel("Sight, Hawk (20)"));
-        labels.add(new JLabel("Strike Reflex (5)"));
-        labels.add(new JLabel("Superior Stat (4 / Tier)"));
-        labels.add(new JLabel("Inferior Stat (-4 / Tier)"));
-        labels.add(new JLabel("Tetrachromatic Vision (15)"));
-        labels.add(new JLabel("Third Eyelid (5)"));
-        labels.add(new JLabel("Tough (3 / Tier)"));
-        labels.add(new JLabel("Fragile (-3 / Tier)"));
-        labels.add(new JLabel("Vigorous (5 / Tier)"));
-        labels.add(new JLabel("Feeble (-5 / Tier)"));
-        labels.add(new JLabel("Wings, Vestigial (5)"));
-
-        // Tilføj MouseListener til labels
-        for (JLabel label : labels) {
-            label.addMouseListener(new MouseAdapter() {
-                @Override
-                public void mouseClicked(MouseEvent e) {
-                    showDetailPanel(label.getText());
-                }
-            });
-        }
-
-        for (int i = 0; i < labels.size(); i++) {
-            JTextField statField = new JTextField(3);
-            statField.addFocusListener(new FocusAdapter() {
-                @Override
-                public void focusLost(FocusEvent e) {
-                    updatePoints();
-                }
-            });
-            fields.add(statField);
-        }
 
         this.setLayout(new BorderLayout());
         this.add(createTopPanel(), BorderLayout.NORTH);
@@ -691,5 +594,31 @@ public class TalentsAndFlawsView extends JPanel {
             e.printStackTrace();
         }
         return output;
+    }
+
+
+    public void addTalents() {
+        for (String name : talentDescriptionMap.keySet()) {
+            //Add the label
+            JLabel label = new JLabel(name);
+            labels.add(label);
+            // Add the description
+            label.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    showDetailPanel(talentDescriptionMap.get(name));
+                }
+            });
+            // Add the input field
+            JTextField statField = new JTextField(3);
+            statField.addFocusListener(new FocusAdapter() {
+                @Override
+                public void focusLost(FocusEvent e) {
+                    updatePoints();
+                }
+            });
+            fields.add(statField);
+        }
+
     }
 }
