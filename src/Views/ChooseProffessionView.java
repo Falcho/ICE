@@ -100,13 +100,13 @@ public class ChooseProffessionView extends JPanel {
         panel.add(scrollPane, BorderLayout.CENTER);
 
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < SkillCategory.size(); i += 2) {
-            SkillCategory category1 = SkillCategory.get(i);
-            sb.append(category1.getName()).append(" (").append(category1.getFirstCost()).append(", ").append(category1.getSecondCost()).append(")");
-            if (i + 1 < SkillCategory.size()) { // Check if there's a second category
-                SkillCategory category2 = SkillCategory.get(i + 1);
+        for (int i = 0; i < skillAndCostList.size(); i += 2) {
+            SkillCategory category1 = skillAndCostList.get(i);
+            sb.append(category1.getName()).append(" (").append(category1.getDPCostFirst()).append(", ").append(category1.getDPCostSecond()).append(")");
+            if (i + 1 < skillAndCostList.size()) { // Check if there's a second category
+                SkillCategory category2 = skillAndCostList.get(i + 1);
                 sb.append("   ");
-                sb.append(category2.getName()).append(" (").append(category2.getFirstCost()).append(", ").append(category2.getSecondCost()).append(")");
+                sb.append(category2.getName()).append(" (").append(category2.getDPCostFirst()).append(", ").append(category2.getDPCostSecond()).append(")");
             }
             sb.append("\n");
         }
