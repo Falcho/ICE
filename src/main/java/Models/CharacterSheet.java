@@ -62,4 +62,108 @@ public class CharacterSheet {
     public void setStats(List<int[]>liste){
         this.stats.setStats(liste);
     }
+
+    public String getBackground() {
+        return background;
+    }
+
+    public void setBackground(String background) {
+        this.background = background;
+    }
+
+    public Culture getCulture() {
+        return culture;
+    }
+
+    public void setCulture(Culture culture) {
+        this.culture = culture;
+    }
+
+    public Defense getDefense() {
+        return defense;
+    }
+
+    public void setDefense(Defense defense) {
+        this.defense = defense;
+    }
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public ManeuversMovementAndEncumbrance getMME() {
+        return MME;
+    }
+
+    public void setMME(ManeuversMovementAndEncumbrance MME) {
+        this.MME = MME;
+    }
+
+    public Profession getProfession() {
+        return profession;
+    }
+
+    public void setProfession(Profession profession) {
+        this.profession = profession;
+    }
+
+    public Race getRace() {
+        return race;
+    }
+
+    public void setRace(Race race) {
+        this.race = race;
+    }
+
+    public Map<String, SkillCategory> getSkillList() {
+        return skillList;
+    }
+
+    public void setSkillList(Map<String, SkillCategory> skillList) {
+        this.skillList = skillList;
+    }
+
+    public Map<String, Spell> getSpellList() {
+        return spellList;
+    }
+
+    public void setSpellList(Map<String, Spell> spellList) {
+        this.spellList = spellList;
+    }
+
+    public PrimaryStats getStats() {
+        return stats;
+    }
+
+    public void setStats(PrimaryStats stats) {
+        this.stats = stats;
+    }
+
+    public Set<TalentsAndFlaws> getTalentsAndFLaws() {
+        return TalentsAndFLaws;
+    }
+
+    public void setTalentsAndFLaws(Set<TalentsAndFlaws> talentsAndFLaws) {
+        TalentsAndFLaws = talentsAndFLaws;
+    }
+
+    public int getXp() {
+        return xp;
+    }
+
+    public void setXp(int xp) {
+        this.xp = xp;
+    }
 }
