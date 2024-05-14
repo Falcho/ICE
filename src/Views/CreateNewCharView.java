@@ -2,13 +2,14 @@ package Views;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class CreateNewCharView extends JPanel {
     private JLabel title;
     private JTextField nameField;
     private JLabel label;
 
-    private JButton saveAndContinueButton;
+    protected JButton saveAndContinueButton;
 
     public CreateNewCharView() {
         //initialize all components
@@ -72,6 +73,17 @@ public class CreateNewCharView extends JPanel {
         return bottomPanel;
     }
 
+    public String getNameField() {
+        return nameField.getText();
+    }
 
+    public void saveAndContinue(ActionListener actionListener) {
+        saveAndContinueButton.addActionListener(actionListener);
+    }
 
+    public void reset(boolean bln) {
+        if (bln) {
+            nameField.setText("");
+        }
+    }
 }
