@@ -1,7 +1,5 @@
 package Controllers;
 
-import javax.swing.*;
-import java.io.File;
 import java.util.List;
 
 import Views.*;
@@ -13,7 +11,7 @@ public class CharacterSheetController {
     public CharacterSheetController(CreateStatsView view) {
         this.view = view;
 
-        this.view.saveAndContinueButtonCLick(e -> {
+        this.view.saveAndContinueButtonClick(e -> {
             List<int[]> stats = this.view.getStats();
             for (int[] stat : stats) {
                 System.out.println(stat[0] + " " + stat[1]);
