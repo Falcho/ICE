@@ -17,8 +17,9 @@ public class MainFrame extends JFrame {
         super("Rolemaster Character Generator");
         cardLayout = new CardLayout();
 
-        CreateStatsView newStatsView = new CreateStatsView();
         CreateNewCharView newCharView = new CreateNewCharView();
+        CreateStatsView newStatsView = new CreateStatsView();
+        ChooseProfessionView chooseProfessionView = new ChooseProfessionView();
         TalentsAndFlawsView talentsAndFlawsView = new TalentsAndFlawsView(Rules.getTalentsAndFlaws());
         // sets our layout as a card layout
         setLayout(cardLayout);
@@ -31,6 +32,7 @@ public class MainFrame extends JFrame {
 
         // adds view to card layout with unique constraints
         add(newCharView, "myView");
+        add(chooseProfessionView, "professionView");
         add(newStatsView, "newStats");
         add(talentsAndFlawsView, "talentsAndFlaws");
         cardLayout.show(this.getContentPane(), "talentsAndFlaws");
