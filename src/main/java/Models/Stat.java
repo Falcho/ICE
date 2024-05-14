@@ -80,4 +80,11 @@ public class Stat {
     protected int getRaceBonus(){
         return characterSheet.race.getRaceBonus(this.name);
     }
+
+    public void setStat(int[] stat){
+        this.potentionel=stat[0];
+        this.temp=stat[1];
+
+    }
+
 }
