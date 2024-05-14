@@ -11,29 +11,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ChooseProffessionView extends JPanel {
+public class ChooseProfessionView extends JPanel {
 
     private JLabel title;
-//    private String[] proffessionList;
+//    private String[] professionList;
     private List<Profession> professionList;
     private List<SkillCategory> skillAndCostList;
-    private List<Skill> proffessionalSkill;
-    private JTextArea proffessionDescription;
-    private JCheckBox proffessionalBonusButton;
+    private List<Skill> professionalSkill;
+    private JTextArea professionDescription;
+    private JCheckBox professionalBonusButton;
     private JCheckBox knackButton;
     private JButton returnToCharacterName;
     private JButton saveAndContinueToRace;
 
-    public ChooseProffessionView() {
+    public ChooseProfessionView() {
         //Initialize all components
-        title = new JLabel("Choose Proffession");
+        title = new JLabel("Choose Profession");
 //        proffessionList = new String[]{"Fighter", "Magician","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test"};
         professionList = new ArrayList<>();
         skillAndCostList = new ArrayList<>();
-        proffessionalSkill = new ArrayList<>();
-        proffessionDescription = new JTextArea("Description Description Description Description \n" +
+        professionalSkill = new ArrayList<>();
+        professionDescription = new JTextArea("Description Description Description Description \n" +
                 "Description Description Description Description \n");
-        proffessionalBonusButton = new JCheckBox("Bonus");
+        professionalBonusButton = new JCheckBox("Bonus");
         knackButton = new JCheckBox("Knack");
 
 
@@ -43,8 +43,8 @@ public class ChooseProffessionView extends JPanel {
 
         this.setLayout(new BorderLayout());
         this.add(createTitlePanel(), BorderLayout.NORTH);
-        this.add(createProffessionListPanel(), BorderLayout.WEST);
-        this.add(createProffessionInfoPanel(), BorderLayout.EAST);
+        this.add(createProfessionListPanel(), BorderLayout.WEST);
+        this.add(createProfessionInfoPanel(), BorderLayout.EAST);
         this.add(createButtonsPanel(), BorderLayout.SOUTH);
 
     }
@@ -55,7 +55,7 @@ public class ChooseProffessionView extends JPanel {
         return panel;
     }
 
-    private JPanel createProffessionListPanel() {
+    private JPanel createProfessionListPanel() {
         JPanel panel = new JPanel(new BorderLayout());
 
         DefaultListModel<String> model = new DefaultListModel<>();
@@ -80,31 +80,31 @@ public class ChooseProffessionView extends JPanel {
         return panel;
     }
 
-    private JPanel createProffessionInfoPanel() {
+    private JPanel createProfessionInfoPanel() {
         JPanel panel = new JPanel();
         BorderLayout layout = new BorderLayout();
         panel.setLayout(layout);
-        panel.add(createProffessionTopInfoPanel(), BorderLayout.NORTH);
-        panel.add(createProffessionalSkillsPanel(), BorderLayout.SOUTH);
+        panel.add(createProfessionTopInfoPanel(), BorderLayout.NORTH);
+        panel.add(createProfessionalSkillsPanel(), BorderLayout.SOUTH);
         return panel;
     }
 
-    private JPanel createProffessionTopInfoPanel() {
+    private JPanel createProfessionTopInfoPanel() {
         JPanel panel = new JPanel();
         BorderLayout layout = new BorderLayout();
         panel.setLayout(layout);
-        panel.add(createProffessionDescriptionPanel(), BorderLayout.WEST);
-        panel.add(createProffessionSkillCostPanel(), BorderLayout.EAST);
+        panel.add(createProfessionDescriptionPanel(), BorderLayout.WEST);
+        panel.add(createProfessionSkillCostPanel(), BorderLayout.EAST);
         return panel;
     }
 
-    private JPanel createProffessionDescriptionPanel() {
+    private JPanel createProfessionDescriptionPanel() {
         JPanel panel = new JPanel();
-        panel.add(proffessionDescription);
+        panel.add(professionDescription);
         return panel;
     }
 
-    private JPanel createProffessionSkillCostPanel() {
+    private JPanel createProfessionSkillCostPanel() {
         JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout());
 
@@ -128,13 +128,13 @@ public class ChooseProffessionView extends JPanel {
         return panel;
     }
 
-    private JPanel createProffessionalSkillsPanel() {
+    private JPanel createProfessionalSkillsPanel() {
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
-        for (Skill skill : proffessionalSkill){
+        for (Skill skill : professionalSkill){
             JPanel skillPanel = new JPanel();
             skillPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
-            skillPanel.add(proffessionalBonusButton);
+            skillPanel.add(professionalBonusButton);
             skillPanel.add(knackButton);
             JLabel skillLabel = new JLabel(String.valueOf(skill));
             skillPanel.add(skillLabel);
@@ -152,37 +152,30 @@ public class ChooseProffessionView extends JPanel {
         return panel;
     }
 
-    public List<Skill> getProffessionalSkill() {
-        return proffessionalSkill;
+
+    public List<Skill> getProfessionalSkill() {
+        return professionalSkill;
     }
 
-    public void setProffessionalSkill(List<Skill> proffessionalSkill) {
-        this.proffessionalSkill = proffessionalSkill;
+    public void setProfessionalSkill(List<Skill> professionalSkill) {
+        this.professionalSkill = professionalSkill;
     }
 
-    public JTextArea getProffessionDescription() {
-        return proffessionDescription;
+    public JTextArea getProfessionDescription() {
+        return professionDescription;
     }
 
-    public void setProffessionDescription(JTextArea proffessionDescription) {
-        this.proffessionDescription = proffessionDescription;
+    public void setProfessionDescription(JTextArea professionDescription) {
+        this.professionDescription = professionDescription;
     }
 
-    public List<Profession> getProffessionJList() {
+    public List<Profession> getProfessionJList() {
         return professionList;
     }
 
-    public void setProffessionJList(List<Profession> proffessionList) {
-        this.professionList = proffessionList;
+    public void setProfessionJList(List<Profession> professionList) {
+        this.professionList = professionList;
     }
-
-//    public String[] getProffessionList() {
-//        return proffessionList;
-//    }
-//
-//    public void setProffessionList(String[] proffessionList) {
-//        this.proffessionList = proffessionList;
-//    }
 
     public List<SkillCategory> getSkillAndCostList() {
         return skillAndCostList;

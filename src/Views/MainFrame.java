@@ -13,7 +13,7 @@ public class MainFrame extends JFrame {
         cardLayout = new CardLayout();
 
         CreateStatsView statsView = new CreateStatsView();
-        ChooseProffessionView proffView = new ChooseProffessionView();
+        ChooseProfessionView proffView = new ChooseProfessionView();
         // sets our layout as a card layout
         setLayout(cardLayout);
 
