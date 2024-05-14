@@ -6,6 +6,7 @@ import Models.SkillCategory;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -128,11 +129,11 @@ public class ChooseProffessionView extends JPanel {
     }
 
     public List<Skill> getProffessionalSkill() {
-        return (List<Skill>) proffessionalSkill;
+        return proffessionalSkill;
     }
 
     public void setProffessionalSkill(List<Skill> proffessionalSkill) {
-        this.proffessionalSkill = (JList<Skill>) proffessionalSkill;
+        this.proffessionalSkill = proffessionalSkill;
     }
 
     public JTextArea getProffessionDescription() {
