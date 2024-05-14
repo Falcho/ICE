@@ -1,0 +1,76 @@
+{
+  "header": "Common Humans",
+  "description": "Details for common sub-races of humans.",
+  "subraces": [
+    {
+      "name": "Human, average",
+      "race_sizes": {
+        "size": "M",
+        "weight_male": "185 lbs",
+        "stride": "0'",
+        "weight_female": "154 lbs",
+        "height_male": "5'10\"",
+        "variance": "+/- 5 lbs/in.",
+        "height_female": "5'5\""
+      },
+      "stat_bonuses": {
+        "agility": 0,
+        "constitution": 0,
+        "empathy": 0,
+        "intuition": 0,
+        "memory": 0,
+        "presence": 0,
+        "quickness": 0,
+        "reasoning": 0,
+        "self_discipline": 0,
+        "strength": 0
+      },
+      "resistances": {
+        "channeling": 0,
+        "mentalism": 0,
+        "essence": 0,
+        "physical": 0
+      },
+      "health_and_dev": {
+        "endurance": 0,
+        "recovery_multiplier": "1x",
+        "base_hits": 25,
+        "bonus_dev_points": 50
+      },
+      "name": "Human, large",
+      "race_sizes": {
+        "size": "M",
+        "weight_male": "230 lbs",
+        "stride": "+1'",
+        "weight_female": "180 lbs",
+        "height_male": "6'4\"",
+        "variance": "+/- 5 lbs/in.",
+        "height_female": "5'9\""
+      },
+      "stat_bonuses": {
+        "agility": 0,
+        "constitution": 1,
+        "empathy": 0,
+        "intuition": 0,
+        "memory": 0,
+        "presence": 1,
+        "quickness": 0,
+        "reasoning": 0,
+        "self_discipline": 0,
+        "strength": 1
+      },
+      "resistances": {
+        "channeling": 0,
+        "mentalism": 0,
+        "essence": 0,
+        "physical": 0
+      },
+      "health_and_dev": {
+        "endurance": 0,
+        "recovery_multiplier": "1x",
+        "base_hits": 30,
+        "bonus_dev_points": 34
+      }
+    }
+  ]
+}
