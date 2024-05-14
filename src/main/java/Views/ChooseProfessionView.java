@@ -205,7 +205,7 @@ public class ChooseProfessionView extends JPanel {
 
     private void updateSkillAndCostList(Profession profession) {
         skillAndCostList.clear();
-        skillAndCostList.addAll(profession.getSkillCategory());
+        //skillAndCostList.addAll(profession.getSkillCategory());
         updateProfessionSkillCostPanel();
     }
 
