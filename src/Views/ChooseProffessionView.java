@@ -174,11 +174,11 @@ public class ChooseProffessionView extends JPanel {
         this.proffessionList = proffessionList;
     }
 
-    public JList<SkillCategory> getSkillAndCostList() {
+    public List<SkillCategory> getSkillAndCostList() {
         return skillAndCostList;
     }
 
-    public void setSkillAndCostList(JList<SkillCategory> skillAndCostList) {
+    public void setSkillAndCostList(List<SkillCategory> skillAndCostList) {
         this.skillAndCostList = skillAndCostList;
     }
 
