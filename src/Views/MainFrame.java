@@ -1,6 +1,8 @@
 package Views;
 
 import Controllers.CharacterSheetController;
+import Controllers.CreateNewCharController;
+import Models.CharacterSheet;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,17 +16,31 @@ public class MainFrame extends JFrame {
         super("Java Swing MVC");
         cardLayout = new CardLayout();
 
-        CreateStatsView statsView = new CreateStatsView();
+        CreateStatsView newStatsView = new CreateStatsView();
+        CreateNewCharView newCharView = new CreateNewCharView();
         // sets our layout as a card layout
         setLayout(cardLayout);
 
         // initialize user controller
-        //new CharacterSheetController(statsView);
+        CharacterSheet model = new CharacterSheet();
+        CreateNewCharController newCharController = new CreateNewCharController(newCharView, model);
+        //new CharacterSheetController(newStatsView);
+
 
         // adds view to card layout with unique constraints
-        add(statsView, "myView");
+        add(newCharView, "myView");
+        add(newStatsView, "newStats");
         cardLayout.show(this.getContentPane(), "myView");
         // switch view according to its constraints on click
+        newCharView.saveAndContinue(e -> {
+            if (newCharController.validateAndSave()) {
+                cardLayout.show(this.getContentPane(), "newStats");
+            }
+            else {
+                newCharView.reset(true);
+            }
+        });
+
 
         // icon for our application
         //ImageIcon imageIcon = new ImageIcon("data/appicon.png");
@@ -37,4 +53,6 @@ public class MainFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }
+
+    //public void changeView();
 }
