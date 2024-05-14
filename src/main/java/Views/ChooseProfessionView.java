@@ -26,12 +26,10 @@ public class ChooseProfessionView extends JPanel {
     public ChooseProfessionView() {
         //Initialize all components
         title = new JLabel("Choose Profession");
-//        proffessionList = new String[]{"Fighter", "Magician","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test"};
         professionList = new ArrayList<>();
         skillAndCostList = new ArrayList<>();
         professionalSkill = new ArrayList<>();
-        professionDescription = new JTextArea("Description Description Description Description \n" +
-                "Description Description Description Description \n");
+        professionDescription = new JTextArea();
         professionalBonusButton = new JCheckBox("Bonus");
         knackButton = new JCheckBox("Knack");
 
@@ -118,11 +116,13 @@ public class ChooseProfessionView extends JPanel {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < skillAndCostList.size(); i += 2) {
             SkillCategory category1 = skillAndCostList.get(i);
-            sb.append(category1.getName()).append(" (").append(category1.getDPCostFirst()).append(", ").append(category1.getDPCostSecond()).append(")");
+            sb.append(category1.getName()).append(" (").append(category1.getDPCostFirst()).append(", ")
+                    .append(category1.getDPCostSecond()).append(")");
             if (i + 1 < skillAndCostList.size()) { // Check if there's a second category
                 SkillCategory category2 = skillAndCostList.get(i + 1);
                 sb.append("   ");
-                sb.append(category2.getName()).append(" (").append(category2.getDPCostFirst()).append(", ").append(category2.getDPCostSecond()).append(")");
+                sb.append(category2.getName()).append(" (").append(category2.getDPCostFirst()).append(", ")
+                        .append(category2.getDPCostSecond()).append(")");
             }
             sb.append("\n");
         }
@@ -205,6 +205,7 @@ public class ChooseProfessionView extends JPanel {
 
     private void updateSkillAndCostList(Profession profession) {
         skillAndCostList.clear();
+        //Linje her er muligvis ikke nødvendig?
         //skillAndCostList.addAll(profession.getSkillCategory());
         updateProfessionSkillCostPanel();
     }
@@ -218,7 +219,8 @@ public class ChooseProfessionView extends JPanel {
     private void updateProfessionSkillCostPanel() {
         StringBuilder sb = new StringBuilder();
         for (SkillCategory category : skillAndCostList) {
-            sb.append(category.getName()).append(" (").append(category.getDPCostFirst()).append(", ").append(category.getDPCostSecond()).append(")\n");
+            sb.append(category.getName()).append(" (").append(category.getDPCostFirst()).append(", ").
+                    append(category.getDPCostSecond()).append(")\n");
         }
         professionDescription.setText(sb.toString());
     }
