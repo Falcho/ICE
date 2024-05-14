@@ -5,8 +5,8 @@ import Views.CreateNewCharView;
 import Views.MainFrame;
 
 public class CreateNewCharController {
-    private CreateNewCharView view;
-    private CharacterSheet model;
+    private final CreateNewCharView view;
+    private final CharacterSheet model;
 
     public CreateNewCharController(CreateNewCharView view, CharacterSheet model) {
         this.view = view;

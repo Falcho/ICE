@@ -10,7 +10,7 @@ import java.awt.*;
 public class MainFrame extends JFrame {
 
     // Card layout for switching view
-    private CardLayout cardLayout;
+    private final CardLayout cardLayout;
 
     public MainFrame() {
         super("Rolemaster Character Generator");
@@ -40,6 +40,7 @@ public class MainFrame extends JFrame {
                 newCharView.reset(true);
             }
         });
+
 
 
         // icon for our application
