@@ -167,7 +167,7 @@ public class CreateStatsView extends JPanel {
         returnToCharacterInfo.addActionListener(actionListener);
     }
 
-    public void saveAndContinueButtonCLick (ActionListener actionListener) {
+    public void saveAndContinueButtonClick(ActionListener actionListener) {
         saveAndContinueToSkills.addActionListener(actionListener);
     }
 
