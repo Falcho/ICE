@@ -14,7 +14,6 @@ import java.util.List;
 public class ChooseProfessionView extends JPanel {
 
     private JLabel title;
-//    private String[] professionList;
     private List<Profession> professionList;
     private List<SkillCategory> skillAndCostList;
     private List<Skill> professionalSkill;
@@ -67,9 +66,12 @@ public class ChooseProfessionView extends JPanel {
         professionJList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         professionJList.addListSelectionListener(e -> {
             if (!e.getValueIsAdjusting()) {
-                String selectedProfession = professionJList.getSelectedValue();
-                if (selectedProfession != null) {
-                    JOptionPane.showMessageDialog(null, "You clicked: " + selectedProfession);
+                int selectedIndex = professionJList.getSelectedIndex();
+                if (selectedIndex != -1) {
+                    Profession selectedProfession = professionList.get(selectedIndex);
+                    professionDescription.setText(selectedProfession.getDescription());
+                    updateSkillAndCostList(selectedProfession);
+                    updateProfessionalSkills(selectedProfession);
                 }
             }
         });
@@ -200,7 +202,43 @@ public class ChooseProfessionView extends JPanel {
     public void saveAndContinueToRace(ActionListener actionListener) {
         saveAndContinueToRace.addActionListener(actionListener);
     }
+
+    private void updateSkillAndCostList(Profession profession) {
+        skillAndCostList.clear();
+        skillAndCostList.addAll(profession.getSkillCategory());
+        updateProfessionSkillCostPanel();
+    }
+
+    private void updateProfessionalSkills(Profession profession) {
+        professionalSkill.clear();
+        professionalSkill.addAll(profession.getProfessionalSkill());
+        updateProfessionalSkillsPanel();
+    }
+
+    private void updateProfessionSkillCostPanel() {
+        StringBuilder sb = new StringBuilder();
+        for (SkillCategory category : skillAndCostList) {
+            sb.append(category.getName()).append(" (").append(category.getDPCostFirst()).append(", ").append(category.getDPCostSecond()).append(")\n");
+        }
+        professionDescription.setText(sb.toString());
+    }
+
+    private void updateProfessionalSkillsPanel() {
+        professionDescription.removeAll();
+        for (Skill skill : professionalSkill) {
+            JPanel skillPanel = new JPanel();
+            skillPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+            skillPanel.add(professionalBonusButton);
+            skillPanel.add(knackButton);
+            JLabel skillLabel = new JLabel(skill.getName());
+            skillPanel.add(skillLabel);
+            professionDescription.add(skillPanel);
+        }
+        professionDescription.revalidate();
+        professionDescription.repaint();
+    }
 }
+
 
 
 
