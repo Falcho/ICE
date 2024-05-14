@@ -15,7 +15,7 @@ public class ChooseProffessionView extends JPanel {
     private JLabel title;
     private String[] proffessionList;
     private JList<String> proffessionJList;
-    private JList<SkillCategory> skillAndCostList;
+    private List<SkillCategory> skillAndCostList;
     private List<Skill> proffessionalSkill;
     private JTextArea proffessionDescription;
     private JCheckBox proffessionalBonusButton;
@@ -28,7 +28,7 @@ public class ChooseProffessionView extends JPanel {
         title = new JLabel("Choose Proffession");
         proffessionList = new String[]{"Fighter", "Magician","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test"};
         proffessionJList = new JList(proffessionList);
-        skillAndCostList = new JList(proffessionList);
+        skillAndCostList = new ArrayList<>();
         proffessionalSkill = new ArrayList<>();
         proffessionDescription = new JTextArea("Description Description Description Description \n" +
                 "Description Description Description Description \n");
@@ -92,13 +92,25 @@ public class ChooseProffessionView extends JPanel {
 
     private JPanel createProffessionSkillCostPanel() {
         JPanel panel = new JPanel();
-        JList list = new JList();
-        list.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-        list.setLayoutOrientation(JList.HORIZONTAL_WRAP);
-        list.setVisibleRowCount(10);
-        JScrollPane scrollPane = new JScrollPane(list);
-        list.setPreferredSize(new Dimension(250,250));
-        panel.add(scrollPane);
+        panel.setLayout(new BorderLayout());
+
+        JTextArea textArea = new JTextArea();
+        textArea.setEditable(false);
+        JScrollPane scrollPane = new JScrollPane(textArea);
+        panel.add(scrollPane, BorderLayout.CENTER);
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < SkillCategory.size(); i += 2) {
+            SkillCategory category1 = SkillCategory.get(i);
+            sb.append(category1.getName()).append(" (").append(category1.getFirstCost()).append(", ").append(category1.getSecondCost()).append(")");
+            if (i + 1 < SkillCategory.size()) { // Check if there's a second category
+                SkillCategory category2 = SkillCategory.get(i + 1);
+                sb.append("   ");
+                sb.append(category2.getName()).append(" (").append(category2.getFirstCost()).append(", ").append(category2.getSecondCost()).append(")");
+            }
+            sb.append("\n");
+        }
+        textArea.setText(sb.toString());
         return panel;
     }
 
