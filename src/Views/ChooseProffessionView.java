@@ -16,7 +16,7 @@ public class ChooseProffessionView extends JPanel {
     private String[] proffessionList;
     private JList<String> proffessionJList;
     private JList<SkillCategory> skillAndCostList;
-    private JList<Skill> proffessionalSkill;
+    private List<Skill> proffessionalSkill;
     private JTextArea proffessionDescription;
     private JCheckBox proffessionalBonusButton;
     private JCheckBox knackButton;
@@ -29,7 +29,7 @@ public class ChooseProffessionView extends JPanel {
         proffessionList = new String[]{"Fighter", "Magician","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test"};
         proffessionJList = new JList(proffessionList);
         skillAndCostList = new JList(proffessionList);
-        proffessionalSkill = new JList<>();
+        proffessionalSkill = new ArrayList<>();
         proffessionDescription = new JTextArea("Description Description Description Description \n" +
                 "Description Description Description Description \n");
         proffessionalBonusButton = new JCheckBox("Bonus");
@@ -105,9 +105,11 @@ public class ChooseProffessionView extends JPanel {
     private JPanel createProffessionalSkillsPanel() {
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
+//        Function<Skill,String>skillNameExtractor = Skill::getName;
+//        List<String>skillNames = proffessionalSkill.stream().map(skillNameExtractor).toList();
+//        JList<String> skillsList = new JList<>(skillNames.toArray(new String[0]));
         //tilføj kode der henter Professional Skill Listen
-        List<Skill> skills = getProffessionalSkill();
-        for (Skill skill : skills){
+        for (Skill skill : proffessionalSkill){
             JPanel skillPanel = new JPanel();
             skillPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
             skillPanel.add(proffessionalBonusButton);
