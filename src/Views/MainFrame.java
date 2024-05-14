@@ -18,6 +18,7 @@ public class MainFrame extends JFrame {
 
         CreateStatsView newStatsView = new CreateStatsView();
         CreateNewCharView newCharView = new CreateNewCharView();
+        TalentsAndFlawsView talentsAndFlawsView = new TalentsAndFlawsView();
         // sets our layout as a card layout
         setLayout(cardLayout);
 
@@ -30,7 +31,8 @@ public class MainFrame extends JFrame {
         // adds view to card layout with unique constraints
         add(newCharView, "myView");
         add(newStatsView, "newStats");
-        cardLayout.show(this.getContentPane(), "myView");
+        add(talentsAndFlawsView, "talentsAndFlaws");
+        cardLayout.show(this.getContentPane(), "talentsAndFlaws");
         // switch view according to its constraints on click
         newCharView.saveAndContinue(e -> {
             if (newCharController.validateAndSave()) {
@@ -40,7 +42,10 @@ public class MainFrame extends JFrame {
                 newCharView.reset(true);
             }
         });
-
+        newStatsView.returnToCharacterButtonClick(e -> {
+            newCharView.reset(true);
+            cardLayout.show(this.getContentPane(), "myView");
+        });
 
 
         // icon for our application
