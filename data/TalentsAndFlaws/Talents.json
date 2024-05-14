@@ -1,0 +1,426 @@
+[
+    {
+      "name": "Deadeye",
+      "description": "You have uncanny aim with a ranged weapon. All range penalties for a ranged Combat Training specialization may be reduced by up to 10/Tier."
+    },
+    {
+      "name": "Fast Attack",
+      "description": "Your quick reflexes permit you to act before others. You gain +5/Tier to your Initiative."
+    },
+    {
+      "name": "Foiler",
+      "description": "You have incorporated moves in one melee Combat Training specialization designed to cause your opponent to mishandle his weapon. Any round you use this talent, any foe attacking you that you are aware of has the fumble numbers of all his weapons increased by 1/Tier."
+    },
+    {
+      "name": "Opportunistic Strike",
+      "description": "You have learned to take advantage of your foe’s misfortunes with one melee Combat Training specialization. If in melee combat with a foe, and your foe fumbles, you may make an immediate attack roll against him (in addition to any normal attack that round). This attack does not require any AP and your OB is not reduced for the number of AP used or for Parrying."
+    },
+    {
+      "name": "Pressing the Advantage",
+      "description": "You have an aggressive fighting style using one melee Combat Training specialization. Every time you inflict a critical on your opponent you get a +10 OB/Tier to your next attack against this foe."
+    },
+    {
+      "name": "Quickdraw/Quickload",
+      "description": "As Quickdraw, you have mastered drawing a weapon or, with Quickload, loading a missile weapon quickly. Drawing or loading for a specified ranged Combat Training specialization is treated as instantaneous (0 AP) rather than 1 AP. As Slow on the Draw, you are clumsy with all weapons when surprised. Drawing your weapon or readying an arrow takes you 2 AP."
+    },
+    {
+      "name": "Slow on the Draw",
+      "description": "As Quickdraw, you have mastered drawing a weapon or, with Quickload, loading a missile weapon quickly. Drawing or loading for a specified ranged Combat Training specialization is treated as instantaneous (0 AP) rather than 1 AP. As Slow on the Draw, you are clumsy with all weapons when surprised. Drawing your weapon or readying an arrow takes you 2 AP."
+    },
+    {
+      "name": "Riposte",
+      "description": "When using all of your OB to parry with one melee Combat Training specialization, you may attempt a riposte attack. If the parry is effective (no hits delivered), you may make an immediate (0 AP) attack with an OB of 50 minus the foe’s total modified attack roll. (e.g., an attack roll of 35 would result in a +15 riposte attack, while an attack roll of 70 would result in a -20 riposte attack)."
+    },
+    {
+      "name": "Sense Weakness",
+      "description": "You are able to sense a foe’s weakness by making a Perception roll (Concentration action for one round) while observing the foe for 1 round. With a Success, you may reroll one critical against him (the second roll stands). You may decide after your initial critical roll whether to use your reroll or save it for a later attack. You may sense the weakness of the same foe again after you have used your reroll. If you sense the weakness of a different foe before using your reroll, the first reroll is lost."
+    },
+    {
+      "name": "Sharpshooter",
+      "description": "You have learned the importance of patience when using your ranged weapon. For each full round you spend aiming, you gain +5 to your OB with one ranged Combat Training specialization, to a maximum of +5/ Tier."
+    },
+    {
+      "name": "Frenzy",
+      "description": "You can enter a frenzied rage with a successful Adrenal Focus maneuver. While frenzied, you gain a +5 Strength bonus, your attacks are treated as +1 Size, and you suffer no penalties due to hit loss. Instead of falling unconscious at 0 Hits, you will continue to fight until you reach negative hits equal to your Body Development skill, at which point you will fall unconscious. Once unconscious you must make a Physical RR each round until you either fail (and die) or are healed enough hits to be above this threshold. While frenzied, you get no Defensive Bonus other than that due to magic and are unable to allocate OB to parry attacks. Furthermore, you will always attack the closest creature (medium Perception roll required to distinguish friend from foe) and an Adrenal Focus maneuver is required to exit the frenzied rage. If there are no animate targets left to attack, you will destroy anything else within reach until knocked unconscious or you make a successful maneuver to come out of frenzy."
+    },
+    {
+      "name": "Light Sleeper",
+      "description": "As a light sleeper you receive a +25 bonus to Perception rolls to awake from sleep. As a heavy sleeper you are difficult to awaken and receive a -25 to Perception rolls to awaken. The difficulty of the maneuver is set by the GM depending on the conditions."
+    },
+    {
+      "name": "Heavy Sleeper",
+      "description": "As a light sleeper you receive a +25 bonus to Perception rolls to awake from sleep. As a heavy sleeper you are difficult to awaken and receive a -25 to Perception rolls to awaken. The difficulty of the maneuver is set by the GM depending on the conditions."
+    },
+    {
+      "name": "Eloquence",
+      "description": "You are exceptionally gifted at magic and receive +5/ Tier to all Spellcasting rolls."
+    },
+    {
+      "name": "Extended Reach",
+      "description": "You are able to cast Touch spells from a single spell list with a range of 5'/Tier. Any range modifiers apply normally, using the actual range."
+    },
+    {
+      "name": "Graceful Recovery",
+      "description": "You have a lower chance of catastrophic failure when casting spells. Spell Failure rolls are reduced by up to 5/Tier (to a minimum of 1)."
+    },
+    {
+      "name": "Inglorious Failure",
+      "description": "When you suffer a Spell Failure, your Spell Failure roll is increased by 5/Tier."
+    },
+    {
+      "name": "Mumbler",
+      "description": "You get a penalty of -5/Tier to all Spellcasting rolls."
+    },
+    {
+      "name": "Power Recycling",
+      "description": "When you fail casting a spell you are able to recover ½ (Tier I) or all (Tier II) of the Power Points used."
+    },
+    {
+      "name": "Quick-Caster",
+      "description": "You are particularly adept at quickly casting spells from one of your spell lists. The number of Action Points (normally 2-4 AP) required to cast a spell from the list is 2-3 AP (Tier I) or 2 AP (Tier II)."
+    },
+    {
+      "name": "Scope Skills",
+      "description": "Spells from one of your spell lists affect a greater area than normal and have their radius or # of targets increased by +100%/Tier. If used with directed spells (e.g. Bolts), your applicable directed spells OB must be split between the attacks."
+    },
+    {
+      "name": "Spatial Skills",
+      "description": "Spells from one of your spell lists work at greater distances than normal and have their ranges increased by +50%/Tier."
+    },
+    {
+      "name": "Subconscious Discipline",
+      "description": "You are able to extend the duration of your Concentration based spells beyond your actual time of concentration. The spell will continue for half (Tier I) or the total (Tier II) rounds spent concentrating after concentration has ceased."
+    },
+    {
+      "name": "Temporal Skills",
+      "description": "Spells from one of your spell lists last longer than normal and have their duration increased by +50%/Tier. This only affects spells that have a duration."
+    },
+    {
+      "name": "Ambidextrous",
+      "description": "You are able to use either hand equally well for all maneuvers and activities. The normal -20 penalty for off-hand usage does not apply."
+    },
+    {
+      "name": "Beast of Burden",
+      "description": "Your body is particularly well-suited for carrying heavy loads. You may carry an additional 10%/Tier of your body weight as encumbrance without penalty, except that encumbrance penalties are not reduced for purposes of Dodging."
+    },
+    {
+      "name": "Slow Bleeder",
+      "description": "Your body has an abnormal ability or inability to clot bleeding wounds. Each bleeding injury is reduced by 1 hit/round for each Tier. Slow Bleeder may prevent bleeding entirely. The injury is modified at the moment it is inflicted; it does not clot/open an additional 1 point of bleeding each round."
+    },
+    {
+      "name": "Uncoordinated",
+      "description": "You are terribly uncoordinated and have a difficult time moving and performing other actions. Penalties to actions made while moving are treated as if you were moving 1 pace (Tier I) or 2 paces (Tier II) higher than your actual pace."
+    },
+    {
+      "name": "Additional Limb Pair",
+      "description": "You possess an additional pair of arms per Tier. The additional arms may be used to manipulate and to make attacks (with the usual penalties for multiple attacks). If the additional limbs are legs and unable to make attacks, use Increased Stride rather than this talent."
+    },
+    {
+      "name": "Breath Holding",
+      "description": "You may hold your breath for up to 1 minute per character level. If you remain inactive, the time may be doubled, or tripled with a successful Meditation maneuver."
+    },
+    {
+      "name": "Darkvision",
+      "description": "You can see 10'/Tier feet even in complete darkness. (Usually you must also have the Nightvision talent, but the GM may choose to allow it to be taken alone for some setting-specific reason.) The second tier and above costs only 5 instead of 10."
+    },
+    {
+      "name": "Defensive Aura",
+      "description": "A glowing or blurred aura surrounds you, making you more difficult to target. You receive +5 DB/Tier, which is not cumulative with any Aura or Blur spell."
+    },
+    {
+      "name": "Efficient Sleeper",
+      "description": "As an Efficient Sleeper you require less sleep than most people, able to get benefits from 3 hours (Tier I) or 2 hours (Tier II) of sleep as others do in 4."
+    },
+    {
+      "name": "Restless Sleeper",
+      "description": "As a Restless Sleeper you toss and turn and have a hard time getting restful sleep and thus must sleep 5 hours (Tier I) or 6 hours (Tier II) to get the benefit of 4 hours. Both Efficient Sleeper and Restless Sleeper will change the rate at which you recover Power Points, but not the total you recover per night of sleep."
+    },
+    {
+      "name": "Elemental Resistance",
+      "description": "You are particularly resistant or susceptible to one of: Cold/Ice, Heat/Fire, or Electricity/Light. You gain a +5/Tier bonus (Resistance) to DBs, RRs, and Endurance against the selected element. If the effect is a fixed critical and none of these bonuses apply, the critical is reduced (Resistance) by one severity for every 2 Tiers. Modifiers also apply to extreme environmental conditions (e.g. Resistance to Heat/Fire would give an Endurance bonus when traveling in an extremely hot desert)."
+    },
+    {
+      "name": "Elemental Susceptibility",
+      "description": "You are particularly resistant or susceptible to one of: Cold/Ice, Heat/Fire, or Electricity/Light. You gain a -5/Tier penalty (Susceptibility) to DBs, RRs, and Endurance against the selected element. If the effect is a fixed critical and none of these bonuses apply, the critical is increased (Susceptibility) by one severity for every 2 Tiers. Modifiers also apply to extreme environmental conditions (e.g. Susceptibility to Heat/Fire would give an Endurance penalty when traveling in an extremely hot desert)."
+    },
+    {
+      "name": "Enhanced Attack",
+      "description": "You are able to put an incredible amount of momentum and power into one of your attacks (e.g., Bite, Striking). Its size is increased by +1 size/Tier."
+    },
+    {
+      "name": "Lesser Attack",
+      "description": "Your attack is weak relative to your size and is decreased by -1 size/Tier."
+    },
+    {
+      "name": "Extra Joints",
+      "description": "Your limbs are multiply-jointed or extra flexible (e.g., a tentacle) and agile. All activity with the limb, including melee, throwing, and movement, gains a +20 bonus."
+    },
+    {
+      "name": "Fast Healer",
+      "description": "You recover faster than normal. Recovery times are cut in half."
+    },
+    {
+      "name": "Slow Healer",
+      "description": "You recover slower than normal. Recovery times are doubled."
+    },
+    {
+      "name": "Hearing, Cat",
+      "description": "Your hearing is equivalent to that of a cat. It is not more sensitive to most sounds than the hearing of a human, but you are able to hear very high-pitched sounds, such as some calls of rats and mice and those of sonar-using bats. In addition, you have an improved ability to determine the location of a sound's source, gaining +10 on Perception maneuvers to locate a sound."
+    },
+    {
+      "name": "Hearing, Dog",
+      "description": "You have hearing as sensitive as a dog. Dogs can pinpoint nearby sounds with high accuracy and may hear sounds up to 4 times as far away as a human, including very high-pitched sounds. This grants +10 on sound-based Perception maneuvers."
+    },
+    {
+      "name": "Hearing, Hare",
+      "description": "Your range of hearing is very good in the high and low frequency range. You may also localize sounds with great accuracy and hear danger coming from 10 times farther than a human. You gain +20 on hearing Perception maneuvers."
+    },
+    {
+      "name": "Heatsense",
+      "description": "You have a very sensitive tongue, antennae, or sensor pits that allow you to gauge temperature at close range up to 1/1000th of a degree. You may use this to sense prey nearby, or detect tracks of prey within several hours of its passing. This grants a bonus up to +20 on Perception and Tracking maneuvers to detect living creatures or other warm or cold objects, as long as you come within close proximity to them or their tracks."
+    },
+    {
+      "name": "Immune to Disease",
+      "description": "You are of exceptional health, or of a nature that is not subject to disease. You are immune to all normal, natural diseases (Tier I) or all diseases including magical ones (Tier II)."
+    },
+    {
+      "name": "Increased Size",
+      "description": "You are one size (per Tier) larger than medium. Larger size makes your attacks more powerful and increases your number of concussion hits."
+    },
+    {
+      "name": "Decreased Size",
+      "description": "You are one size (per Tier) smaller than medium. Smaller size weakens your attacks and reduces your concussion hits."
+    },
+    {
+      "name": "Increased Stride",
+      "description": "Your base movement rate is increased by 2'/round for each tier."
+    },
+    {
+      "name": "Decreased Stride",
+      "description": "Your base movement rate is decreased by 2'/round for each tier."
+    },
+    {
+      "name": "Light-boned",
+      "description": "You are lightly built and relatively fragile for your size. Your concussion hits and any attacks made against you are adjusted as if you were one size smaller per Tier. Attacks you make against others are not adjusted."
+    },
+    {
+      "name": "Light Sensitivity",
+      "description": "You cannot take direct sunlight, and you are at a penalty of -25/Tier when in bright light equal to direct sunlight. (This penalty is reduced by 25 in light equal to a cloudy day, by 50 for partially shaded or cloudy conditions, and by 75 in full shadows such as under storm clouds or heavy tree cover)."
+    },
+    {
+      "name": "Magical Resistance",
+      "description": "You have an innate resistance to one of the realms of magic and receive +5/Tier to all Resistance Rolls versus that realm."
+    },
+    {
+      "name": "Magical Vulnerability",
+      "description": "You have an innate vulnerability to one of the realms of magic and receive -5/Tier to all Resistance Rolls versus that realm."
+    },
+    {
+      "name": "Natural Armor",
+      "description": "Your skin (hide, carapace, etc.) is resistant to attacks as if you were wearing armor and gives +1 AT / Tier (AT 1 is no armor). This natural armor moves naturally with you and incurs no encumbrance or maneuver penalties. It also does not interfere with magic, so it provides no RR bonus against spells, nor does it hinder your own casting. If combined with worn armor, use the higher AT (do not add them together), and if the worn armor is heavier add the number of tiers as DB."
+    },
+    {
+      "name": "Natural Weaponry",
+      "description": "You have some type of natural weaponry (e.g., a Bite, Claw, Sting, Horn, etc.) and may develop skill with it and make attacks equal to your size. Use the Enhanced Attack or Lesser Attack talent to increase or decrease its size. This allows creatures to get an attack at -1 size for free, although one cannot receive points for taking natural weaponry at less than -1 size."
+    },
+    {
+      "name": "Nightvision",
+      "description": "You can see in dim light, equivalent to nighttime conditions, as well as a human can see in daylight. All penalties for darkness (other than complete, pitch dark conditions) are reduced by 40. However, while using Nightvision you are more susceptible to sudden bright lights. Range is still limited by environmental factors (e.g., haze, fog)."
+    },
+    {
+      "name": "Physical Resistance",
+      "description": "You have an innate resistance to physical ailments (e.g., poison, disease) and receive +5/Tier to all Physical Resistance Rolls."
+    },
+    {
+      "name": "Physical Vulnerability",
+      "description": "You have an innate vulnerability to physical ailments (e.g., poison, disease) and receive -5/Tier to all Physical Resistance Rolls."
+    },
+    {
+      "name": "Poison Injection",
+      "description": "One of your natural attacks (typically a bite or stinger) injects poison. If the attack scores a critical (any severity), the target must make a Physical RR against your level or suffer the effect of the poison (typically Circulatory poison)."
+    },
+    {
+      "name": "Recurved Musculature",
+      "description": "Your muscles have tremendous capacity and also store negative energy, allowing them to work like springs. Your base jump is tripled, and you receive a +20 bonus to Acrobatics, Climbing, Jumping, and Running maneuvers."
+    },
+    {
+      "name": "Sight, Eagle",
+      "description": "Your keen eyesight permits both good peripheral vision as well as the ability to focus on distant objects, such as a hare two miles away. You gain a +20 bonus to all vision-based Perception maneuvers."
+    },
+    {
+      "name": "Sight, Gecko",
+      "description": "Your eyes perform like those of a gecko, permitting additional detail close-up as well as good depth vision and you do not lose your color vision in dark conditions (normal penalties for darkness still apply). You gain a +10 bonus to all vision-based Perception maneuvers."
+    },
+    {
+      "name": "Sight, Hawk",
+      "description": "Your vision is exceptional, permitting you to see objects up to 5 miles away with great sharpness, with good depth perception and the ability to spot tiny movements. You gain a +30 bonus to all vision-based Perception maneuvers."
+    },
+    {
+      "name": "Strike Reflex",
+      "description": "Your powerful strike reflex allows you to act with tremendous speed, gaining a +20 initiative modifier, when the reflex is triggered by any sudden movement towards or away from you by a target within range of your attack. This instinctive response is impossible for you to quell, even if you want to; you must take immediate offensive action in the round in which you are startled, rather than waiting to see what is happening."
+    },
+    {
+      "name": "Superior Stat",
+      "description": "An average being of your race is superior in one of the 10 statistics over the average human. You get +1/Tier to the stats bonus."
+    },
+    {
+      "name": "Inferior Stat",
+      "description": "An average being of your race is inferior in one of the 10 statistics over the average human. You get -1/Tier to the stats bonus."
+    },
+    {
+      "name": "Tetrachromatic Vision",
+      "description": "Your vision encompasses normal color vision as well as sensitivity to ultraviolet light. Your sense of colors differs from other races, and you are also more sensitive to cues others cannot see. Penalties for spotting invisible (including hidden by the Unseen spell) and camouflaged people and objects are reduced by 30."
+    },
+    {
+      "name": "Third Eyelid",
+      "description": "Your eyes have a transparent additional eyelid, or nictating membrane, which protects them while still permitting sight. You are unaffected by dust, sand, or water which otherwise might limit use of your eyes."
+    },
+    {
+      "name": "Tough",
+      "description": "You are exceptionally tough and have a higher pain tolerance than others. This grants a +5/Tier modifier to base hits."
+    },
+    {
+      "name": "Fragile",
+      "description": "You are exceptionally fragile and have a lower pain tolerance than others. This grants a -5/Tier modifier to base hits."
+    },
+    {
+      "name": "Vigorous",
+      "description": "You have incredible stamina. You get a +10/Tier modifier to all Endurance rolls."
+    },
+    {
+      "name": "Feeble",
+      "description": "You suffer from a lack of stamina. You get a -10/Tier modifier to all Endurance rolls."
+    },
+    {
+      "name": "Wings, Vestigial",
+      "description": "You have small wings which are not adequate for flight, but which do provide a +10 bonus to Jumping and when using Acrobatics to reduce the impact of a fall."
+    },
+    {
+      "name": "Acute Hearing",
+      "description": "You have a heightened sense of hearing, providing a +5/Tier to Perception rolls involving hearing."
+    },
+    {
+      "name": "Poor Hearing",
+      "description": "You have a deficient sense of hearing, providing a -5/Tier to Perception rolls involving hearing."
+    },
+    {
+      "name": "Acute Smell",
+      "description": "You have a heightened sense of smell, providing a +5/Tier to Perception rolls involving smell."
+    },
+    {
+      "name": "Poor Smell",
+      "description": "You have a deficient sense of smell, providing a -5/Tier to Perception rolls involving smell."
+    },
+    {
+      "name": "Acute Taste",
+      "description": "You enjoy a superb sense of taste, providing a +5/Tier to Perception rolls involving taste."
+    },
+    {
+      "name": "Poor Taste",
+      "description": "You have a deficient sense of taste, providing a -5/Tier to Perception rolls involving taste."
+    },
+    {
+      "name": "Acute Touch",
+      "description": "You have unusually sensitive tactile senses, providing a +5/Tier to Perception rolls involving touch."
+    },
+    {
+      "name": "Poor Touch",
+      "description": "You have deficient tactile senses, providing a -5/Tier to Perception rolls involving touch."
+    },
+    {
+      "name": "Acute Vision",
+      "description": "You have heightened sight, providing a +5/Tier to Perception rolls involving vision."
+    },
+    {
+      "name": "Animal Empathy",
+      "description": "You have an affinity with a particular kind of animal. Any maneuvers involving one type of animal (dogs, cats, marine mammals, fish, hooved mammals, etc.) are at +25. In addition, if you associate with an animal of that type for one month, you and the animal will be able to communicate empathically to a range of 100'. For each Tier beyond Tier I, the range is increased by 25'."
+    },
+    {
+      "name": "Destiny Sense",
+      "description": "You instinctively know the direction (Tier I) or direction and distance (Tier II) that will take you to a specific goal. This can be used once per day."
+    },
+    {
+      "name": "Direction Sense",
+      "description": "By detecting the planet’s magnetic field or other means, you are always able to discern which direction is north. This grants a +30 bonus to Navigation."
+    },
+    {
+      "name": "Empathy",
+      "description": "You can read emotions of those within 25'. If a target is trying to hide his emotions, he gets a Resistance Roll vs. your level; Success means that you cannot “read” that target for 24 hours. This ability grants a +50 bonus to Social Awareness when appropriate."
+    },
+    {
+      "name": "Extra Sense",
+      "description": "You can sense something that normally cannot be sensed (allowing Perception rolls). This sense must be specified when taken, and appropriately described (e.g., “able to smell fear” or “can feel evil magic”). The GM should be wary about how broadly a sense is described, and may narrow it."
+    },
+    {
+      "name": "Missing Sense",
+      "description": "You are completely missing a sense: taste (-5), feel/touch (-10), smell (-10), hearing (-15), or sight (-20). You suffer a -100 penalty on actions requiring the sense (if it is possible at all) and from -20 to -50 on actions which would benefit from the sense (e.g. -20 might be appropriate for a deaf character on a Perception check to avoid being ambushed, while -50 is appropriate for many maneuvers for blind characters)."
+    },
+    {
+      "name": "One Eye",
+      "description": "You have sight only in one eye. The other may be missing, replaced with a glass eye, or covered with an eyepatch. You lack distance perception and peripheral vision on the affected side, and all ranged attacks suffer a -25 penalty."
+    },
+    {
+      "name": "Visions",
+      "description": "You are able to receive spontaneous visions of persons/places/objects based upon objects that you touch with your bare skin. The details of the vision are at the discretion of the GM, but should reveal details of a significant event relating to the object, if any. (That a knife was touched by a rat two days ago is usually an insignificant event, that it was used to murder someone a week ago is usually very significant). This can be used one time per day for every Tier."
+    },
+    {
+      "name": "Distinct Odor",
+      "description": "The character with this flaw has a distinct odor, which will transfer to objects the character touches with bare skin. This grants a +50 bonus to Perception and Tracking efforts based on smell."
+    },
+    {
+      "name": "Disturbing Voice",
+      "description": "The character has a grating or annoying tone of voice. This gives a penalty of -20/Tier to any maneuver to verbally calm or persuade (Influence skills, Performance Art: Singing, Leadership, etc.)."
+    },
+    {
+      "name": "Golden Throat",
+      "description": "You have a soothing and calming voice. This gives +10/Tier to any maneuver to verbally calm or persuade (Charm, Singing, Leadership, etc.)."
+    },
+    {
+      "name": "Iron Will",
+      "description": "You have formidable willpower, and get a bonus of +5/Tier to Resistance Rolls versus mental spells (attack, informational, or otherwise)."
+    },
+    {
+      "name": "Look of Eagles",
+      "description": "With the gift of inspiration, you get +10/Tier to all Leadership maneuvers and followers get +2/Tier to fear RRs."
+    },
+    {
+      "name": "Math Illiterate",
+      "description": "You never learned basic math and have a very hard time with numbers. You cannot add or subtract without your fingers, cannot multiply at all, and cannot count higher than 20."
+    },
+    {
+      "name": "Multilingual",
+      "description": "You grew up in a multilingual culture or have always been able to learn languages quickly when you immerse yourself in them. You gain 10 ranks in one language or 5 ranks in each of two languages."
+    },
+    {
+      "name": "Mute",
+      "description": "You cannot speak, although you can understand speech and may communicate via other means such as sign language or gesture if you have the ability to do so."
+    },
+    {
+      "name": "Neutral Odor",
+      "description": "You naturally have a very weak odor. This makes all attempts to perceive your presence based upon the sense of smell operate at -50. This penalty may be reduced if you are carrying any objects or equipment that carry strong odors (e.g., garlic, rotting fish)."
+    },
+    {
+      "name": "Non-violent",
+      "description": "You do not want to hurt others, and flinch with remorse when doing so. After inflicting a critical, any action you take in the following round suffers a penalty of -20/Tier."
+    },
+    {
+      "name": "Perfect Pitch",
+      "description": "You have perfect pitch and are able to reproduce any pitch with either your voice (if possible with your vocal cords) or an appropriate instrument. This allows you to play most pieces of music after hearing them. You get +10/Tier to any Performance Art: Singing or Play Instrument skill."
+    },
+    {
+      "name": "Prodigy",
+      "description": "You excel in a particular skill or talent."
+    },
+    {
+      "name": "Inept",
+      "description": "You struggle with a particular skill or talent."
+    },
+    {
+      "name": "Restricted Diet",
+      "description": "You can only eat certain types of food without suffering penalties."
+    },
+    {
+      "name": "Revulsion",
+      "description": "You have a strong aversion to a particular substance or condition."
+    }
+ ]

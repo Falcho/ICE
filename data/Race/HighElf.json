@@ -1,0 +1,37 @@
+{
+  "header": "High Elf",
+  "description": "Details for the High Elf race.",
+  "race_sizes": {
+    "size": "M",
+    "weight_male": "215 lbs",
+    "stride": "+2'",
+    "weight_female": "175 lbs",
+    "height_male": "6'7\"",
+    "variance": "+/- 4 lbs/in.",
+    "height_female": "6'3\""
+  },
+  "stat_bonuses": {
+    "agility": 3,
+    "constitution": -1,
+    "empathy": 2,
+    "intuition": 0,
+    "memory": 2,
+    "presence": 3,
+    "quickness": 2,
+    "reasoning": 1,
+    "self_discipline": -5,
+    "strength": -1
+  },
+  "resistances": {
+    "channeling": -5,
+    "mentalism": -5,
+    "essence": -5,
+    "physical": 10
+  },
+  "health_and_dev": {
+    "endurance": 10,
+    "recovery_multiplier": "2x",
+    "base_hits": 25,
+    "bonus_dev_points": 3
+  }
+}

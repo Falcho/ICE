@@ -8,13 +8,13 @@ import java.util.List;
 
 public class CreateStatsView extends JPanel {
 
-    private JLabel title;
-    private List<JLabel> labels;
-    private List<JTextField[]> fields;
+    private final JLabel title;
+    private final List<JLabel> labels;
+    private final List<JTextField[]> fields;
 
-    private JButton returnToCharacterInfo;
-    private JButton saveAndContinueToSkills;
-    private JButton rollStatsForMe;
+    private final JButton returnToCharacterInfo;
+    private final JButton saveAndContinueToSkills;
+    private final JButton rollStatsForMe;
 
     public CreateStatsView() {
         //Initialize all components
@@ -167,7 +167,7 @@ public class CreateStatsView extends JPanel {
         returnToCharacterInfo.addActionListener(actionListener);
     }
 
-    public void saveAndContinueButtonCLick (ActionListener actionListener) {
+    public void saveAndContinueButtonClick(ActionListener actionListener) {
         saveAndContinueToSkills.addActionListener(actionListener);
     }
 
