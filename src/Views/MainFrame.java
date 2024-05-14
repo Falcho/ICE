@@ -13,7 +13,7 @@ public class MainFrame extends JFrame {
     private CardLayout cardLayout;
 
     public MainFrame() {
-        super("Java Swing MVC");
+        super("Rolemaster Character Generator");
         cardLayout = new CardLayout();
 
         CreateStatsView newStatsView = new CreateStatsView();
