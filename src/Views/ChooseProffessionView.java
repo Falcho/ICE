@@ -1,5 +1,6 @@
 package Views;
 
+import Models.Profession;
 import Models.Skill;
 import Models.SkillCategory;
 
@@ -13,8 +14,8 @@ import java.util.List;
 public class ChooseProffessionView extends JPanel {
 
     private JLabel title;
-    private String[] proffessionList;
-    private JList<String> proffessionJList;
+//    private String[] proffessionList;
+    private List<Profession> professionList;
     private List<SkillCategory> skillAndCostList;
     private List<Skill> proffessionalSkill;
     private JTextArea proffessionDescription;
@@ -26,8 +27,8 @@ public class ChooseProffessionView extends JPanel {
     public ChooseProffessionView() {
         //Initialize all components
         title = new JLabel("Choose Proffession");
-        proffessionList = new String[]{"Fighter", "Magician","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test"};
-        proffessionJList = new JList(proffessionList);
+//        proffessionList = new String[]{"Fighter", "Magician","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test","Test"};
+        professionList = new ArrayList<>();
         skillAndCostList = new ArrayList<>();
         proffessionalSkill = new ArrayList<>();
         proffessionDescription = new JTextArea("Description Description Description Description \n" +
@@ -55,14 +56,27 @@ public class ChooseProffessionView extends JPanel {
     }
 
     private JPanel createProffessionListPanel() {
-        JPanel panel = new JPanel();
-        JList list = new JList(proffessionList);
-        list.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-        list.setLayoutOrientation(JList.VERTICAL);
-        list.setVisibleRowCount(30);
-        JScrollPane scrollPane = new JScrollPane(list);
-        list.setPreferredSize(new Dimension(300,500));
-        panel.add(scrollPane);
+        JPanel panel = new JPanel(new BorderLayout());
+
+        DefaultListModel<String> model = new DefaultListModel<>();
+        for (Profession profession : professionList) {
+            model.addElement(profession.getName());
+        }
+
+        JList<String> professionJList = new JList<>(model);
+        professionJList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        professionJList.addListSelectionListener(e -> {
+            if (!e.getValueIsAdjusting()) {
+                String selectedProfession = professionJList.getSelectedValue();
+                if (selectedProfession != null) {
+                    JOptionPane.showMessageDialog(null, "You clicked: " + selectedProfession);
+                }
+            }
+        });
+
+        JScrollPane scrollPane = new JScrollPane(professionJList);
+        panel.add(scrollPane, BorderLayout.CENTER);
+
         return panel;
     }
 
@@ -117,10 +131,6 @@ public class ChooseProffessionView extends JPanel {
     private JPanel createProffessionalSkillsPanel() {
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
-//        Function<Skill,String>skillNameExtractor = Skill::getName;
-//        List<String>skillNames = proffessionalSkill.stream().map(skillNameExtractor).toList();
-//        JList<String> skillsList = new JList<>(skillNames.toArray(new String[0]));
-        //tilføj kode der henter Professional Skill Listen
         for (Skill skill : proffessionalSkill){
             JPanel skillPanel = new JPanel();
             skillPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
@@ -158,21 +168,21 @@ public class ChooseProffessionView extends JPanel {
         this.proffessionDescription = proffessionDescription;
     }
 
-    public JList<String> getProffessionJList() {
-        return proffessionJList;
+    public List<Profession> getProffessionJList() {
+        return professionList;
     }
 
-    public void setProffessionJList(JList<String> proffessionJList) {
-        this.proffessionJList = proffessionJList;
+    public void setProffessionJList(List<Profession> proffessionList) {
+        this.professionList = proffessionList;
     }
 
-    public String[] getProffessionList() {
-        return proffessionList;
-    }
-
-    public void setProffessionList(String[] proffessionList) {
-        this.proffessionList = proffessionList;
-    }
+//    public String[] getProffessionList() {
+//        return proffessionList;
+//    }
+//
+//    public void setProffessionList(String[] proffessionList) {
+//        this.proffessionList = proffessionList;
+//    }
 
     public List<SkillCategory> getSkillAndCostList() {
         return skillAndCostList;
