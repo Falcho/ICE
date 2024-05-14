@@ -1,5 +1,6 @@
 package Models;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -56,6 +57,9 @@ public class CharacterSheet {
 
     public void setStat(String statName,int[]values){
         this.stats.setStat(statName,values);
+    }
 
+    public void setStats(List<int[]>liste){
+        this.stats.setStats(liste);
     }
 }
