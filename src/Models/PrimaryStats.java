@@ -25,4 +25,44 @@ public class PrimaryStats {
         this.strength= new Stat("strength");
     }
 
-}
+    public void setStat(String statNavn,int[] values){
+        if(statNavn.equals("agility")){
+            this.agility.setStat(values);
+        }
+        if(statNavn.equals("contitition")){
+            this.constitution.setStat(values);
+        }
+        if (statNavn.equals("empathy")){
+            this.empathy.setStat(values);
+        }
+        if(statNavn.equals("intuition")){
+            this.intuition.setStat(values);
+        }
+        if(statNavn.equals("memory")){
+            this.memory.setStat(values);
+        }
+        if(statNavn.equals("presence")){
+            this.presence.setStat(values);
+        }
+        if(statNavn.equals("quickness")){
+            this.quickness.setStat(values);
+        }
+        if(statNavn.equals("reasoning")){
+            this.reasoning.setStat(values);
+        }
+        if(statNavn.equals("selfDiscipline")){
+        this.selfDiscipline.setStat(values);
+        }
+
+        if(statNavn.equals("strength")){
+            this.strength.setStat(values);
+        }
+
+
+
+
+
+
+    }
+
+

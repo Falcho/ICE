@@ -85,6 +85,6 @@ public class Stat {
         this.potentionel=stat[0];
         this.temp=stat[1];
 
-
     }
+
 }
