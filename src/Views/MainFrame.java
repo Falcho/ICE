@@ -3,6 +3,7 @@ package Views;
 import Controllers.CharacterSheetController;
 import Controllers.CreateNewCharController;
 import Models.CharacterSheet;
+import Models.Rules;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,7 +19,7 @@ public class MainFrame extends JFrame {
 
         CreateStatsView newStatsView = new CreateStatsView();
         CreateNewCharView newCharView = new CreateNewCharView();
-        TalentsAndFlawsView talentsAndFlawsView = new TalentsAndFlawsView();
+        TalentsAndFlawsView talentsAndFlawsView = new TalentsAndFlawsView(Rules.getTalentsAndFlaws());
         // sets our layout as a card layout
         setLayout(cardLayout);
 
