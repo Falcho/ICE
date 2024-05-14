@@ -2,7 +2,6 @@ package Controllers;
 
 import Models.CharacterSheet;
 import Views.CreateNewCharView;
-import Views.MainFrame;
 
 public class CreateNewCharController {
     private final CreateNewCharView view;
