@@ -53,4 +53,9 @@ public class CharacterSheet {
     public void setName(String name) {
         this.name = name;
     }
+
+    public void setStat(String statName,int[]values){
+        this.stats.setStat(statName,values);
+
+    }
 }
