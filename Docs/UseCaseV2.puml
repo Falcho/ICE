@@ -24,10 +24,10 @@ usecase "Increase Stats" as UC15
 user --> UC1
 user --> UC2
 UC1 --> UC5
-UC5 --> UC8
-UC8 --> UC3
+UC5 --> UC3
 UC3 --> UC4
-UC4 --> UC7
+UC4 --> UC8
+UC8 --> UC7
 UC7 --> UC9
 UC9 --> UC6
 UC6 --> UC2
