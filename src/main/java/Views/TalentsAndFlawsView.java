@@ -95,7 +95,7 @@ public class TalentsAndFlawsView extends JPanel {
     private JPanel createBottomPanel() {
         JPanel panel = new JPanel(new BorderLayout());
 
-        JButton previousButton = new JButton("Previous");
+        JButton previousButton = new JButton("Return to Culture");
         previousButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -105,7 +105,7 @@ public class TalentsAndFlawsView extends JPanel {
         });
         panel.add(previousButton, BorderLayout.WEST);
 
-        JButton continueButton = new JButton("Continue");
+        JButton continueButton = new JButton("Continue to Stats");
         continueButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
