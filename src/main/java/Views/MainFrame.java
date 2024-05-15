@@ -98,13 +98,14 @@ public class MainFrame extends JFrame {
             changeView("talentsAndFlaws");
         });
         generateStatsView.continueButtonClick(e -> {
-            changeView("createBackground");
+            if (createStatsController.validateAndSave())
+                changeView("createBackground");
         });
 
-        /*generateStatsView.previousButtonClick(e -> {
+        /*createBackgroundView.previousButtonClick(e -> {
             changeView("generateStats");
         });
-        generateStatsView.continueButtonClick(e -> {
+        createBackgroundView.continueButtonClick(e -> {
             changeView("characterSheet");
         });*/
 
