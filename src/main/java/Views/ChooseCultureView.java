@@ -15,6 +15,8 @@ public class ChooseCultureView extends JPanel {
     private JLabel title;
     private List<JLabel> labels;
     private JTextArea description;
+    private JTextArea crafts;
+    private JTextArea vocations;
     private List<JTextField[]> field;
     private JComboBox<String> chooseCultureDropdown;
     private Map<String,Culture> cultures;
@@ -95,28 +97,29 @@ public class ChooseCultureView extends JPanel {
     }
 
     private JPanel createDescriptionPane() {
-        description = new JTextArea("COSMOPOLITAN:\n" +
-                "When a city gets large enough, those who dwell in " +
-                "it cease to be merely urban in culture. Large cities " +
-                "tend to have very finely specialized craftsmen, and " +
-                "the majority of their economy is devoted to trade and " +
-                "commerce. The combination of specialization, access " +
-                "to resources and cultural experiences you only find in " +
-                "large urban areas, and exposure to other people via " +
-                "trade and travel create a culture that is cosmopolitan. " +
-                "\nCrafts: Large, diverse cities foster specialization and " +
-                "support a wide range of crafts. Any craft is appropriate. " +
-                "\nVocations: Bookkeeper, guardsman, librarian, manager, " +
-                "merchant, officer, scribe, soldier, valet, or " +
-                "any type of craftsman.");
+        description = new JTextArea("Choose a Culture from the dropdown");
         description.setLineWrap(true);
         description.setWrapStyleWord(true);
         description.setEditable(false);
         description.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        crafts = new JTextArea("Crafts here");
+        crafts.setLineWrap(true);
+        crafts.setWrapStyleWord(true);
+        crafts.setEditable(false);
+        crafts.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        vocations = new JTextArea("Vocations here");
+        vocations.setLineWrap(true);
+        vocations.setWrapStyleWord(true);
+        vocations.setEditable(false);
+        vocations.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
 
         JPanel panel = new JPanel(new BorderLayout());
-        panel.add(description, BorderLayout.CENTER);
+        panel.add(description, BorderLayout.NORTH);
+        JPanel innerPanel = new JPanel(new BorderLayout());
+        innerPanel.add(crafts, BorderLayout.CENTER);
+        innerPanel.add(vocations, BorderLayout.SOUTH);
+        panel.add(innerPanel, BorderLayout.SOUTH);
         return panel;
     }
 
@@ -151,6 +154,18 @@ public class ChooseCultureView extends JPanel {
         for (JTextField[] jTextFields : field) {
             jTextFields[0].setText("");
         }
+    }
+
+    //Setters
+    public void setDescription(String description) {
+        this.description.setText(description);
+    }
+
+    public void setCrafts(String crafts) {
+        this.crafts.setText(crafts);
+    }
+    public void setVocations(String vocations) {
+        this.vocations.setText(vocations);
     }
 
 }
