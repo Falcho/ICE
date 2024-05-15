@@ -80,37 +80,19 @@ public class PrimaryStats {
 
 
     public Stat getStat(String statName){
-        if(statName.equals("agility")){
-            return this.agility;
-        }
-        if(statName.equals("constitution")){
-            return this.constitution;
-        }
-        if (statName.equals("empathy")){
-            return this.empathy;
-        }
-        if (statName.equals("intuition")) {
-            return this.empathy;
-        }
-        if (statName.equals("memory")) {
-            return this.empathy;
-        }
-        if (statName.equals("presence")) {
-            return this.empathy;
-        }
-        if (statName.equals("quickness")) {
-            return this.empathy;
-        }
-        if (statName.equals("reasoning")){
-            return this.empathy;
-        }
-        if (statName.equals("selfDiscipline")) {
-            return this.empathy;
-        }
-        if (statName.equals("strength")) {
-            return this.empathy;
-        }
-        return null;
+        return switch (statName) {
+            case "agility", "Ag" -> this.agility;
+            case "constitution", "Co" -> this.constitution;
+            case "empathy", "Em" -> this.empathy;
+            case "intuition", "In" -> this.empathy;
+            case "memory", "Me" -> this.memory;
+            case "presence", "Pr" -> this.presence;
+            case "quickness", "Qu" -> this.quickness;
+            case "reasoning", "Re" -> this.reasoning;
+            case "selfDiscipline", "SD" -> this.selfDiscipline;
+            case "strength", "St" -> this.strength;
+            default -> null;
+        };
     }
 
 
