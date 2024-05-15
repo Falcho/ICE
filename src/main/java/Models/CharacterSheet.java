@@ -10,8 +10,10 @@ public class CharacterSheet {
     private String name;
     private String background;
     protected Culture culture;
+
     protected Race race;
     protected Profession profession;
+
     protected PrimaryStats stats;
     protected Defense defense;
     protected ManeuversMovementAndEncumbrance MME;
@@ -166,4 +168,14 @@ public class CharacterSheet {
     public void setXp(int xp) {
         this.xp = xp;
     }
+
+
+
+    public Stat getStat(String statName){
+
+        return stats.getStat(statName);
+    }
+
+
+
 }

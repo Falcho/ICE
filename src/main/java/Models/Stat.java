@@ -87,4 +87,12 @@ public class Stat {
 
     }
 
+    public int getPotentionel(){
+        return potentionel;
+    }
+
+    public int getTemp(){
+        return temp;
+    }
+
 }
