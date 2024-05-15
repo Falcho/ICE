@@ -1,0 +1,363 @@
+[
+  {
+    "name": "Fighter",
+    "description": "Fighters are the primary combat specialists. A fighter may be a heavily armored mounted knight, a swashbuckling musketeer, a big brute with a massive bronze-bound club, an honor-obsessed samurai, or a master archer. The face of battle may change with technology and social organization, but there will always be those who specialize in being in the middle of it all.",
+    "availableProfessionalSkillList": [
+      "Riding",
+      "Body Development",
+      "Fortitude",
+      "Weight-Training",
+      "Maneuvering in Armor",
+      "Mounted Combat",
+      "Protect",
+      "Disarm",
+      "Multiple Attacks",
+      "Melee Weapons",
+      "Ranged Weapons",
+      "Shield",
+      "Metalcraft",
+      "Running",
+      "Leadership"
+    ],
+    "professionSkillCost": [
+      {
+        "name": "Animal",
+        "cost1": 2,
+        "cost2": 3
+      },
+      {
+        "name": "Awareness",
+        "cost1": 2,
+        "cost2": 4
+      },
+      {
+        "name": "Battle Expertise",
+        "cost1": 1,
+        "cost2": 2
+      },
+      {
+        "name": "Body Discipline",
+        "cost1": 4,
+        "cost2": 6
+      },
+      {
+        "name": "Brawn",
+        "cost1": 1,
+        "cost2": 3
+      },
+      {
+        "name": "Combat Expertise",
+        "cost1": 1,
+        "cost2": 3
+      },
+      {
+        "name": "Combat Training 1",
+        "cost1": 1,
+        "cost2": 2
+      },
+      {
+        "name": "Combat Training 2",
+        "cost1": 1,
+        "cost2": 2
+      },
+      {
+        "name": "Combat Training 3",
+        "cost1": 2,
+        "cost2": 3
+      },
+      {
+        "name": "Combat Training 4",
+        "cost1": 3,
+        "cost2": 4
+      },
+      {
+        "name": "Composition",
+        "cost1": 3,
+        "cost2": 4
+      },
+      {
+        "name": "Crafting",
+        "cost1": 2,
+        "cost2": 4
+      },
+      {
+        "name": "Delving",
+        "cost1": 7,
+        "cost2": 10
+      },
+      {
+        "name": "Environmental",
+        "cost1": 2,
+        "cost2": 4
+      },
+      {
+        "name": "Gymnastic",
+        "cost1": 3,
+        "cost2": 4
+      },
+      {
+        "name": "Lore",
+        "cost1": 2,
+        "cost2": 4
+      },
+      {
+        "name": "Magical Expertise",
+        "cost1": 7,
+        "cost2": 10
+      },
+      {
+        "name": "Medical",
+        "cost1": 3,
+        "cost2": 4
+      },
+      {
+        "name": "Mental Discipline",
+        "cost1": 5,
+        "cost2": 7
+      },
+      {
+        "name": "Movement",
+        "cost1": 2,
+        "cost2": 4
+      },
+      {
+        "name": "Performance Art",
+        "cost1": 3,
+        "cost2": 4
+      },
+      {
+        "name": "Power Manipulation",
+        "cost1": 9,
+        "cost2": 12
+      },
+      {
+        "name": "Social",
+        "cost1": 2,
+        "cost2": 4
+      },
+      {
+        "name": "Spells Base/Open",
+        "cost1": 7,
+        "cost2": 10
+      },
+      {
+        "name": "Spells Ritual Magic",
+        "cost1": 9,
+        "cost2": 12
+      },
+      {
+        "name": "Spells Closed",
+        "cost1": 15,
+        "cost2": 20
+      },
+      {
+        "name": "Spells Arcane",
+        "cost1": 15,
+        "cost2": 20
+      },
+      {
+        "name": "Spells Restricted",
+        "cost1": 15,
+        "cost2": 20
+      },
+      {
+        "name": "Subterfuge",
+        "cost1": 3,
+        "cost2": 5
+      },
+      {
+        "name": "Technical",
+        "cost1": 5,
+        "cost2": 7
+      },
+      {
+        "name": "Vocation",
+        "cost1": 3,
+        "cost2": 4
+      }
+    ]
+  },
+  {
+    "name": "Mage",
+    "description": "Magicians are Pure Spellcasters who have concentrated on elemental spells. Their base spells deal with the six elements of Rolemaster: earth, fire, ice, light (which includes electricity), water, and wind. They have many spells that hurl bolts and balls of these elements to potentially deadly effect and thus Magicians are often found on battlefields. They can also learn all manner of magical skills with ease.",
+    "availableProfessionalSkillList": [
+      "Attunement",
+      "Runes",
+      "Spell Lore",
+      "Grace",
+      "Directed Spell",
+      "Power Development",
+      "Power Projection",
+      "Architecture",
+      "Astronomy",
+      "Engineering",
+      "Mathematics",
+      "Magical Ritual",
+      "Open Spell Lists",
+      "Closed Spell Lists",
+      "Base Spell Lists"
+    ],
+    "professionSkillCost": [
+      {
+        "name": "Animal",
+        "cost1": 3,
+        "cost2": 5
+      },
+      {
+        "name": "Awareness",
+        "cost1": 4,
+        "cost2": 6
+      },
+      {
+        "name": "Battle Expertise",
+        "cost1": 7,
+        "cost2": 10
+      },
+      {
+        "name": "Body Discipline",
+        "cost1": 6,
+        "cost2": 8
+      },
+      {
+        "name": "Brawn",
+        "cost1": 6,
+        "cost2": 8
+      },
+      {
+        "name": "Combat Expertise",
+        "cost1": 7,
+        "cost2": 10
+      },
+      {
+        "name": "Combat Science",
+        "cost1": 2,
+        "cost2": 4
+      },
+      {
+        "name": "Combat Training 1",
+        "cost1": 5,
+        "cost2": 7
+      },
+      {
+        "name": "Combat Training 2",
+        "cost1": 6,
+        "cost2": 8
+      },
+      {
+        "name": "Combat Training 3",
+        "cost1": 9,
+        "cost2": 12
+      },
+      {
+        "name": "Combat Training 4",
+        "cost1": 15,
+        "cost2": 20
+      },
+      {
+        "name": "Composition",
+        "cost1": 2,
+        "cost2": 4
+      },
+      {
+        "name": "Crafting",
+        "cost1": 3,
+        "cost2": 4
+      },
+      {
+        "name": "Delving",
+        "cost1": 1,
+        "cost2": 2
+      },
+      {
+        "name": "Environmental",
+        "cost1": 4,
+        "cost2": 6
+      },
+      {
+        "name": "Gymnastic",
+        "cost1": 4,
+        "cost2": 6
+      },
+      {
+        "name": "Lore",
+        "cost1": 1,
+        "cost2": 3
+      },
+      {
+        "name": "Magical Expertise",
+        "cost1": 1,
+        "cost2": 2
+      },
+      {
+        "name": "Medical",
+        "cost1": 3,
+        "cost2": 4
+      },
+      {
+        "name": "Mental Discipline",
+        "cost1": 2,
+        "cost2": 4
+      },
+      {
+        "name": "Movement",
+        "cost1": 4,
+        "cost2": 6
+      },
+      {
+        "name": "Performance Art",
+        "cost1": 2,
+        "cost2": 4
+      },
+      {
+        "name": "Power Manipulation",
+        "cost1": 2,
+        "cost2": 3
+      },
+      {
+        "name": "Social",
+        "cost1": 3,
+        "cost2": 4
+      },
+      {
+        "name": "Spells Base/Open",
+        "cost1": 1,
+        "cost2": 2
+      },
+      {
+        "name": "Spells Ritual Magic",
+        "cost1": 1,
+        "cost2": 3
+      },
+      {
+        "name": "Spells Closed",
+        "cost1": 2,
+        "cost2": 4
+      },
+      {
+        "name": "Spells Arcane",
+        "cost1": 5,
+        "cost2": 7
+      },
+      {
+        "name": "Spells Restricted",
+        "cost1": 6,
+        "cost2": 8
+      },
+      {
+        "name": "Subterfuge",
+        "cost1": 6,
+        "cost2": 8
+      },
+      {
+        "name": "Technical",
+        "cost1": 5,
+        "cost2": 7
+      },
+      {
+        "name": "Vocation",
+        "cost1": 3,
+        "cost2": 4
+      }
+    ]
+  }
+]
