@@ -75,7 +75,43 @@ package models{
         # Map SkillList <String, Skill>;
         # Map SpellList <String, Spell>;
         # Set <TalentsAndFlaws> TalentsAndFlaws;
-    }
+        +CharacterSheet(){}
+        +CharacterSheet(int level, int xp, String name, String background, Culture culture, Race race, Profession profession, PrimaryStats stats, Defense defense, ManeuversMovementAndEncumbrance MME, Inventory inventory, Map skillList, Map spellList, Set<TalentsAndFlaws> talentsAndFLaws)
+        +String getName()
+        +void setName()
+        +void setStat(String statName,int[]values)
+        +void setStats(List<int[]>liste)
+        +String getBackground()
+        +void setBackground(String background)
+        +Culture getCulture()
+        +void setCulture(Culture culture)
+        +Defense getDefense()
+        +void setDefense(Defense defense)
+        +Inventory getInventory()
+        +void setInventory(Inventory inventory)
+        +int getLevel()
+        +void setLevel(int level)
+        +ManeuversMovementAndEncumbrance getMME()
+        +void setMME(ManeuversMovementAndEncumbrance MME)
+        +Profession getProfession()
+        +void setProfession(Profession profession)
+        +Race getRace()
+        +void setRace(Race race)
+        +Map<String, SkillCategory> getSkillList()
+        +void setSkillList(Map<String, SkillCategory> skillList)
+        +Map<String, Spell> getSpellList()
+        +void setSpellList(Map<String, Spell> spellList)
+        +PrimaryStats getStats()
+        + void setStats(PrimaryStats stats)
+        +Set<TalentsAndFlaws> getTalentsAndFLaws()
+        +void setTalentsAndFLaws(Set<TalentsAndFlaws> talentsAndFLaws)
+        +int getXp()
+        +void setXp(int xp)
+        +Stat getStat(String statName)
+
+
+
+       }
     Class GeneralEquipment{}
     Class Skill{
     -boolean proffesionalSkill
@@ -157,7 +193,22 @@ package models{
         # String penaltyAp
         # String loadLimit
     }
-    Class PrimaryStats{}
+    Class PrimaryStats{
+     # Stat agility;
+     # Stat constitution;
+     # Stat empathy;
+     # Stat intuition;
+     # Stat memory;
+     # Stat presence;
+     # Stat quickness;
+     # Stat reasoning;
+     # Stat selfDiscipline;
+     # Stat strength;
+     +PrimaryStats()
+     +void setStat(String statNavn, int[] values)
+     +void setStats(List<int[]> stats)
+     +Stat getStat(String statName)
+    }
     Class Defense{}
     Class MagicItems{}
     Class Race{
@@ -211,12 +262,15 @@ package models{
         - String name
         - int potentional
         - int temp
+        + Stat(String name)
         # int bonus()
         # int racial()
         # int special()
         # int getTotal()
-        # int getPotentional()
-        # getTemp()
+        #int getRaceBonus()
+        +void setStat(int[] stat)
+        + int getPotentional()
+        + getTemp()
     }
 }
 
