@@ -17,8 +17,9 @@ public class ChooseProfessionController {
 
         });
     }
-    private boolean validate(Profession profession) {
-        return false;
+    private boolean validate(ChooseProfessionView view) {
+        if(view.isProfessionSelected());
+        return true;
     }
     private void saveDataToModel(Profession profession) {
         model.setProfession(profession);
