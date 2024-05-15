@@ -7,7 +7,7 @@ public class Profession {
 
     protected String name;
     protected String description;
-    protected Map<String, List<Integer>> professionSkillCost;
+    protected List<SkillCategory> professionSkillCost;
     protected List<String> availableRealms;
     protected List<Skill> availableProfessionalSkillList;
     protected Map<String, List<Spell>> professionSpell;
@@ -15,23 +15,20 @@ public class Profession {
     protected List<Skill> chosenKnacks;
     protected List<Skill> chosenRealms;
 
-    public Profession(String name, String description, Map<String, List<Integer>> professionSkillCost, List<String> realms, List<Skill> availableProfessionalSkillList) {
+    public Profession(String name, String description, List<SkillCategory> professionSkillCost, List<String> chosenRealms, List<Skill> availableProfessionalSkillList) {
         this.name = name;
         this.description = description;
         this.professionSkillCost = professionSkillCost;
-        this.availableRealms = realms;
+        this.availableRealms = chosenRealms;
         this.availableProfessionalSkillList = availableProfessionalSkillList;
     }
 
-    public Map<String, List<Integer>> getSkillCost() {
-        return professionSkillCost;
-    }
 
     public List<Skill> getProfessionalSkill() {
         return availableProfessionalSkillList;
     }
 
-    public Map<String, List<Integer>> getProfessionSkillCost() {
+    public List<SkillCategory> getProfessionSkillCost() {
         return professionSkillCost;
     }
 
@@ -61,5 +58,49 @@ public class Profession {
 
     public List<Skill> getChosenRealms() {
         return chosenRealms;
+    }
+
+    public Map<String, List<Spell>> getProfessionSpell() {
+        return professionSpell;
+    }
+
+    public List<Skill> getAvailableProfessionalSkillList() {
+        return availableProfessionalSkillList;
+    }
+
+    public void setAvailableProfessionalSkillList(List<Skill> availableProfessionalSkillList) {
+        this.availableProfessionalSkillList = availableProfessionalSkillList;
+    }
+
+    public void setAvailableRealms(List<String> availableRealms) {
+        this.availableRealms = availableRealms;
+    }
+
+    public void setChosenKnacks(List<Skill> chosenKnacks) {
+        this.chosenKnacks = chosenKnacks;
+    }
+
+    public void setChosenProfessionalSkills(List<Skill> chosenProfessionalSkills) {
+        this.chosenProfessionalSkills = chosenProfessionalSkills;
+    }
+
+    public void setChosenRealms(List<Skill> chosenRealms) {
+        this.chosenRealms = chosenRealms;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setProfessionSkillCost(List<SkillCategory> professionSkillCost) {
+        this.professionSkillCost = professionSkillCost;
+    }
+
+    public void setProfessionSpell(Map<String, List<Spell>> professionSpell) {
+        this.professionSpell = professionSpell;
     }
 }
