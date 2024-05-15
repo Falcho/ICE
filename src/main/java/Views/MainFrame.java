@@ -19,7 +19,7 @@ public class MainFrame extends JFrame {
 
         CreateNewCharView newCharView = new CreateNewCharView();
         CreateStatsView newStatsView = new CreateStatsView();
-        ChooseProfessionView chooseProfessionView = new ChooseProfessionView();
+        ChooseProfessionView chooseProfessionView = new ChooseProfessionView(Rules.getProfessionList());
         TalentsAndFlawsView talentsAndFlawsView = new TalentsAndFlawsView(Rules.getTalentsAndFlaws());
         // sets our layout as a card layout
         setLayout(cardLayout);
