@@ -110,7 +110,7 @@ public class PrimaryStats {
         if (statName.equals("strength")) {
             return this.empathy;
         }
-        return stat;
+        return null;
     }
 
 
