@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CreateCultureView extends JPanel {
+public class ChooseCultureView extends JPanel {
 
     private JLabel title;
     private List<JLabel> labels;
@@ -17,7 +17,7 @@ public class CreateCultureView extends JPanel {
     private JButton goToStats;
     private JButton previous;
 
-    public CreateCultureView() {
+    public ChooseCultureView() {
         //Initialize all components
         title = new JLabel("It's time to choose your Culture");
         Font font = new Font(title.getFont().getName(), Font.PLAIN, 16);
