@@ -9,14 +9,14 @@ public class CreateNewCharView extends JPanel {
     private JTextField nameField;
     private JLabel label;
 
-    protected JButton saveAndContinueButton;
+    protected JButton continueButton;
 
     public CreateNewCharView() {
         //initialize all components
         title = new JLabel("Create a new character");
         label = new JLabel("Enter character name: ");
         nameField = new JTextField(10);
-        saveAndContinueButton = new JButton("Save and continue to Profession");
+        continueButton = new JButton("Continue to Profession");
 
         this.setLayout(new BorderLayout());
 
@@ -69,7 +69,7 @@ public class CreateNewCharView extends JPanel {
 
     private JPanel createBottomPanel() {
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        bottomPanel.add(saveAndContinueButton);
+        bottomPanel.add(continueButton);
         return bottomPanel;
     }
 
@@ -77,8 +77,8 @@ public class CreateNewCharView extends JPanel {
         return nameField.getText();
     }
 
-    public void saveAndContinue(ActionListener actionListener) {
-        saveAndContinueButton.addActionListener(actionListener);
+    public void continueButtonClick(ActionListener actionListener) {
+        continueButton.addActionListener(actionListener);
     }
 
     public void reset(boolean bln) {

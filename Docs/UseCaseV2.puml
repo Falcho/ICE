@@ -1,6 +1,6 @@
 @startuml
 'https://plantuml.com/use-case-diagram
-
+!Pragma layout smetana
 actor user
 
 usecase "New Character" as UC1

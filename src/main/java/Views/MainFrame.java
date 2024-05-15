@@ -42,7 +42,7 @@ public class MainFrame extends JFrame {
         add(newStatsView, "newStats");
         cardLayout.show(this.getContentPane(), "cultureView");
         // switch view according to its constraints on click
-        newCharView.saveAndContinue(e -> {
+        newCharView.continueButtonClick(e -> {
             if (newCharController.validateAndSave()) {
                 cardLayout.show(this.getContentPane(), "professionView");
             }
@@ -50,18 +50,18 @@ public class MainFrame extends JFrame {
                 newCharView.reset(true);
             }
         });
-        chooseProfessionView.returnToCharacterName(e -> {
+        chooseProfessionView.previousButtonClick(e -> {
             cardLayout.show(this.getContentPane(), "chooseName");
         });
-        chooseProfessionView.saveAndContinueToRace(e -> {
+        chooseProfessionView.continueButtonClick(e -> {
             //Validate and save
             cardLayout.show(this.getContentPane(), "talentsAndFlaws");
         });
         //talentsAndFlawsView.
-        newStatsView.returnToCharacterButtonClick(e -> {
+        newStatsView.previousButtonClick(e -> {
             cardLayout.show(this.getContentPane(), "talentsAndFlaws");
         });
-        newStatsView.saveAndContinueButtonClick(e -> {
+        newStatsView.continueButtonClick(e -> {
             cardLayout.show(this.getContentPane(), "");
         });
         //talentsAndFlawsView.
