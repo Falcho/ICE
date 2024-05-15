@@ -39,20 +39,7 @@ public class ChooseCultureView extends JPanel {
         }
 
 
-        description = new JTextArea("COSMOPOLITAN:\n" +
-                "When a city gets large enough, those who dwell in\n" +
-                "it cease to be merely urban in culture. Large cities\n" +
-                "tend to have very finely specialized craftsmen, and\n" +
-                "the majority of their economy is devoted to trade and\n" +
-                "commerce. The combination of specialization, access\n" +
-                "to resources and cultural experiences you only find in\n" +
-                "large urban areas, and exposure to other people via\n" +
-                "trade and travel create a culture that is cosmopolitan.\n" +
-                "\nCrafts: Large, diverse cities foster specialization and\n" +
-                "support a wide range of crafts. Any craft is appropriate.\n" +
-                "\nVocations: Bookkeeper, guardsman, librarian, manager,\n" +
-                "merchant, officer, scribe, soldier, valet, or\n" +
-                "any type of craftsman.",1,1);
+
 
         chooseCultureDropdown = new JComboBox<>(new String[]{"Cosmopolitan", "Harsh", "Highland", "Mariner"});
         goToStats = new JButton("Go To Stats");
@@ -61,8 +48,7 @@ public class ChooseCultureView extends JPanel {
         setLayout(new BorderLayout());
 
         this.add(createTopPanel(), BorderLayout.NORTH);
-        this.add(createLeftPanel(), BorderLayout.WEST);
-        this.add(createRightPanel(), BorderLayout.EAST);
+        this.add(createCenterPanel(), BorderLayout.CENTER);
         this.add(createBottomPanel(), BorderLayout.SOUTH);
     }
 
@@ -78,7 +64,14 @@ public class ChooseCultureView extends JPanel {
         return borderPanel;
     }
 
-    private JPanel createLeftPanel() {
+    private JSplitPane createCenterPanel() {
+        JSplitPane centerPanel = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, createDescriptionPane(), createSkillListPane());
+        centerPanel.setResizeWeight(0.5);
+        centerPanel.setContinuousLayout(true);
+        return centerPanel;
+    }
+
+    private JPanel createSkillListPane() {
         JPanel panel = new JPanel();
         GroupLayout layout = new GroupLayout(panel);
         panel.setLayout(layout);
@@ -107,9 +100,29 @@ public class ChooseCultureView extends JPanel {
         return panel;
     }
 
-    private JPanel createRightPanel() {
-        JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEADING));
-        panel.add(description);
+    private JPanel createDescriptionPane() {
+        description = new JTextArea("COSMOPOLITAN:\n" +
+                "When a city gets large enough, those who dwell in " +
+                "it cease to be merely urban in culture. Large cities " +
+                "tend to have very finely specialized craftsmen, and " +
+                "the majority of their economy is devoted to trade and " +
+                "commerce. The combination of specialization, access " +
+                "to resources and cultural experiences you only find in " +
+                "large urban areas, and exposure to other people via " +
+                "trade and travel create a culture that is cosmopolitan. " +
+                "\nCrafts: Large, diverse cities foster specialization and " +
+                "support a wide range of crafts. Any craft is appropriate. " +
+                "\nVocations: Bookkeeper, guardsman, librarian, manager, " +
+                "merchant, officer, scribe, soldier, valet, or " +
+                "any type of craftsman.");
+        description.setLineWrap(true);
+        description.setWrapStyleWord(true);
+        description.setEditable(false);
+        description.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+
+
+        JPanel panel = new JPanel(new BorderLayout());
+        panel.add(description, BorderLayout.CENTER);
         return panel;
     }
 
