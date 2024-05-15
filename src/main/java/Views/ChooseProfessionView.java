@@ -22,8 +22,8 @@ public class ChooseProfessionView extends JPanel {
     private JTextArea professionDescription;
     private JCheckBox professionalBonusButton;
     private JCheckBox knackButton;
-    private JButton returnToCharacterName;
-    private JButton saveAndContinueToRace;
+    private JButton previousButton;
+    private JButton continueToRace;
 
     public ChooseProfessionView() {
         //Initialize all components
@@ -36,8 +36,8 @@ public class ChooseProfessionView extends JPanel {
         knackButton = new JCheckBox("Knack");
 
 
-        returnToCharacterName = new JButton("Return to Character Name");
-        saveAndContinueToRace = new JButton("Save and Continue to Race");
+        previousButton = new JButton("Return to Character Name");
+        continueToRace = new JButton("Continue to Race");
 
 
         this.setLayout(new BorderLayout());
@@ -150,8 +150,8 @@ public class ChooseProfessionView extends JPanel {
 
     private JPanel createButtonsPanel() {
         JPanel panel = new JPanel();
-        panel.add(returnToCharacterName);
-        panel.add(saveAndContinueToRace);
+        panel.add(previousButton);
+        panel.add(continueToRace);
         return panel;
     }
 
@@ -204,12 +204,12 @@ public class ChooseProfessionView extends JPanel {
         this.title = title;
     }
 
-    public void returnToCharacterName(ActionListener actionListener) {
-        returnToCharacterName.addActionListener(actionListener);
+    public void previousButtonClick(ActionListener actionListener) {
+        previousButton.addActionListener(actionListener);
     }
 
-    public void saveAndContinueToRace(ActionListener actionListener) {
-        saveAndContinueToRace.addActionListener(actionListener);
+    public void continueButtonClick(ActionListener actionListener) {
+        continueToRace.addActionListener(actionListener);
     }
 
     private void updateSkillAndCostList(Profession profession) {
