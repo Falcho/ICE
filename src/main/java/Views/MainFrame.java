@@ -52,7 +52,7 @@ public class MainFrame extends JFrame {
         // switch view according to its constraints on click
         newCharView.continueButtonClick(e -> {
             if (newCharController.validateAndSave()) {
-                cardLayout.show(this.getContentPane(), "professionView");
+                changeView("professionView");
             }
             else {
                 newCharView.reset(true);
@@ -60,43 +60,52 @@ public class MainFrame extends JFrame {
         });
 
         chooseProfessionView.previousButtonClick(e -> {
-            cardLayout.show(this.getContentPane(), "chooseName");
+            changeView("chooseName");
         });
         chooseProfessionView.continueButtonClick(e -> {
             //if (chooseProfessionController.validateAndSave()) {
-                cardLayout.show(this.getContentPane(), "talentsAndFlaws");
+                changeView("cultureView");
             //}
         });
 
         /*chooseRaceView.previousButtonClick(e -> {
-            cardLayout.show(this.getContentPane(), "professionView");
+            changeView("professionView");
         });
         chooseRaceView.continueButtonClick(e -> {
             if (chooseRaceController.validateAndSave()) {
-                cardLayout.show(this.getContentPane(), "talentsAndFlaws");
+                changeView("cultureView");
             }
         });*/
 
+        chooseCultureView.previousButtonClick(e -> {
+            changeView("professionView");
+        });
+        chooseCultureView.continueButtonClick(e -> {
+            if (cultureController.validateAndSave()) {
+                changeView("talentsAndFlaws");
+            }
+        });
+
         talentsAndFlawsView.previousButtonClick(e -> {
-            cardLayout.show(this.getContentPane(), "chooseRace");
+            changeView("cultureView");
         });
         talentsAndFlawsView.continueButtonClick(e -> {
             talentsAndFlawsView.saveTalents();
-            cardLayout.show(this.getContentPane(), "generateStats");
+            changeView("generateStats");
         });
 
         generateStatsView.previousButtonClick(e -> {
-            cardLayout.show(this.getContentPane(), "talentsAndFlaws");
+            changeView("talentsAndFlaws");
         });
         generateStatsView.continueButtonClick(e -> {
-            cardLayout.show(this.getContentPane(), "createBackground");
+            changeView("createBackground");
         });
 
         /*generateStatsView.previousButtonClick(e -> {
-            cardLayout.show(this.getContentPane(), "generateStats");
+            changeView("generateStats");
         });
         generateStatsView.continueButtonClick(e -> {
-            cardLayout.show(this.getContentPane(), "characterSheet");
+            changeView("characterSheet");
         });*/
 
 
@@ -113,5 +122,7 @@ public class MainFrame extends JFrame {
         setVisible(true);
     }
 
-    //public void changeView();
+    public void changeView(String viewName) {
+        cardLayout.show(this.getContentPane(), viewName);
+    }
 }
