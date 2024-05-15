@@ -66,4 +66,44 @@ public class Profession {
     public Map<String, List<Spell>> getProfessionSpell() {
         return professionSpell;
     }
+
+    public List<Skill> getAvailableProfessionalSkillList() {
+        return availableProfessionalSkillList;
+    }
+
+    public void setAvailableProfessionalSkillList(List<Skill> availableProfessionalSkillList) {
+        this.availableProfessionalSkillList = availableProfessionalSkillList;
+    }
+
+    public void setAvailableRealms(List<String> availableRealms) {
+        this.availableRealms = availableRealms;
+    }
+
+    public void setChosenKnacks(List<Skill> chosenKnacks) {
+        this.chosenKnacks = chosenKnacks;
+    }
+
+    public void setChosenProfessionalSkills(List<Skill> chosenProfessionalSkills) {
+        this.chosenProfessionalSkills = chosenProfessionalSkills;
+    }
+
+    public void setChosenRealms(List<Skill> chosenRealms) {
+        this.chosenRealms = chosenRealms;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setProfessionSkillCost(Map<String, List<Integer>> professionSkillCost) {
+        this.professionSkillCost = professionSkillCost;
+    }
+
+    public void setProfessionSpell(Map<String, List<Spell>> professionSpell) {
+        this.professionSpell = professionSpell;
+    }
 }
