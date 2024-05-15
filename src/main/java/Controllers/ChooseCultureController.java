@@ -15,6 +15,8 @@ public class ChooseCultureController {
         view.dropDownSelection(e -> {
             Culture choice = view.getChosenCulture();
             view.setDescription(choice.getDescription());
+            view.setCrafts(choice.getCrafts().toString());
+            view.setVocations(choice.getVocations().toString());
         });
     }
 }
