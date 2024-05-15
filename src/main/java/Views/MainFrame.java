@@ -1,6 +1,7 @@
 package Views;
 
 import Controllers.ChooseCultureController;
+import Controllers.ChooseProfessionController;
 import Controllers.CreateNewCharController;
 import Controllers.CreateStatsController;
 import Models.CharacterSheet;
@@ -32,6 +33,7 @@ public class MainFrame extends JFrame {
         // initialize user controller
         CharacterSheet model = new CharacterSheet();
         CreateNewCharController newCharController = new CreateNewCharController(newCharView, model);
+        ChooseProfessionController chooseProfessionController = new ChooseProfessionController(chooseProfessionView, model);
         CreateStatsController createStatsController = new CreateStatsController(generateStatsView, model);
         ChooseCultureController cultureController = new ChooseCultureController(chooseCultureView, model);
         //new CharacterSheetController(generateStatsView);
@@ -58,7 +60,9 @@ public class MainFrame extends JFrame {
         });
 
         chooseProfessionView.previousButtonClick(e -> {
-            cardLayout.show(this.getContentPane(), "chooseName");
+            if (chooseProfessionController.validateAndSave()) {
+                cardLayout.show(this.getContentPane(), "chooseName");
+            }
         });
         chooseProfessionView.continueButtonClick(e -> {
             //Validate and save
