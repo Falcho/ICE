@@ -1,6 +1,5 @@
 package Views;
 
-import Controllers.CharacterSheetController;
 import Controllers.CreateNewCharController;
 import Controllers.CreateStatsController;
 import Models.CharacterSheet;
@@ -19,9 +18,10 @@ public class MainFrame extends JFrame {
         cardLayout = new CardLayout();
 
         CreateNewCharView newCharView = new CreateNewCharView();
-        //JPanel chooseRaceView = new ChooseRaceView();
-        CreateStatsView newStatsView = new CreateStatsView();
         ChooseProfessionView chooseProfessionView = new ChooseProfessionView();
+        //JPanel chooseRaceView = new ChooseRaceView();
+        ChooseCultureView chooseCultureView = new ChooseCultureView();
+        CreateStatsView newStatsView = new CreateStatsView();
         TalentsAndFlawsView talentsAndFlawsView = new TalentsAndFlawsView(Rules.getTalentsAndFlaws());
         // sets our layout as a card layout
         setLayout(cardLayout);
@@ -35,11 +35,12 @@ public class MainFrame extends JFrame {
 
         // adds view to card layout with unique constraints
         add(newCharView, "chooseName");
-        //add(chooseRaceView, "chooseRace");
         add(chooseProfessionView, "professionView");
+        //add(chooseRaceView, "chooseRace");
+        add(chooseCultureView, "cultureView");
         add(talentsAndFlawsView, "talentsAndFlaws");
         add(newStatsView, "newStats");
-        cardLayout.show(this.getContentPane(), "chooseName");
+        cardLayout.show(this.getContentPane(), "cultureView");
         // switch view according to its constraints on click
         newCharView.saveAndContinue(e -> {
             if (newCharController.validateAndSave()) {
