@@ -98,7 +98,6 @@ public class Rules {
 
         Map<String, Culture> cultures = new TreeMap<>();
         ObjectMapper objectMapper = new ObjectMapper();
-        //CollectionType collectionType = objectMapper.getTypeFactory().constructCollectionType(Map.class, Culture.class);
         File json = new File("data/cultures/cultures.json");
         try {
             Map<String, Map<String, Object>> tempMap = objectMapper.readValue(json, new TypeReference<Map<String, Map<String, Object>>>(){});
@@ -125,11 +124,6 @@ public class Rules {
             throw new RuntimeException(e);
         }
 
-        /*try {
-            cultures = objectMapper.readValue(json, new TypeReference<Map<String, Culture>>(){});
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }*/
         return cultures;
     }
 }
