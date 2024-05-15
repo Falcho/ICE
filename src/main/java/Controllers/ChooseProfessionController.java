@@ -20,9 +20,16 @@ public class ChooseProfessionController {
     }
     private void saveDataToModel(Profession profession) {
         model.setProfession(profession);
+
     }
 
     public boolean validateAndSave(){
-    return true;
+    Profession profession = view.getSelectedProfession();
+    if(validate(view)){
+        saveDataToModel(profession);
+        System.out.println("Selected Profession: " + profession.getName());
+        return true;
+    }
+    return false;
     }
 }
