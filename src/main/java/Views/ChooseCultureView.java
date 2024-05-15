@@ -14,8 +14,8 @@ public class ChooseCultureView extends JPanel {
     private List<JTextField[]> field;
     private JComboBox<String> chooseCultureDropdown;
 
-    private JButton goToStats;
-    private JButton previous;
+    private JButton continueButton;
+    private JButton previousButton;
 
     public ChooseCultureView() {
         //Initialize all components
@@ -42,8 +42,8 @@ public class ChooseCultureView extends JPanel {
 
 
         chooseCultureDropdown = new JComboBox<>(new String[]{"Cosmopolitan", "Harsh", "Highland", "Mariner"});
-        goToStats = new JButton("Go To Stats");
-        previous = new JButton("Previous");
+        continueButton = new JButton("Continue to Talents");
+        previousButton = new JButton("Previous");
 
         setLayout(new BorderLayout());
 
@@ -156,8 +156,8 @@ public class ChooseCultureView extends JPanel {
 
     private JPanel createBottomPanel() {
         JPanel panel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        panel.add(previous);
-        panel.add(goToStats);
+        panel.add(previousButton);
+        panel.add(continueButton);
         return panel;
     }
 
@@ -189,11 +189,11 @@ public class ChooseCultureView extends JPanel {
     //Action Listeners
 
     public void previousButtonClick (ActionListener actionListener) {
-        previous.addActionListener(actionListener);
+        previousButton.addActionListener(actionListener);
     }
 
     public void goToStatsButtonClick (ActionListener actionListener) {
-        goToStats.addActionListener(actionListener);
+        continueButton.addActionListener(actionListener);
     }
 
     public void reset(){
