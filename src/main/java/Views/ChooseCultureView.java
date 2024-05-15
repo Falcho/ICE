@@ -72,6 +72,34 @@ public class ChooseCultureView extends JPanel {
     }
 
     private JPanel createSkillListPane() {
+        JPanel panel = new JPanel(new BorderLayout());
+        String[] columnNames = {"Skill Name", "Skill Points"};
+        String[][] data = {
+                {"Perception", "2"},
+                {"Body Development", "1"},
+                {"Unarmed", "1"},
+                {"Composition & Perf. Arts", "4"},
+                {"Crafting & Vocation", "6"},
+                {"Region (Own)", "5"},
+                {"Region (Neighbouring)", "2"},
+                {"Languages", "19"},
+                {"Religion/Philosophy", "2"},
+                {"Other Lores", "7"},
+                {"Running", "1"},
+                {"Influence", "2"},
+                {"Social Awareness", "3"},
+                {"Trading", "1"}
+        };
+        JTable skillTable = new JTable(data, columnNames);
+        skillTable.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+        skillTable.setFillsViewportHeight(true);
+
+        panel.add(skillTable);
+
+        return panel;
+    }
+
+    /*private JPanel createSkillListPane() {
         JPanel panel = new JPanel();
         GroupLayout layout = new GroupLayout(panel);
         panel.setLayout(layout);
@@ -98,7 +126,7 @@ public class ChooseCultureView extends JPanel {
         }
         layout.setVerticalGroup(vGroup);
         return panel;
-    }
+    }*/
 
     private JPanel createDescriptionPane() {
         description = new JTextArea("COSMOPOLITAN:\n" +
