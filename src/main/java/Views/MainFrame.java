@@ -45,7 +45,7 @@ public class MainFrame extends JFrame {
                 newCharView.reset(true);
             }
         });
-        newStatsView.returnToCharacterButtonClick(e -> {
+        chooseProfessionView.returnToCharacterName(e -> {
             newCharView.reset(true);
             cardLayout.show(this.getContentPane(), "myView");
         });
