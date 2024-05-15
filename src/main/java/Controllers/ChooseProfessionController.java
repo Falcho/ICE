@@ -23,6 +23,6 @@ public class ChooseProfessionController {
     }
 
     public boolean validateAndSave(){
-
+    return true;
     }
 }
