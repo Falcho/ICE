@@ -14,6 +14,17 @@ public class Rules {
         emptySkillList.put("Delving", new SkillCategory("Delving") );
         return emptySkillList;
     }
+    public static Map<String, Profession>getProfessionList() {
+        Map<String, Profession> professionList = new TreeMap<>();
+        ObjectMapper mapper = new ObjectMapper();
+        File json = new File("data/proffessions/professions.json");
+        try {
+            professionList = mapper.readValue(json, new TypeReference<Map<String, Profession>>() {});
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return professionList;
+    }
 
     public static Map<String, String> getTalentsAndFlaws() {
         Map<String,String> talentsAndFlaws = new HashMap<>();
