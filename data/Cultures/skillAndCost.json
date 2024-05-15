@@ -1,0 +1,383 @@
+{
+  "Skills": {
+    "Animal": {
+      "Cost": 2,
+      "Subskills": {
+        "Animal Handling": {
+          "Cost": 1,
+          "Cultures": {
+            "Cosmopolitan": 4,
+            "Harsh": 1,
+            "Highland": 3,
+            "Mariner": 2,
+            "Nomad": 1
+          }
+        },
+        "Riding": {
+          "Cost": 3,
+          "Cultures": {
+            "Cosmopolitan": 1,
+            "Harsh": 2
+          }
+        }
+      }
+    },
+    "Awareness": {
+      "Cost": 2,
+      "Subskills": {
+        "Perception": {
+          "Cost": 2,
+          "Cultures": {
+            "Cosmopolitan": 2,
+            "Harsh": 1,
+            "Highland": 2,
+            "Mariner": 1,
+            "Nomad": 1,
+            "Reaver": 1,
+            "Rural": 1,
+            "Sylvan": 2,
+            "Underground": 2
+          }
+        },
+        "Tracking": {
+          "Cost": 1,
+          "Cultures": {
+            "Cosmopolitan": 1,
+            "Harsh": 1,
+            "Highland": 1,
+            "Mariner": 1,
+            "Nomad": 1
+          }
+        }
+      }
+    },
+    "Brawn": {
+      "Cost": 3,
+      "Subskills": {
+        "Body Development": {
+          "Cost": 1,
+          "Cultures": {
+            "Cosmopolitan": 3,
+            "Harsh": 2,
+            "Highland": 1,
+            "Mariner": 1,
+            "Nomad": 2,
+            "Reaver": 1,
+            "Rural": 1,
+            "Sylvan": 2,
+            "Underground": 1
+          }
+        },
+        "Weight-training": {
+          "Cost": 1,
+          "Cultures": {
+            "Cosmopolitan": 1,
+            "Harsh": 1
+          }
+        }
+      }
+    },
+    "Battle Expertise": {
+      "Cost": 3,
+      "Subskills": {
+        "Maneuvering in Armor": {
+          "Cost": 1,
+          "Cultures": {
+            "Cosmopolitan": 1,
+            "Harsh": 2
+          }
+        },
+        "Combat Training": {
+          "Unarmed": {
+            "Cost": 4,
+            "Cultures": {
+              "Cosmopolitan": 1,
+              "Harsh": 1,
+              "Highland": 1,
+              "Mariner": 1,
+              "Nomad": 1,
+              "Reaver": 2,
+              "Rural": 1,
+              "Sylvan": 1,
+              "Underground": 1,
+              "Urban": 1
+            }
+          },
+          "Melee Weapons": {
+            "Cost": 4,
+            "Cultures": {
+              "Cosmopolitan": 1,
+              "Harsh": 1,
+              "Highland": 1,
+              "Mariner": 1
+            }
+          },
+          "Ranged Weapons": {
+            "Cost": 4,
+            "Cultures": {
+              "Cosmopolitan": 1,
+              "Harsh": 1,
+              "Highland": 1
+            }
+          }
+        }
+      }
+    },
+    "Composition & Perf. Art": {
+      "Cost": 2,
+      "Subskills": {
+        "choose 1-2 ranks/skill": {
+          "Cost": 4,
+          "Cultures": {
+            "Cosmopolitan": 1,
+            "Harsh": 1,
+            "Highland": 1,
+            "Mariner": 1,
+            "Nomad": 3
+          }
+        }
+      }
+    },
+    "Crafting & Vocation": {
+      "Cost": 2,
+      "Subskills": {
+        "choose 1-2 ranks/skill": {
+          "Cost": 6,
+          "Cultures": {
+            "Cosmopolitan": 4,
+            "Harsh": 4,
+            "Highland": 4,
+            "Mariner": 4,
+            "Nomad": 3,
+            "Reaver": 4,
+            "Rural": 4,
+            "Sylvan": 5,
+            "Underground": 7
+          }
+        }
+      }
+    },
+    "Environmental": {
+      "Cost": 3,
+      "Subskills": {
+        "Piloting": {
+          "Cost": 1
+        },
+        "Navigation": {
+          "Cost": 1,
+          "Cultures": {
+            "Cosmopolitan": 1,
+            "Harsh": 1
+          }
+        },
+        "Survival (Own region)": {
+          "Cost": 3,
+          "Cultures": {
+            "Cosmopolitan": 2,
+            "Harsh": 1,
+            "Highland": 1,
+            "Mariner": 1,
+            "Nomad": 2
+          }
+        }
+      }
+    },
+    "Gymnastic": {
+      "Cost": 3,
+      "Subskills": {
+        "Acrobatics": {
+          "Cost": 1
+        },
+        "Jumping": {
+          "Cost": 1,
+          "Cultures": {
+            "Cosmopolitan": 1,
+            "Harsh": 1
+          }
+        }
+      }
+    },
+    "Lore": {
+      "Cost": 1,
+      "Subskills": {
+        "Region (Own)": {
+          "Cost": 5,
+          "Cultures": {
+            "Cosmopolitan": 5,
+            "Harsh": 5,
+            "Highland": 5,
+            "Mariner": 5,
+            "Nomad": 5,
+            "Reaver": 5,
+            "Rural": 5,
+            "Sylvan": 5,
+            "Underground": 5,
+            "Urban": 5
+          }
+        },
+        "Region (Neighboring)": {
+          "Cost": 2,
+          "Cultures": {
+            "Cosmopolitan": 2,
+            "Harsh": 2,
+            "Highland": 2,
+            "Mariner": 1,
+            "Nomad": 3
+          }
+        },
+        "Languages": {
+          "Cost": 19,
+          "Cultures": {
+            "Cosmopolitan": 8,
+            "Harsh": 13,
+            "Highland": 15,
+            "Mariner": 14,
+            "Nomad": 11,
+            "Reaver": 13,
+            "Rural": 13,
+            "Sylvan": 13,
+            "Underground": 17
+          }
+        },
+        "Religion/Philosophy": {
+          "Cost": 2,
+          "Cultures": {
+            "Cosmopolitan": 1
+          }
+        },
+        "Other Lores": {
+          "Cost": 7,
+          "Cultures": {
+            "Cosmopolitan": 2,
+            "Harsh": 4,
+            "Highland": 5,
+            "Mariner": 4,
+            "Nomad": 3,
+            "Reaver": 5,
+            "Rural": 4,
+            "Sylvan": 4,
+            "Underground": 7
+          }
+        }
+      }
+    },
+    "Medical": {
+      "Cost": 3,
+      "Subskills": {
+        "Herbalism": {
+          "Cost": 1,
+          "Cultures": {
+            "Cosmopolitan": 1
+          }
+        },
+        "Medicine": {
+          "Cost": 2,
+          "Cultures": {
+            "Cosmopolitan": 1,
+            "Harsh": 1,
+            "Highland": 1,
+            "Mariner": 1,
+            "Nomad": 1,
+            "Reaver": 1,
+            "Rural": 2
+          }
+        }
+      }
+    },
+    "Movement": {
+      "Cost": 2,
+      "Subskills": {
+        "Climbing": {
+          "Cost": 1,
+          "Cultures": {
+            "Cosmopolitan": 1,
+            "Harsh": 1,
+            "Highland": 2,
+            "Mariner": 1
+          }
+        },
+        "Running": {
+          "Cost": 1,
+          "Cultures": {
+            "Cosmopolitan": 2,
+            "Harsh": 2,
+            "Highland": 1,
+            "Mariner": 2,
+            "Nomad": 2,
+            "Reaver": 1,
+            "Rural": 2,
+            "Sylvan": 1,
+            "Underground": 1
+          }
+        },
+        "Swimming": {
+          "Cost": 1,
+          "Cultures": {
+            "Cosmopolitan": 2,
+            "Harsh": 1
+          }
+        }
+      }
+    },
+    "Skills": {
+      "Social": {
+        "Cost": 2,
+        "Subskills": {
+          "Influence": {
+            "Cost": 2,
+            "Cultures": {
+              "Cosmopolitan": 1,
+              "Harsh": 1,
+              "Highland": 2
+            }
+          },
+          "Social Awareness": {
+            "Cost": 3,
+            "Cultures": {
+              "Cosmopolitan": 1,
+              "Harsh": 1,
+              "Highland": 1,
+              "Mariner": 1,
+              "Nomad": 1,
+              "Reaver": 1,
+              "Rural": 1,
+              "Sylvan": 1,
+              "Underground": 2
+            }
+          },
+          "Trading": {
+            "Cost": 1,
+            "Cultures": {
+              "Cosmopolitan": 1,
+              "Harsh": 1,
+              "Highland": 1,
+              "Mariner": 2
+            }
+          }
+        }
+      },
+      "Subterfuge": {
+        "Cost": 3,
+        "Subskills": {
+          "Concealment": {
+            "Cost": 1,
+            "Cultures": {
+              "Cosmopolitan": 1,
+              "Harsh": 1,
+              "Highland": 1
+            }
+          },
+          "Stalking": {
+            "Cost": 2,
+            "Cultures": {
+              "Cosmopolitan": 1,
+              "Harsh": 1,
+              "Highland": 2,
+              "Mariner": 2
+            }
+          }
+        }
+      }
+    }
+  }
+}
