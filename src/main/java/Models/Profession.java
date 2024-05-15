@@ -7,7 +7,7 @@ public class Profession {
 
     protected String name;
     protected String description;
-    protected Map<String, List<Integer>> professionSkillCost;
+    protected List<SkillCategory> professionSkillCost;
     protected List<String> availableRealms;
     protected List<Skill> availableProfessionalSkillList;
     protected Map<String, List<Spell>> professionSpell;
@@ -15,7 +15,7 @@ public class Profession {
     protected List<Skill> chosenKnacks;
     protected List<Skill> chosenRealms;
 
-    public Profession(String name, String description, Map<String, List<Integer>> professionSkillCost, List<String> chosenRealms, List<Skill> availableProfessionalSkillList) {
+    public Profession(String name, String description, List<SkillCategory> professionSkillCost, List<String> chosenRealms, List<Skill> availableProfessionalSkillList) {
         this.name = name;
         this.description = description;
         this.professionSkillCost = professionSkillCost;
@@ -23,15 +23,12 @@ public class Profession {
         this.availableProfessionalSkillList = availableProfessionalSkillList;
     }
 
-    public Map<String, List<Integer>> getSkillCost() {
-        return professionSkillCost;
-    }
 
     public List<Skill> getProfessionalSkill() {
         return availableProfessionalSkillList;
     }
 
-    public Map<String, List<Integer>> getProfessionSkillCost() {
+    public List<SkillCategory> getProfessionSkillCost() {
         return professionSkillCost;
     }
 
@@ -99,7 +96,7 @@ public class Profession {
         this.name = name;
     }
 
-    public void setProfessionSkillCost(Map<String, List<Integer>> professionSkillCost) {
+    public void setProfessionSkillCost(List<SkillCategory> professionSkillCost) {
         this.professionSkillCost = professionSkillCost;
     }
 
