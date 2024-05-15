@@ -25,6 +25,8 @@ public class TalentsAndFlawsView extends JPanel {
     private JLabel pointsLabel;
     private int totalPoints = 10;
     private Map<String, String> talentDescriptionMap;
+    private JButton previousButton;
+    private JButton continueButton;
 
 
 
@@ -95,29 +97,23 @@ public class TalentsAndFlawsView extends JPanel {
     private JPanel createBottomPanel() {
         JPanel panel = new JPanel(new BorderLayout());
 
-        JButton previousButton = new JButton("Return to Culture");
-        previousButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Håndter "Previous" knap tryk
-                JOptionPane.showMessageDialog(null, "Previous button clicked");
-            }
-        });
+        previousButton = new JButton("Return to Culture");
         panel.add(previousButton, BorderLayout.WEST);
 
-        JButton continueButton = new JButton("Continue to Stats");
-        continueButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                saveTalents();
-                // Håndter "Continue" knap tryk
-                JOptionPane.showMessageDialog(null, "Continue button clicked and talents saved.");
-            }
-        });
+        continueButton = new JButton("Continue to Stats");
         panel.add(continueButton, BorderLayout.EAST);
 
         return panel;
     }
+
+    public void continueButtonClick(ActionListener actionListener) {
+        continueButton.addActionListener(actionListener);
+    }
+
+    public void previousButtonClick(ActionListener actionListener) {
+        previousButton.addActionListener(actionListener);
+    }
+
 
 
 
@@ -186,7 +182,7 @@ public class TalentsAndFlawsView extends JPanel {
 
 
 
-    private void saveTalents() {
+    public void saveTalents() {
         selectedTalents.clear();
         for (int i = 0; i < labels.size(); i++) {
             String talentName = labels.get(i).getText().replaceAll("<html><body style='width: 150px'>|</body></html>", "");
