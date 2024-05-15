@@ -1,5 +1,6 @@
 package Views;
 
+import Models.Profession;
 import Models.Skill;
 import Models.SkillCategory;
 
@@ -160,36 +161,12 @@ public class ChooseProfessionView extends JPanel {
         return selectedIndex != -1;
     }
 
-    public List<Skill> getProfessionalSkill() {
-        return professionalSkill;
-    }
-
-    public void setProfessionalSkill(List<Skill> professionalSkill) {
-        this.professionalSkill = professionalSkill;
-    }
-
-    public JTextArea getProfessionDescription() {
-        return professionDescription;
-    }
-
-    public void setProfessionDescription(JTextArea professionDescription) {
-        this.professionDescription = professionDescription;
-    }
-
-    public List<SkillCategory> getSkillAndCostList() {
-        return skillAndCostList;
-    }
-
-    public void setSkillAndCostList(List<SkillCategory> skillAndCostList) {
-        this.skillAndCostList = skillAndCostList;
-    }
-
-    public JLabel getTitle() {
-        return title;
-    }
-
-    public void setTitle(JLabel title) {
-        this.title = title;
+    public Profession getSelectedProfession() {
+        int selectedIndex = professionJList.getSelectedIndex();
+        if (selectedIndex != -1) {
+            return (Profession) professionList.get(selectedIndex);
+        }
+        return null;
     }
 
     public void previousButtonClick(ActionListener actionListener) {
