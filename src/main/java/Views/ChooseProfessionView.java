@@ -9,12 +9,13 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 
 public class ChooseProfessionView extends JPanel {
 
     private JLabel title;
-    private List<Profession> professionList;
+    private Map<String,Profession> professionList;
     private JList<String> professionJList;
     private List<SkillCategory> skillAndCostList;
     private List<Skill> professionalSkill;
@@ -24,10 +25,10 @@ public class ChooseProfessionView extends JPanel {
     private JButton returnToCharacterName;
     private JButton saveAndContinueToRace;
 
-    public ChooseProfessionView() {
+    public ChooseProfessionView(Map<String,Profession> professionList) {
         //Initialize all components
         title = new JLabel("Choose Profession");
-        professionList = new ArrayList<>();
+        this.professionList = professionList;
         skillAndCostList = new ArrayList<>();
         professionalSkill = new ArrayList<>();
         professionDescription = new JTextArea();
@@ -57,8 +58,8 @@ public class ChooseProfessionView extends JPanel {
         JPanel panel = new JPanel(new BorderLayout());
 
         DefaultListModel<String> model = new DefaultListModel<>();
-        for (Profession profession : professionList) {
-            model.addElement(profession.getName());
+        for (String profession : professionList.keySet()) {
+            model.addElement(profession);
         }
 
         professionJList = new JList<>(model);
@@ -162,9 +163,9 @@ public class ChooseProfessionView extends JPanel {
     public Profession getSelectedProfession() {
         String selectedProfession = professionJList.getSelectedValue();
         if(selectedProfession != null){
-            for(Profession profession : professionList){
-                if(profession.getName().equals(selectedProfession)){
-                    return profession;
+            for(String profession : professionList.keySet()){
+                if(profession.equals(selectedProfession)){
+                    return professionList.get(profession);
                 }
             }
         }
@@ -187,13 +188,13 @@ public class ChooseProfessionView extends JPanel {
         this.professionDescription = professionDescription;
     }
 
-    public List<Profession> getProfessionJList() {
-        return professionList;
-    }
+//    public List<Profession> getProfessionJList() {
+//        return professionList;
+//    }
 
-    public void setProfessionJList(List<Profession> professionList) {
-        this.professionList = professionList;
-    }
+//    public void setProfessionJList(List<Profession> professionList) {
+//        this.professionList = professionList;
+//    }
 
     public List<SkillCategory> getSkillAndCostList() {
         return skillAndCostList;
