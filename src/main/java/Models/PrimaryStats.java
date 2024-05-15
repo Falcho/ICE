@@ -79,6 +79,41 @@ public class PrimaryStats {
     }
 
 
+    public Stat getStat(String statName){
+        if(statName.equals("agility")){
+            return this.agility;
+        }
+        if(statName.equals("constitution")){
+            return this.constitution;
+        }
+        if (statName.equals("empathy")){
+            return this.empathy;
+        }
+        if (statName.equals("intuition")) {
+            return this.empathy;
+        }
+        if (statName.equals("memory")) {
+            return this.empathy;
+        }
+        if (statName.equals("presence")) {
+            return this.empathy;
+        }
+        if (statName.equals("quickness")) {
+            return this.empathy;
+        }
+        if (statName.equals("reasoning")){
+            return this.empathy;
+        }
+        if (statName.equals("selfDiscipline")) {
+            return this.empathy;
+        }
+        if (statName.equals("strength")) {
+            return this.empathy;
+        }
+        return stat;
+    }
+
+
 }
 
 
