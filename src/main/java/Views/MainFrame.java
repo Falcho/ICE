@@ -1,5 +1,6 @@
 package Views;
 
+import Controllers.ChooseCultureController;
 import Controllers.CreateNewCharController;
 import Controllers.CreateStatsController;
 import Models.CharacterSheet;
@@ -30,6 +31,7 @@ public class MainFrame extends JFrame {
         CharacterSheet model = new CharacterSheet();
         CreateNewCharController newCharController = new CreateNewCharController(newCharView, model);
         CreateStatsController createStatsController = new CreateStatsController(newStatsView, model);
+        ChooseCultureController cultureController = new ChooseCultureController(chooseCultureView, model);
         //new CharacterSheetController(newStatsView);
 
 
