@@ -6,6 +6,13 @@ public class Culture {
     private String cultureName;
     private Map<String, Integer> skillMap;
 
+    public Culture() {
+    }
+
+    public Culture(String cultureName) {
+        this.cultureName = cultureName;
+    }
+
     public Culture(String cultureName, Map<String, Integer> skillMap) {
         this.cultureName = cultureName;
         this.skillMap = skillMap;
