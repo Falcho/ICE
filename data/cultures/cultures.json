@@ -129,28 +129,6 @@
       {"Trading": 1}
     ]
   },
-  "Nomad": {
-    "name": "Nomad",
-    "description": "Nomadic cultures tend to center around herding or hunting, driving their food supply with them or following its migrations. Mounts and herd animals are the core of their lives, and they tend to be far more focused on portable property and less focused on land ownership than non-nomads.",
-    "crafts": ["Culinary (cook)", "Fabric Craft (spinster, dyer, tailor, weaver, seamstress)", "Leathercraft (tanner, leather worker, tent maker, armorer, girdler)"],
-    "vocations": ["Herdsman", "Scout", "Guard", "Weaver", "Leather worker"],
-    "skills": [
-      {"perception": 2},
-      {"body development": 1},
-      {"unarmed": 1},
-      {"choose 1-2 ranks/skill (composition & perf. art)": 4},
-      {"choose 1-2 ranks/skill (crafting & vocation)": 6},
-      {"Lore region (own)": 5},
-      {"Lore region (neighboring)": 2},
-      {"languages": 19},
-      {"Lore religion/philosophy": 1},
-      {"Other lores": 7},
-      {"running": 1},
-      {"influence": 2},
-      {"social awareness": 3},
-      {"trading": 1}
-    ]
-  },
   "Reaver": {
     "name": "Reaver",
     "description": "Reavers represent a society of raiders, generally found in badlands adjacent to a more settled culture. They live by preying on the productivity of others, though they may also engage in herding or agriculture on a limited basis.",
