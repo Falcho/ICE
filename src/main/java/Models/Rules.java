@@ -34,7 +34,7 @@ public class Rules {
 
                 String name = (String) professionJson.get("name");
                 String description = (String) professionJson.get("description");
-                JsonArray availableSkillsArray = (JsonArray) professionJson.get("availableProfesionalSkillList");
+                JsonArray availableSkillsArray = (JsonArray) professionJson.get("availableProfessionalSkillList");
                 JsonArray skillCostArray = (JsonArray) professionJson.get("professionSkillCost");
 
                 //Convert available skills to list
