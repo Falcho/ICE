@@ -2,6 +2,7 @@ package Controllers;
 
 import Models.CharacterSheet;
 import Models.Culture;
+import Models.Profession;
 import Views.ChooseCultureView;
 
 import java.util.Map;
@@ -29,5 +30,25 @@ public class ChooseCultureController {
 
             view.setSkillTable(skillList);
         });
+    }
+
+    private boolean validate() {
+        return view.getChosenCulture()!=null;
+
+    }
+
+    private void saveDataToModel(Culture culture) {
+        model.setCulture(culture);
+
+    }
+
+    public boolean validateAndSave() {
+        Culture selectedCulture = view.getChosenCulture();
+        if (validate()) {
+            saveDataToModel(selectedCulture);
+            System.out.println("Selected Culture: " + selectedCulture.getName());
+            return true;
+        }
+        return false;
     }
 }
