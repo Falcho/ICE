@@ -14,7 +14,9 @@ import java.util.List;
 public class ChooseProfessionView extends JPanel {
 
     private JLabel title;
+    private Profession profession;
     private List<Profession> professionList;
+    private JList<String> professionJList;
     private List<SkillCategory> skillAndCostList;
     private List<Skill> professionalSkill;
     private JTextArea professionDescription;
@@ -60,7 +62,7 @@ public class ChooseProfessionView extends JPanel {
             model.addElement(profession.getName());
         }
 
-        JList<String> professionJList = new JList<>(model);
+        professionJList = new JList<>(model);
         professionJList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         professionJList.addListSelectionListener(e -> {
             if (!e.getValueIsAdjusting()) {
@@ -151,6 +153,15 @@ public class ChooseProfessionView extends JPanel {
         panel.add(returnToCharacterName);
         panel.add(saveAndContinueToRace);
         return panel;
+    }
+
+    public boolean isProfessionSelected(){
+        int selectedIndex = professionJList.getSelectedIndex();
+        return selectedIndex != -1;
+    }
+
+    public void setProfession() {
+        this.profession = profession;
     }
 
     public List<Skill> getProfessionalSkill() {
