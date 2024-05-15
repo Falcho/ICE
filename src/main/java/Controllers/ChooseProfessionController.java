@@ -23,7 +23,7 @@ public class ChooseProfessionController {
 
     }
 
-    public boolean validateAndSave(){
+   /* public boolean validateAndSave(){
     Profession profession = view.getSelectedProfession();
     if(validate(view)){
         saveDataToModel(profession);
@@ -31,5 +31,5 @@ public class ChooseProfessionController {
         return true;
     }
     return false;
-    }
+    }*/
 }
