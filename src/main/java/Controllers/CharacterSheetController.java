@@ -11,7 +11,7 @@ public class CharacterSheetController {
     public CharacterSheetController(CreateStatsView view) {
         this.view = view;
 
-        this.view.saveAndContinueButtonClick(e -> {
+        this.view.continueButtonClick(e -> {
             List<int[]> stats = this.view.getStats();
             for (int[] stat : stats) {
                 System.out.println(stat[0] + " " + stat[1]);
