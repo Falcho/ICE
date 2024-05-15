@@ -143,6 +143,10 @@ public class ChooseCultureView extends JPanel {
         continueButton.addActionListener(actionListener);
     }
 
+    public void dropDownSelection(ActionListener actionListener) {
+        chooseCultureDropdown.addActionListener(actionListener);
+    }
+
     public void reset(){
         for (JTextField[] jTextFields : field) {
             jTextFields[0].setText("");
