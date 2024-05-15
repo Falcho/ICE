@@ -2,6 +2,7 @@ package Views;
 
 import Controllers.CharacterSheetController;
 import Controllers.CreateNewCharController;
+import Controllers.CreateStatsController;
 import Models.CharacterSheet;
 import Models.Rules;
 
@@ -18,6 +19,7 @@ public class MainFrame extends JFrame {
         cardLayout = new CardLayout();
 
         CreateNewCharView newCharView = new CreateNewCharView();
+        JPanel chooseRaceView = new ChooseRaceView();
         CreateStatsView newStatsView = new CreateStatsView();
         ChooseProfessionView chooseProfessionView = new ChooseProfessionView();
         TalentsAndFlawsView talentsAndFlawsView = new TalentsAndFlawsView(Rules.getTalentsAndFlaws());
@@ -27,28 +29,40 @@ public class MainFrame extends JFrame {
         // initialize user controller
         CharacterSheet model = new CharacterSheet();
         CreateNewCharController newCharController = new CreateNewCharController(newCharView, model);
+        CreateStatsController createStatsController = new CreateStatsController(newStatsView, model);
         //new CharacterSheetController(newStatsView);
 
 
         // adds view to card layout with unique constraints
-        add(newCharView, "myView");
+        add(newCharView, "chooseName");
+        add(chooseRaceView, "chooseRace");
         add(chooseProfessionView, "professionView");
         add(newStatsView, "newStats");
         add(talentsAndFlawsView, "talentsAndFlaws");
-        cardLayout.show(this.getContentPane(), "talentsAndFlaws");
+        cardLayout.show(this.getContentPane(), "chooseRace");
         // switch view according to its constraints on click
         newCharView.saveAndContinue(e -> {
             if (newCharController.validateAndSave()) {
-                cardLayout.show(this.getContentPane(), "newStats");
+                cardLayout.show(this.getContentPane(), "professionView");
             }
             else {
                 newCharView.reset(true);
             }
         });
-        newStatsView.returnToCharacterButtonClick(e -> {
-            newCharView.reset(true);
-            cardLayout.show(this.getContentPane(), "myView");
+        chooseProfessionView.returnToCharacterName(e -> {
+            cardLayout.show(this.getContentPane(), "chooseName");
         });
+        chooseProfessionView.saveAndContinueToRace(e -> {
+            //Validate and save
+            cardLayout.show(this.getContentPane(), "newStats");
+        });
+        newStatsView.returnToCharacterButtonClick(e -> {
+            cardLayout.show(this.getContentPane(), "newStats");
+        });
+        newStatsView.saveAndContinueButtonClick(e -> {
+            cardLayout.show(this.getContentPane(), "talentsAndFlaws");
+        });
+        //talentsAndFlawsView.
 
 
         // icon for our application
