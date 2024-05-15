@@ -1,0 +1,179 @@
+{
+  "Cosmopolitan": {
+    "Description": "When a city gets large enough, those who dwell in it cease to be merely urban in culture. Large cities tend to have very finely specialized craftsmen, and the majority of their economy is devoted to trade and commerce. The combination of specialization, access to resources and cultural experiences you only find in large urban areas, and exposure to other people via trade and travel create a culture that is cosmopolitan.",
+    "Crafts": [
+      "Large, diverse cities foster specialization and support a wide range of crafts. Any craft is appropriate."
+    ],
+    "Vocations": [
+      "Bookkeeper",
+      "Guardsman",
+      "Librarian",
+      "Manager",
+      "Merchant",
+      "Officer",
+      "Scribe",
+      "Soldier",
+      "Valet",
+      "Any type of craftsman"
+    ]
+  },
+  "Harsh": {
+    "Description": "This culture represents people living in wastelands, though the type can vary. Tundra, ice shelves, lava fields, true deserts, or even some form of chemically or magically hostile wasteland all apply. People in these cultures live on the edge of survival and tend to be very focused on survival skills applicable to their harsh environment.",
+    "Crafts": [
+      "Culinary (cook)",
+      "Leathercraft (tanner, leather craft, armorer)",
+      "Metalcraft (blacksmith, weapon smith, armorer)",
+      "Woodcraft (carpenter)"
+    ],
+    "Vocations": [
+      "Hunter",
+      "Trapper",
+      "Shaman",
+      "Guide"
+    ]
+  },
+  "Highland": {
+    "Description": "Highlanders live in rough hills or mountainous terrain. They are usually somewhat isolated by the local geography and limited in food sources by a lack of flat land. They tend to engage in limited agriculture and herding.",
+    "Crafts": [
+      "Culinary (cook, brewer, butcher)",
+      "Fabric Craft (any)",
+      "Leathercraft (any)",
+      "Metalcraft (blacksmith, weapon smith, armorer)",
+      "Stonecraft (mason, stone dresser, potter)",
+      "Woodcraft (sawyer, carpenter, cart wright, cooper)"
+    ],
+    "Vocations": [
+      "Herdsman",
+      "Farmer",
+      "Weaver",
+      "Stonemason",
+      "Carpenter",
+      "Soldier",
+      "Miner"
+    ]
+  },
+  "Mariner": {
+    "Description": "Mariner cultures are usually located along the shores of an ocean, lake, or river, and their economies are usually fishing and trade based. They get the majority of their subsistence from the water, though they may also engage in herding or agriculture.",
+    "Crafts": [
+      "Culinary (cook, brewer)",
+      "Fabric Craft (tailor, seamstress, rope braider)",
+      "Leathercraft (leather worker, armorer)",
+      "Metalcraft (blacksmith, foundry worker, weapon smith, armorer)",
+      "Woodcraft (carpenter, ship wright, cooper)"
+    ],
+    "Vocations": [
+      "Sailor",
+      "Soldier",
+      "Pirate",
+      "Fisherman",
+      "Chandler",
+      "Ship builder",
+      "Sailmaker"
+    ]
+  },
+  "Nomad": {
+    "Description": "Nomadic cultures tend to center around herding or hunting, driving their food supply with them or following its migrations. Mounts and herd animals are the core of their lives, and they tend to be far more focused on portable property and less focused on land ownership than non-nomads.",
+    "Crafts": [
+      "Culinary (cook)",
+      "Fabric Craft (spinster, dyer, tailor, weaver, seamstress)",
+      "Leathercraft (tanner, leather worker, tent maker, armorer, girdler)"
+    ],
+    "Vocations": [
+      "Herdsman",
+      "Scout",
+      "Guard",
+      "Weaver",
+      "Leather worker"
+    ]
+  },
+  "Reaver": {
+    "Description": "Reavers represent a society of raiders, generally found in badlands adjacent to a more settled culture. They live by preying on the productivity of others, though they may also engage in herding or agriculture on a limited basis.",
+    "Crafts": [
+      "Culinary (cook)",
+      "Leathercraft (tanner, leather worker, armorer)",
+      "Metalcraft (blacksmith, weapon smith, armorer)"
+    ],
+    "Vocations": [
+      "Raider",
+      "Hunter",
+      "Scout",
+      "Bonesetter",
+      "Shaman"
+    ]
+  },
+  "Rural": {
+    "Description": "Most of the above cultures take place in rural environments, but this culture specifically refers to people who dwell in the rural areas of relatively open, settled lands. Rural people are usually farmers of some sort, tied to the land they tend. Some rural dwellers are engaged in crafts, but they tend to be small scale and oriented toward local use. Rural dwellers generally have a symbiotic relationship with nearby urban dwellers, exchanging food and raw materials for most of their manufactured goods.",
+    "Crafts": [
+      "Culinary (cook, brewer, butcher, cheese maker)",
+      "Fabric Craft (any)",
+      "Leathercraft (any)",
+      "Metalcraft (blacksmith, weapon smith, armorer)",
+      "Stonecraft (mason, stone dresser, potter)",
+      "Woodcraft (sawyer, carpenter, cart wright, cooper)"
+    ],
+    "Vocations": [
+      "Farmer",
+      "Herdsman",
+      "Militia",
+      "Weaver",
+      "Tinker",
+      "Stonemason",
+      "Carpenter"
+    ]
+  },
+  "Sylvan": {
+    "Description": "Sylvan peoples are woodland dwellers who may practice some limited herding and/or farming, but mostly live by hunting and gathering in their rich environment. These cultures tend to be spread out with low populations, as high concentrations of people often result in the forest being cleared and the culture shifting to a new type.",
+    "Crafts": [
+      "Culinary (any)",
+      "Fabric Craft (any)",
+      "Leathercraft (tanner, leather worker, cobbler, armorer)",
+      "Metalcraft (blacksmith, weapon smith)",
+      "Stonecraft (potter)",
+      "Woodcraft (sawyer, carpenter, cooper)"
+    ],
+    "Vocations": [
+      "Hunter",
+      "Farmer",
+      "Scout",
+      "Weaver",
+      "Carpenter",
+      "Leather worker"
+    ]
+  },
+  "Underground": {
+    "Description": "People who spend most or all of their time underground or inside vast structures are of this culture. Some steady supply of food must be available, be it animal herds, fungus farms, or fishing, or else the culture becomes fully dependent on trade for food (those that raid for food become Reavers).",
+    "Crafts": [
+      "Culinary (cook, brewer, butcher, cheese maker)",
+      "Fabric Craft (spinster, dyer, tailor, weaver, seamstress)",
+      "Leathercraft (tanner, leather worker, cobbler, armorer)",
+      "Metalcraft (any)",
+      "Stonecraft (any)"
+    ],
+    "Vocations": [
+      "Miner",
+      "Soldier",
+      "Blacksmith",
+      "Fungus farmer",
+      "Explorer",
+      "Scout"
+    ]
+  },
+  "Urban": {
+    "Description": "Urban dwellers are the people who live in the towns and small cities of a settled area. They tend to be skilled specialists or craftsmen, and usually live a symbiotic existence with the rural people of their region, exchanging finished goods for food and raw materials.",
+    "Crafts": [
+      "As with the Cosmopolitan culture, any craft is appropriate."
+    ],
+    "Vocations": [
+      "Bookkeeper",
+      "Guardsman",
+      "Librarian",
+      "Manager",
+      "Merchant",
+      "Officer",
+      "Scribe",
+      "Soldier",
+      "Valet",
+      "Any type of craftsman"
+    ]
+  }
+}
