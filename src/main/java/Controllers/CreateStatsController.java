@@ -1,7 +1,6 @@
 package Controllers;
 
 import Models.CharacterSheet;
-import Models.Stat;
 import Views.CreateStatsView;
 
 import java.util.ArrayList;
@@ -15,9 +14,7 @@ public class CreateStatsController {
         this.model = model;
         this.view = view;
 
-        view.rollStatsForMeButtonClick(e -> {
-            view.setStats(generateStats());
-        });
+        view.rollStatsForMeButtonClick(e -> view.setStats(generateStats()));
     }
 
     private boolean validate() {
