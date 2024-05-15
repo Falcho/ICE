@@ -13,9 +13,6 @@ public class ChooseProfessionController {
         this.model = model;
         this.view = view;
 
-        view.returnToCharacterName(e -> {
-
-        });
     }
     private boolean validate(ChooseProfessionView view) {
         if(view.isProfessionSelected());
@@ -23,5 +20,9 @@ public class ChooseProfessionController {
     }
     private void saveDataToModel(Profession profession) {
         model.setProfession(profession);
+    }
+
+    public boolean validateAndSave(){
+
     }
 }
