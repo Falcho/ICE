@@ -2,7 +2,6 @@ package Controllers;
 
 import Models.CharacterSheet;
 import Models.Culture;
-import Models.Profession;
 import Views.ChooseCultureView;
 
 import java.util.Map;
