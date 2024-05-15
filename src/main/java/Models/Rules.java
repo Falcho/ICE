@@ -22,14 +22,14 @@ public class Rules {
     }
 
     public static List<Map<String, Object>> getProfessionList(String profPath) {
-        List<Map<String,Object>> professions = new ArrayList<>();
+        List<Map<String, Object>> professions = new ArrayList<>();
 
-        try(FileReader reader = new FileReader("data/professions/professions.json")) {
+        try (FileReader reader = new FileReader("data/professions/professions.json")) {
             //Parse JSON File
             JsonArray professionList = (JsonArray) Jsoner.deserialize(reader);
 
             //Iterate over each profession object
-            for(Object profObj : professionList) {
+            for (Object profObj : professionList) {
                 JsonObject professionJson = (JsonObject) profObj;
 
                 String name = (String) professionJson.get("name");
@@ -38,45 +38,36 @@ public class Rules {
                 JsonArray skillCostArray = (JsonArray) professionJson.get("professionSkillCost");
 
                 //Convert available skills to list
-                List <String> availableSkills = new ArrayList<>();
-                for(Object skill : availableSkillsArray) {
+                List<String> availableSkills = new ArrayList<>();
+                for (Object skill : availableSkillsArray) {
                     availableSkills.add((String) skill);
                 }
                 //Convert skill costs to map
-                Map<String,List<Integer>> skillCosts = new HashMap<>();
-                for(Object skillCostObj : skillCostArray) {
+                Map<String, List<Integer>> skillCosts = new LinkedHashMap<>();
+                for (Object skillCostObj : skillCostArray) {
                     JsonObject skillCostJson = (JsonObject) skillCostObj;
                     String skillName = (String) skillCostJson.get("name");
                     int cost1 = ((Number) skillCostJson.get("cost1")).intValue();
                     int cost2 = ((Number) skillCostJson.get("cost2")).intValue();
                     skillCosts.put(skillName, Arrays.asList(cost1, cost2));
                 }
+
                 //Create profession map
                 Map<String, Object> profession = new HashMap<>();
                 profession.put("name", name);
                 profession.put("description", description);
                 profession.put("availableProfessionalSkillList", availableSkills);
-                profession.put("ProfessionSkillCosts", skillCosts);
+                profession.put("professionSkillCost", skillCosts);
+
+                professions.add(profession);
             }
 
-        }catch (IOException | JsonException e) {
+        } catch (IOException | JsonException e) {
             e.printStackTrace();
         }
         return professions;
     }
 
-  /* public static Map<String, Profession>getProfessionList() {
-        Map<String, Profession> professionMap = new TreeMap<>();
-        List<Profession> professionList;
-        ObjectMapper mapper = new ObjectMapper();
-        File json = new File("data/proffessions/professions.json");
-        try {
-            professionList = mapper.readValue(json, new TypeReference<List<Profession>>() {});
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        return professionMap;
-    }*/
 
     public static Map<String, String> getTalentsAndFlaws() {
         Map<String, String> talentsAndFlaws = new HashMap<>();
