@@ -19,97 +19,87 @@
       {"influence": 2},
       {"social awareness": 3},
       {"trading": 1}
-    ],
-    "Harsh": {
-      "name": "Harsh",
-      "description": "This culture represents people living in wastelands, though the type can vary. Tundra, ice shelves, lava fields, true deserts, or even some form of chemically or magically hostile wasteland all apply. People in these cultures live on the edge of survival and tend to be very focused on survival skills applicable to their harsh environment.",
-      "crafts": ["Culinary (cook)", "Leathercraft (tanner, leather craft, armorer)", "Metalcraft (blacksmith, weapon smith, armorer)", "Woodcraft (carpenter)"],
-      "vocations": ["Hunter", "Trapper", "Shaman", "Guide"],
-      "skills": [
-        {"perception": 2},
-        {"tracking": 1},
-        {"body development": 3},
-        {"Maneuvering in Armor": 1},
-        {"Unarmed": 1},
-        {"Melee Weapons": 1},
-        {"choose 1-2 ranks/skill (crafting & vocation)": 4},
-        {"Navigation": 1},
-        {"Survival (Own region)": 3},
-        {"Lore region (own)": 5},
-        {"languages": 8},
-        {"Other lores": 2},
-        {"Medicine": 2},
-        {"Running": 2},
-        {"Concealment": 1},
-        {"Stalking": 2}
-      ]
-    },
-    "Highland": {
-      "name": "Highland",
-      "description": "Highlanders live in rough hills or mountainous terrain. They are usually somewhat isolated by the local geography and limited in food sources by a lack of flat land. They tend to engage in limited agriculture and herding.",
-      "crafts": ["Culinary (cook, brewer, butcher)", "Fabric Craft (any)", "Leathercraft (any)", "Metalcraft (blacksmith, weapon smith, armorer)", "Stonecraft (mason, stone dresser, potter)", "Woodcraft (sawyer, carpenter, cart wright, cooper)"],
-      "vocations": ["Herdsman", "Farmer", "Weaver", "Stonemason", "Carpenter", "Soldier", "Miner"],
-      "skills": [
-        {"Animal Handling": 1},
-        {"Perception": 1},
-        {"Tracking": 1},
-        {"Body Development": 2},
-        {"Maneuvering in Armor": 1},
-        {"Unarmed": 1},
-        {"Melee Weapons": 1},
-        {"choose 1-2 ranks/skill (composition & perf. art)": 1},
-        {"choose 1-2 ranks/skill (crafting & vocation)": 4},
-        {"Survival (Own region)": 2},
-        {"Jumping": 1},
-        {"Lore region (own)": 5},
-        {"languages": 13},
-        {"Other lores": 4},
-        {"Medicine": 1},
-        {"Climbing": 1},
-        {"Running": 2},
-        {"Swimming": 1},
-        {"Social Awareness": 1},
-        {"Stalking": 1}
-      ]
-    },
-    "Mariner": {
-      "name": "Mariner",
-      "description": "Mariner cultures are usually located along the shores of an ocean, lake, or river, and their economies are usually fishing and trade based. They get the majority of their subsistence from the water, though they may also engage in herding or agriculture.",
-      "crafts": ["Culinary (cook, brewer)", "Fabric Craft (tailor, seamstress, rope braider)", "Leathercraft (leather worker, armorer)", "Metalcraft (blacksmith, foundry worker, weapon smith, armorer)", "Woodcraft (carpenter, ship wright, cooper)"],
-      "vocations": ["Sailor", "Soldier", "Pirate", "Fisherman", "Chandler", "Ship builder", "Sailmaker"],
-      "skills": [
-        {"Perception": 3},
-        {"Body Development": 2},
-        {"Weight-training": 2},
-        {"Unarmed": 5},
-        {"choose 1-2 ranks/skill (composition & perf. art)": 2},
-        {"choose 1-2 ranks/skill (crafting & vocation)": 1},
-        {"Navigation": 2},
-        {"Survival (Own region)": 2},
-        {"Acrobatics": 2},
-        {"Jumping": 2},
-        {"Lore region (own)": 2},
-        {"Lore region (neighboring)": 2},
-        {"languages": 2},
-        {"Other lores": 2},
-        {"Medicine": 2},
-        {"Climbing": 2},
-        {"Running": 2},
-        {"Swimming": 2},
-        {"Influence": 2},
-        {"Social Awareness": 2},
-        {"Trading": 2}
-      ]
-    }
+    ]
+  },
+  "Harsh": {
+    "name": "Harsh",
+    "description": "This culture represents people living in wastelands, though the type can vary. Tundra, ice shelves, lava fields, true deserts, or even some form of chemically or magically hostile wasteland all apply. People in these cultures live on the edge of survival and tend to be very focused on survival skills applicable to their harsh environment.",
+    "crafts": ["Culinary (cook)", "Leathercraft (tanner, leather craft, armorer)", "Metalcraft (blacksmith, weapon smith, armorer)", "Woodcraft (carpenter)"],
+    "vocations": ["Hunter", "Trapper", "Shaman", "Guide"],
+    "skills": [
+      {"perception": 2},
+      {"tracking": 1},
+      {"body development": 3},
+      {"Maneuvering in Armor": 1},
+      {"Unarmed": 1},
+      {"Melee Weapons": 1},
+      {"choose 1-2 ranks/skill (crafting & vocation)": 4},
+      {"Navigation": 1},
+      {"Survival (Own region)": 3},
+      {"Lore region (own)": 5},
+      {"languages": 8},
+      {"Other lores": 2},
+      {"Medicine": 2},
+      {"Running": 2},
+      {"Concealment": 1},
+      {"Stalking": 2}
+    ]
+  },
+  "Highland": {
+    "name": "Highland",
+    "description": "Highlanders live in rough hills or mountainous terrain. They are usually somewhat isolated by the local geography and limited in food sources by a lack of flat land. They tend to engage in limited agriculture and herding.",
+    "crafts": ["Culinary (cook, brewer, butcher)", "Fabric Craft (any)", "Leathercraft (any)", "Metalcraft (blacksmith, weapon smith, armorer)", "Stonecraft (mason, stone dresser, potter)", "Woodcraft (sawyer, carpenter, cart wright, cooper)"],
+    "vocations": ["Herdsman", "Farmer", "Weaver", "Stonemason", "Carpenter", "Soldier", "Miner"],
+    "skills": [
+      {"Animal Handling": 1},
+      {"Perception": 1},
+      {"Tracking": 1},
+      {"Body Development": 2},
+      {"Maneuvering in Armor": 1},
+      {"Unarmed": 1},
+      {"Melee Weapons": 1},
+      {"choose 1-2 ranks/skill (composition & perf. art)": 1},
+      {"choose 1-2 ranks/skill (crafting & vocation)": 4},
+      {"Survival (Own region)": 2},
+      {"Jumping": 1},
+      {"Lore region (own)": 5},
+      {"languages": 13},
+      {"Other lores": 4},
+      {"Medicine": 1},
+      {"Climbing": 1},
+      {"Running": 2},
+      {"Swimming": 1},
+      {"Social Awareness": 1},
+      {"Stalking": 1}
+    ]
+  },
+  "Mariner": {
+    "name": "Mariner",
+    "description": "Mariner cultures are usually located along the shores of an ocean, lake, or river, and their economies are usually fishing and trade based. They get the majority of their subsistence from the water, though they may also engage in herding or agriculture.",
+    "crafts": ["Culinary (cook, brewer)", "Fabric Craft (tailor, seamstress, rope braider)", "Leathercraft (leather worker, armorer)", "Metalcraft (blacksmith, foundry worker, weapon smith, armorer)", "Woodcraft (carpenter, ship wright, cooper)"],
+    "vocations": ["Sailor", "Soldier", "Pirate", "Fisherman", "Chandler", "Ship builder", "Sailmaker"],
+    "skills": [
+      {"Perception": 3},
+      {"Body Development": 2},
+      {"Weight-training": 2},
+      {"Unarmed": 5},
+      {"choose 1-2 ranks/skill (composition & perf. art)": 2},
+      {"choose 1-2 ranks/skill (crafting & vocation)": 1},
+      {"Navigation": 2},
+      {"Survival (Own region)": 2},
+      {"Acrobatics": 2},
+      {"Jumping": 2},
+      {"Lore region (own)": 2},
+      {"Lore region (neighboring)": 2},
+      {"languages": 2},
+      {"Other lores": 2},
+      {"Medicine": 2},
+      {"Climbing": 2},
+      {"Running": 2},
+      {"Swimming": 2},
+      {"Influence": 2},
+      {"Social Awareness": 2},
+      {"Trading": 2}
+    ]
   }
 }
-
-
-
-
-
-
-
-
-
-

@@ -8,7 +8,7 @@ public class Culture {
     private String description;
     private List<String> crafts;
     private List<String> vocations;
-    private Map<String, Integer> skillMap;
+    private Map<String, Integer> skills;
 
     public Culture() {
     }
@@ -33,8 +33,8 @@ public class Culture {
         return vocations;
     }
 
-    public Map<String, Integer> getSkillMap() {
-        return skillMap;
+    public Map<String, Integer> getSkills() {
+        return skills;
     }
 
     public void setName(String name) {
@@ -53,7 +53,7 @@ public class Culture {
         this.vocations = vocations;
     }
 
-    public void setSkillMap(Map<String, Integer> skillMap) {
-        this.skillMap = skillMap;
+    public void setSkills(Map<String, Integer> skills) {
+        this.skills = skills;
     }
 }
