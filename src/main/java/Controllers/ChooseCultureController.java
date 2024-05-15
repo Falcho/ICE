@@ -4,6 +4,8 @@ import Models.CharacterSheet;
 import Models.Culture;
 import Views.ChooseCultureView;
 
+import java.util.Map;
+
 public class ChooseCultureController {
     private final ChooseCultureView view;
     private final CharacterSheet model;
@@ -17,6 +19,15 @@ public class ChooseCultureController {
             view.setDescription(choice.getDescription());
             view.setCrafts(choice.getCrafts().toString());
             view.setVocations(choice.getVocations().toString());
+            String [][] skillList = new String[choice.getSkills().size()][2];
+            int i = 0;
+            for(Map.Entry<String, Integer> entry : choice.getSkills().entrySet()) {
+                skillList[i][0] = entry.getKey();
+                skillList[i][1] = String.valueOf(entry.getValue());
+                i++;
+            }
+
+            view.setSkillTable(skillList);
         });
     }
 }
