@@ -21,13 +21,13 @@ public class ChooseCultureView extends JPanel {
     private JButton continueButton;
     private JButton previousButton;
 
-    public ChooseCultureView() {
-        //this.cultures = cultures;
-        cultures = new HashMap<>();
+    public ChooseCultureView(Map<String, Culture> cultures) {
+        this.cultures = cultures;
+        /*cultures = new HashMap<>();
         cultures.put("Cosmopolitan", new Culture("Cosmopolitan"));
         cultures.put("Harsh", new Culture("Harsh"));
         cultures.put("Highland", new Culture("Highland"));
-        cultures.put("Malta", new Culture("Malta"));
+        cultures.put("Malta", new Culture("Malta"));*/
 
         String[] availableCultures = cultures.keySet().toArray(new String[0]);
         String[] columnNames = {"Skill Name", "Skill Points"};
