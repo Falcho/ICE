@@ -13,6 +13,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
+
 public class TalentsAndFlawsView extends JPanel {
 
     private List<JLabel> labels;
@@ -23,6 +25,8 @@ public class TalentsAndFlawsView extends JPanel {
     private JLabel pointsLabel;
     private int totalPoints = 10;
     private Map<String, String> talentDescriptionMap;
+
+
 
     public TalentsAndFlawsView(Map<String, String> talentDescriptionMap) {
         labels = new ArrayList<>();
@@ -46,6 +50,8 @@ public class TalentsAndFlawsView extends JPanel {
         this.add(createBottomPanel(), BorderLayout.SOUTH);
     }
 
+
+// opdatere detaljepanelet baseret på brugerinteraktioner.
     private void showDetailPanel(String text) {
         detailPanel.removeAll();
         JLabel detailLabel = new JLabel("<html><body style='width: 250px'>" + escapeHtml(text) + "</body></html>");
@@ -54,10 +60,12 @@ public class TalentsAndFlawsView extends JPanel {
         detailPanel.repaint();
     }
 
+
+// opretter scroll bar.
     private JScrollPane createScrollPane() {
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-
+//
         for (int i = 0; i < labels.size(); i++) {
             JPanel rowPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
             rowPanel.add(labels.get(i));
@@ -67,6 +75,8 @@ public class TalentsAndFlawsView extends JPanel {
 
         return new JScrollPane(panel);
     }
+
+
 
     private JPanel createTopPanel() {
         JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -80,18 +90,36 @@ public class TalentsAndFlawsView extends JPanel {
         return panel;
     }
 
+
+
     private JPanel createBottomPanel() {
-        JPanel panel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        JButton saveButton = new JButton("Save Talents");
-        saveButton.addActionListener(new ActionListener() {
+        JPanel panel = new JPanel(new BorderLayout());
+
+        JButton previousButton = new JButton("Previous");
+        previousButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Håndter "Previous" knap tryk
+                JOptionPane.showMessageDialog(null, "Previous button clicked");
+            }
+        });
+        panel.add(previousButton, BorderLayout.WEST);
+
+        JButton continueButton = new JButton("Continue");
+        continueButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 saveTalents();
+                // Håndter "Continue" knap tryk
+                JOptionPane.showMessageDialog(null, "Continue button clicked and talents saved.");
             }
         });
-        panel.add(saveButton);
+        panel.add(continueButton, BorderLayout.EAST);
+
         return panel;
     }
+
+
 
     private void addTalents() {
         for (String name : talentDescriptionMap.keySet()) {
@@ -114,6 +142,9 @@ public class TalentsAndFlawsView extends JPanel {
             fields.add(statField);
         }
     }
+
+
+
     private void updatePoints() {
         int usedPoints = 0;
         for (JTextField field : fields) {
@@ -121,9 +152,11 @@ public class TalentsAndFlawsView extends JPanel {
                 int value = Integer.parseInt(field.getText());
                 usedPoints += value;
             } catch (NumberFormatException e) {
-                // Ignorerer fejl hvis tekstfeltet ikke indeholder et tal
+
             }
         }
+
+
 
         int remainingPoints = totalPoints - usedPoints;
         if (remainingPoints < 0) {
@@ -137,17 +170,20 @@ public class TalentsAndFlawsView extends JPanel {
                         usedPoints -= value;
                     }
                 } catch (NumberFormatException e) {
-                    // Ignorerer fejl hvis tekstfeltet ikke indeholder et tal
+
                 }
             }
         }
 
+
+         // Viser en dialogboks, hvis der ikke er flere tilgængelige point
         pointsLabel.setText("Points remaining: " + remainingPoints);
         if (remainingPoints == 0) {
-            // Viser en dialogboks, hvis der ikke er flere tilgængelige point
+
             JOptionPane.showMessageDialog(this, "You have used all your points.", "No Points Remaining", JOptionPane.WARNING_MESSAGE);
         }
     }
+
 
 
     private void saveTalents() {
@@ -157,14 +193,14 @@ public class TalentsAndFlawsView extends JPanel {
             try {
                 int value = Integer.parseInt(fields.get(i).getText());
                 selectedTalents.put(talentName, value);
-            } catch (NumberFormatException e
+            } catch (NumberFormatException e) {
 
-            ) {
-                // Ignore if the field does not contain a number
             }
         }
         System.out.println("Selected Talents: " + selectedTalents);
     }
+
+
 
     private String escapeHtml(String text) {
         return text.replace("&", "&amp;")
