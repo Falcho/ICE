@@ -35,11 +35,11 @@ public class MainFrame extends JFrame {
         add(chooseProfessionView, "professionView");
         add(newStatsView, "newStats");
         add(talentsAndFlawsView, "talentsAndFlaws");
-        cardLayout.show(this.getContentPane(), "talentsAndFlaws");
+        cardLayout.show(this.getContentPane(), "myView");
         // switch view according to its constraints on click
         newCharView.saveAndContinue(e -> {
             if (newCharController.validateAndSave()) {
-                cardLayout.show(this.getContentPane(), "newStats");
+                cardLayout.show(this.getContentPane(), "professionView");
             }
             else {
                 newCharView.reset(true);
