@@ -1,6 +1,7 @@
 package Controllers;
 
 import Models.CharacterSheet;
+import Models.Stat;
 import Views.CreateStatsView;
 
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ import java.util.Random;
 public class CreateStatsController {
     CharacterSheet model;
     CreateStatsView view;
-    public CreateStatsController(CharacterSheet model, CreateStatsView view) {
+    public CreateStatsController(CreateStatsView view, CharacterSheet model) {
         this.model = model;
         this.view = view;
 
