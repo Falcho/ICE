@@ -19,20 +19,22 @@ public class MainFrame extends JFrame {
         cardLayout = new CardLayout();
 
         CreateNewCharView newCharView = new CreateNewCharView();
-        ChooseProfessionView chooseProfessionView = new ChooseProfessionView();
-        //JPanel chooseRaceView = new ChooseRaceView();
+        ChooseProfessionView chooseProfessionView = new ChooseProfessionView(Rules.getProfessionList("data/professions/professions.json"));
+        //ChooseRaceView chooseRaceView = new ChooseRaceView();
         ChooseCultureView chooseCultureView = new ChooseCultureView(Rules.getCultures());
-        CreateStatsView newStatsView = new CreateStatsView();
         TalentsAndFlawsView talentsAndFlawsView = new TalentsAndFlawsView(Rules.getTalentsAndFlaws());
+        CreateStatsView generateStatsView = new CreateStatsView();
+        //CreateBackgroundView createBackgroundView = new CreateBackgroundView();
+        //CharacterSheetView characterSheetView = new CharacterSheetView();
         // sets our layout as a card layout
         setLayout(cardLayout);
 
         // initialize user controller
         CharacterSheet model = new CharacterSheet();
         CreateNewCharController newCharController = new CreateNewCharController(newCharView, model);
-        CreateStatsController createStatsController = new CreateStatsController(newStatsView, model);
+        CreateStatsController createStatsController = new CreateStatsController(generateStatsView, model);
         ChooseCultureController cultureController = new ChooseCultureController(chooseCultureView, model);
-        //new CharacterSheetController(newStatsView);
+        //new CharacterSheetController(generateStatsView);
 
 
         // adds view to card layout with unique constraints
@@ -41,8 +43,10 @@ public class MainFrame extends JFrame {
         //add(chooseRaceView, "chooseRace");
         add(chooseCultureView, "cultureView");
         add(talentsAndFlawsView, "talentsAndFlaws");
-        add(newStatsView, "newStats");
-        cardLayout.show(this.getContentPane(), "cultureView");
+        add(generateStatsView, "generateStats");
+        //add(createBackgroundView, "createBackground");
+        //add(characterSheetView, "characterSheet");
+        cardLayout.show(this.getContentPane(), "chooseName");
         // switch view according to its constraints on click
         newCharView.continueButtonClick(e -> {
             if (newCharController.validateAndSave()) {
@@ -52,6 +56,7 @@ public class MainFrame extends JFrame {
                 newCharView.reset(true);
             }
         });
+
         chooseProfessionView.previousButtonClick(e -> {
             cardLayout.show(this.getContentPane(), "chooseName");
         });
@@ -59,19 +64,40 @@ public class MainFrame extends JFrame {
             //Validate and save
             cardLayout.show(this.getContentPane(), "talentsAndFlaws");
         });
-        //talentsAndFlawsView.
-        newStatsView.previousButtonClick(e -> {
+
+        /*chooseRaceView.previousButtonClick(e -> {
+            cardLayout.show(this.getContentPane(), "professionView");
+        });
+        chooseRaceView.continueButtonClick(e -> {
             cardLayout.show(this.getContentPane(), "talentsAndFlaws");
         });
-        newStatsView.continueButtonClick(e -> {
-            cardLayout.show(this.getContentPane(), "");
+
+        talentsAndFlawsView.previousButtonClick(e -> {
+            cardLayout.show(this.getContentPane(), "chooseRace");
         });
-        //talentsAndFlawsView.
+        talentsAndFlawsView.continueButtonClick(e -> {
+            cardLayout.show(this.getContentPane(), "generateStats");
+        });*/
+
+        generateStatsView.previousButtonClick(e -> {
+            cardLayout.show(this.getContentPane(), "talentsAndFlaws");
+        });
+        generateStatsView.continueButtonClick(e -> {
+            cardLayout.show(this.getContentPane(), "createBackground");
+        });
+
+        /*generateStatsView.previousButtonClick(e -> {
+            cardLayout.show(this.getContentPane(), "generateStats");
+        });
+        generateStatsView.continueButtonClick(e -> {
+            cardLayout.show(this.getContentPane(), "characterSheet");
+        });*/
+
 
 
         // icon for our application
-        //ImageIcon imageIcon = new ImageIcon("data/appicon.png");
-        //setIconImage(imageIcon.getImage());
+        ImageIcon imageIcon = new ImageIcon("data/apple-touch-icon.png");
+        setIconImage(imageIcon.getImage());
         // frame width & height
         int FRAME_WIDTH = 1200;
         int FRAME_HEIGHT = 700;
