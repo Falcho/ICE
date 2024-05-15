@@ -5,7 +5,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.*;
 
 public class Rules {
@@ -14,16 +16,17 @@ public class Rules {
         emptySkillList.put("Delving", new SkillCategory("Delving") );
         return emptySkillList;
     }
-    public static Map<String, Profession>getProfessionList() {
-        Map<String, Profession> professionList = new TreeMap<>();
+   public static Map<String, Profession>getProfessionList() {
+        Map<String, Profession> professionMap = new TreeMap<>();
+        List<Profession> professionList;
         ObjectMapper mapper = new ObjectMapper();
         File json = new File("data/proffessions/professions.json");
         try {
-            professionList = mapper.readValue(json, new TypeReference<Map<String, Profession>>() {});
+            professionList = mapper.readValue(json, new TypeReference<List<Profession>>() {});
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return professionList;
+        return professionMap;
     }
 
     public static Map<String, String> getTalentsAndFlaws() {
