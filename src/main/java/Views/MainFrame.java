@@ -60,28 +60,30 @@ public class MainFrame extends JFrame {
         });
 
         chooseProfessionView.previousButtonClick(e -> {
-            if (chooseProfessionController.validateAndSave()) {
-                cardLayout.show(this.getContentPane(), "chooseName");
-            }
+            cardLayout.show(this.getContentPane(), "chooseName");
         });
         chooseProfessionView.continueButtonClick(e -> {
-            //Validate and save
-            cardLayout.show(this.getContentPane(), "talentsAndFlaws");
+            //if (chooseProfessionController.validateAndSave()) {
+                cardLayout.show(this.getContentPane(), "talentsAndFlaws");
+            //}
         });
 
         /*chooseRaceView.previousButtonClick(e -> {
             cardLayout.show(this.getContentPane(), "professionView");
         });
         chooseRaceView.continueButtonClick(e -> {
-            cardLayout.show(this.getContentPane(), "talentsAndFlaws");
-        });
+            if (chooseRaceController.validateAndSave()) {
+                cardLayout.show(this.getContentPane(), "talentsAndFlaws");
+            }
+        });*/
 
         talentsAndFlawsView.previousButtonClick(e -> {
             cardLayout.show(this.getContentPane(), "chooseRace");
         });
         talentsAndFlawsView.continueButtonClick(e -> {
+            talentsAndFlawsView.saveTalents();
             cardLayout.show(this.getContentPane(), "generateStats");
-        });*/
+        });
 
         generateStatsView.previousButtonClick(e -> {
             cardLayout.show(this.getContentPane(), "talentsAndFlaws");
