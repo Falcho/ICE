@@ -118,13 +118,13 @@ public class ChooseProfessionView extends JPanel {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < skillAndCostList.size(); i += 2) {
             SkillCategory category1 = skillAndCostList.get(i);
-            sb.append(category1.getName()).append(" (").append(category1.getDPCostFirst()).append(", ")
-                    .append(category1.getDPCostSecond()).append(")");
+            sb.append(category1.getName()).append(" (").append(category1.getCost1()).append(", ")
+                    .append(category1.getCost2()).append(")");
             if (i + 1 < skillAndCostList.size()) { // Check if there's a second category
                 SkillCategory category2 = skillAndCostList.get(i + 1);
                 sb.append("   ");
-                sb.append(category2.getName()).append(" (").append(category2.getDPCostFirst()).append(", ")
-                        .append(category2.getDPCostSecond()).append(")");
+                sb.append(category2.getName()).append(" (").append(category2.getCost1()).append(", ")
+                        .append(category2.getCost2()).append(")");
             }
             sb.append("\n");
         }
@@ -236,8 +236,8 @@ public class ChooseProfessionView extends JPanel {
     private void updateProfessionSkillCostPanel() {
         StringBuilder sb = new StringBuilder();
         for (SkillCategory category : skillAndCostList) {
-            sb.append(category.getName()).append(" (").append(category.getDPCostFirst()).append(", ").
-                    append(category.getDPCostSecond()).append(")\n");
+            sb.append(category.getName()).append(" (").append(category.getCost1()).append(", ").
+                    append(category.getCost2()).append(")\n");
         }
         professionDescription.setText(sb.toString());
     }
