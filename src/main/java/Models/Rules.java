@@ -38,4 +38,18 @@ public class Rules {
 
         return talentsAndFlaws;
     }
+
+    public static Map<String, Culture> getCultures(){
+        Map<String, Culture> cultures = new TreeMap<>();
+        ObjectMapper objectMapper = new ObjectMapper();
+        //CollectionType collectionType = objectMapper.getTypeFactory().constructCollectionType(Map.class, Culture.class);
+        File json = new File("data/cultures/cultures.json");
+
+        try {
+            cultures = objectMapper.readValue(json, new TypeReference<Map<String, Culture>>(){});
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return cultures;
+    }
 }
