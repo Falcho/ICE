@@ -20,5 +20,203 @@
       {"social awareness": 3},
       {"trading": 1}
     ]
+  },
+  "Harsh": {
+    "name": "Harsh",
+    "description": "This culture represents people living in wastelands, though the type can vary. Tundra, ice shelves, lava fields, true deserts, or even some form of chemically or magically hostile wasteland all apply. People in these cultures live on the edge of survival and tend to be very focused on survival skills applicable to their harsh environment.",
+    "crafts": ["Culinary (cook)", "Leathercraft (tanner, leather craft, armorer)", "Metalcraft (blacksmith, weapon smith, armorer)", "Woodcraft (carpenter)"],
+    "vocations": ["Hunter", "Trapper", "Shaman", "Guide"],
+    "skills": [
+      {"perception": 2},
+      {"body development": 1},
+      {"unarmed": 1},
+      {"choose 1-2 ranks/skill (composition & perf. art)": 4},
+      {"choose 1-2 ranks/skill (crafting & vocation)": 6},
+      {"Lore region (own)": 5},
+      {"Lore region (neighboring)": 2},
+      {"languages": 19},
+      {"Lore religion/philosophy": 1},
+      {"Other lores": 7},
+      {"running": 1},
+      {"influence": 2},
+      {"social awareness": 3},
+      {"trading": 1}
+    ]
+  },
+  "Highland": {
+    "name": "Highland",
+    "description": "Highlanders live in rough hills or mountainous terrain. They are usually somewhat isolated by the local geography and limited in food sources by a lack of flat land. They tend to engage in limited agriculture and herding.",
+    "crafts": ["Culinary (cook, brewer, butcher)", "Fabric Craft (any)", "Leathercraft (any)", "Metalcraft (blacksmith, weapon smith, armorer)", "Stonecraft (mason, stone dresser, potter)", "Woodcraft (sawyer, carpenter, cart wright, cooper)"],
+    "vocations": ["Herdsman", "Farmer", "Weaver", "Stonemason", "Carpenter", "Soldier", "Miner"],
+    "skills": [
+      {"perception": 2},
+      {"body development": 1},
+      {"unarmed": 1},
+      {"choose 1-2 ranks/skill (composition & perf. art)": 4},
+      {"choose 1-2 ranks/skill (crafting & vocation)": 6},
+      {"Lore region (own)": 5},
+      {"Lore region (neighboring)": 2},
+      {"languages": 19},
+      {"Lore religion/philosophy": 1},
+      {"Other lores": 7},
+      {"running": 1},
+      {"influence": 2},
+      {"social awareness": 3},
+      {"trading": 1}
+    ]
+  },
+  "Mariner": {
+    "name": "Mariner",
+    "description": "Mariner cultures are usually located along the shores of an ocean, lake, or river, and their economies are usually fishing and trade based. They get the majority of their subsistence from the water, though they may also engage in herding or agriculture.",
+    "crafts": ["Culinary (cook, brewer)", "Fabric Craft (tailor, seamstress, rope braider)", "Leathercraft (leather worker, armorer)", "Metalcraft (blacksmith, foundry worker, weapon smith, armorer)", "Woodcraft (carpenter, ship wright, cooper)"],
+    "vocations": ["Sailor", "Soldier", "Pirate", "Fisherman", "Chandler", "Ship builder", "Sailmaker"],
+    "skills": [
+      {"perception": 2},
+      {"body development": 1},
+      {"unarmed": 1},
+      {"choose 1-2 ranks/skill (composition & perf. art)": 4},
+      {"choose 1-2 ranks/skill (crafting & vocation)": 6},
+      {"Lore region (own)": 5},
+      {"Lore region (neighboring)": 2},
+      {"languages": 19},
+      {"Lore religion/philosophy": 1},
+      {"Other lores": 7},
+      {"running": 1},
+      {"influence": 2},
+      {"social awareness": 3},
+      {"trading": 1}
+    ]
+  },
+  "Nomad": {
+    "name": "Nomad",
+    "description": "Nomadic cultures tend to center around herding or hunting, driving their food supply with them or following its migrations. Mounts and herd animals are the core of their lives, and they tend to be far more focused on portable property and less focused on land ownership than non-nomads.",
+    "crafts": ["Culinary (cook)", "Fabric Craft (spinster, dyer, tailor, weaver, seamstress)", "Leathercraft (tanner, leather worker, tent maker, armorer, girdler)"],
+    "vocations": ["Herdsman", "Scout", "Guard", "Weaver", "Leather worker"],
+    "skills": [
+      {"perception": 2},
+      {"body development": 1},
+      {"unarmed": 1},
+      {"choose 1-2 ranks/skill (composition & perf. art)": 4},
+      {"choose 1-2 ranks/skill (crafting & vocation)": 6},
+      {"Lore region (own)": 5},
+      {"Lore region (neighboring)": 2},
+      {"languages": 19},
+      {"Lore religion/philosophy": 1},
+      {"Other lores": 7},
+      {"running": 1},
+      {"influence": 2},
+      {"social awareness": 3},
+      {"trading": 1}
+    ]
+  },
+  "Reaver": {
+    "name": "Reaver",
+    "description": "Reavers represent a society of raiders, generally found in badlands adjacent to a more settled culture. They live by preying on the productivity of others, though they may also engage in herding or agriculture on a limited basis.",
+    "crafts": ["Culinary (cook)", "Leathercraft (tanner, leather worker, armorer)", "Metalcraft (blacksmith, weapon smith, armorer)"],
+    "vocations": ["Raider", "Hunter", "Scout", "Bonesetter", "Shaman"],
+    "skills": [
+      {"perception": 2},
+      {"body development": 1},
+      {"unarmed": 1},
+      {"choose 1-2 ranks/skill (composition & perf. art)": 4},
+      {"choose 1-2 ranks/skill (crafting & vocation)": 6},
+      {"Lore region (own)": 5},
+      {"Lore region (neighboring)": 2},
+      {"languages": 19},
+      {"Lore religion/philosophy": 1},
+      {"Other lores": 7},
+      {"running": 1},
+      {"influence": 2},
+      {"social awareness": 3},
+      {"trading": 1}
+    ]
+  },
+  "Rural": {
+    "name": "Rural",
+    "description": "Most of the above cultures take place in rural environments, but this culture specifically refers to people who dwell in the rural areas of relatively open, settled lands. Rural people are usually farmers of some sort, tied to the land they tend. Some rural dwellers are engaged in crafts, but they tend to be small scale and oriented toward local use. Rural dwellers generally have a symbiotic relationship with nearby urban dwellers, exchanging food and raw materials for most of their manufactured goods.",
+    "crafts": ["Culinary (cook, brewer, butcher, cheese maker)", "Fabric Craft (any)", "Leathercraft (any)", "Metalcraft (blacksmith, weapon smith, armorer)", "Stonecraft (mason, stone dresser, potter)", "Woodcraft (sawyer, carpenter, cart wright, cooper)"],
+    "vocations": ["Farmer", "Herdsman", "Militia", "Weaver", "Tinker", "Stonemason", "Carpenter"],
+    "skills": [
+      {"perception": 2},
+      {"body development": 1},
+      {"unarmed": 1},
+      {"choose 1-2 ranks/skill (composition & perf. art)": 4},
+      {"choose 1-2 ranks/skill (crafting & vocation)": 6},
+      {"Lore region (own)": 5},
+      {"Lore region (neighboring)": 2},
+      {"languages": 19},
+      {"Lore religion/philosophy": 1},
+      {"Other lores": 7},
+      {"running": 1},
+      {"influence": 2},
+      {"social awareness": 3},
+      {"trading": 1}
+    ]
+  },
+  "Sylvan": {
+    "name": "Sylvan",
+    "description": "Sylvan peoples are woodland dwellers who may practice some limited herding and/or farming, but mostly live by hunting and gathering in their rich environment. These cultures tend to be spread out with low populations, as high concentrations of people often result in the forest being cleared and the culture shifting to a new type.",
+    "crafts": ["Culinary (any)", "Fabric Craft (any)", "Leathercraft (tanner, leather worker, cobbler, armorer)", "Metalcraft (blacksmith, weapon smith)", "Stonecraft (potter)", "Woodcraft (sawyer, carpenter, cooper)"],
+    "vocations": ["Hunter", "Farmer", "Scout", "Weaver", "Carpenter", "Leather worker"],
+    "skills": [
+      {"perception": 2},
+      {"body development": 1},
+      {"unarmed": 1},
+      {"choose 1-2 ranks/skill (composition & perf. art)": 4},
+      {"choose 1-2 ranks/skill (crafting & vocation)": 6},
+      {"Lore region (own)": 5},
+      {"Lore region (neighboring)": 2},
+      {"languages": 19},
+      {"Lore religion/philosophy": 1},
+      {"Other lores": 7},
+      {"running": 1},
+      {"influence": 2},
+      {"social awareness": 3},
+      {"trading": 1}
+    ]
+  },
+  "Underground": {
+    "name": "Underground",
+    "description": "People who spend most or all of their time underground or inside vast structures are of this culture. Some steady supply of food must be available, be it animal herds, fungus farms, or fishing, or else the culture becomes fully dependent on trade for food (those that raid for food become Reavers).",
+    "crafts": ["Culinary (cook, brewer, butcher, cheese maker)", "Fabric Craft (spinster, dyer, tailor, weaver, seamstress)", "Leathercraft (tanner, leather worker, cobbler, armorer)", "Metalcraft (any)", "Stonecraft (any)"],
+    "vocations": ["Miner", "Soldier", "Blacksmith", "Fungus farmer", "Explorer", "Scout"],
+    "skills": [
+      {"perception": 2},
+      {"body development": 1},
+      {"unarmed": 1},
+      {"choose 1-2 ranks/skill (composition & perf. art)": 4},
+      {"choose 1-2 ranks/skill (crafting & vocation)": 6},
+      {"Lore region (own)": 5},
+      {"Lore region (neighboring)": 2},
+      {"languages": 19},
+      {"Lore religion/philosophy": 1},
+      {"Other lores": 7},
+      {"running": 1},
+      {"influence": 2},
+      {"social awareness": 3},
+      {"trading": 1}
+    ]
+  },
+  "Urban": {
+    "name": "Urban",
+    "description": "Urban dwellers are the people who live in the towns and small cities of a settled area. They tend to be skilled specialists or craftsmen, and usually live a symbiotic existence with the rural people of their region, exchanging finished goods for food and raw materials.",
+    "crafts": ["As with the Cosmopolitan culture, any craft is appropriate."],
+    "vocations": ["Bookkeeper", "Guardsman", "Librarian", "Manager", "Merchant", "Officer", "Scribe", "Soldier", "Valet", "Any type of craftsman"],
+    "skills": [
+      {"perception": 2},
+      {"body development": 1},
+      {"unarmed": 1},
+      {"choose 1-2 ranks/skill (composition & perf. art)": 4},
+      {"choose 1-2 ranks/skill (crafting & vocation)": 6},
+      {"Lore region (own)": 5},
+      {"Lore region (neighboring)": 2},
+      {"languages": 19},
+      {"Lore religion/philosophy": 1},
+      {"Other lores": 7},
+      {"running": 1},
+      {"influence": 2},
+      {"social awareness": 3},
+      {"trading": 1}
+    ]
   }
 }
