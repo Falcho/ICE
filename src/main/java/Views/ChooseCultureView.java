@@ -53,7 +53,7 @@ public class ChooseCultureView extends JPanel {
         title.setFont(font);
 
         chooseCultureDropdown = new JComboBox<>(availableCultures);
-        continueButton = new JButton("Go To Stats");
+        continueButton = new JButton("Continue To Talents");
         previousButton = new JButton("Previous");
 
         setLayout(new BorderLayout());
