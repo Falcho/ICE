@@ -14,6 +14,7 @@ import java.util.List;
 public class ChooseProfessionView extends JPanel {
 
     private JLabel title;
+    private Profession profession;
     private List<Profession> professionList;
     private JList<String> professionJList;
     private List<SkillCategory> skillAndCostList;
@@ -157,6 +158,10 @@ public class ChooseProfessionView extends JPanel {
     public boolean isProfessionSelected(){
         int selectedIndex = professionJList.getSelectedIndex();
         return selectedIndex != -1;
+    }
+
+    public void setProfession() {
+        this.profession = profession;
     }
 
     public List<Skill> getProfessionalSkill() {
