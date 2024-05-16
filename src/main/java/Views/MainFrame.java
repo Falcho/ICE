@@ -19,6 +19,7 @@ public class MainFrame extends JFrame {
         super("Rolemaster Character Generator");
         cardLayout = new CardLayout();
 
+        StartMenuView menuView= new StartMenuView();
         CreateNewCharView newCharView = new CreateNewCharView();
         ChooseProfessionView chooseProfessionView = new ChooseProfessionView(Rules.getProfessionList("data/professions/professions.json"));
         //ChooseRaceView chooseRaceView = new ChooseRaceView();
@@ -40,6 +41,7 @@ public class MainFrame extends JFrame {
 
 
         // adds view to card layout with unique constraints
+        add(menuView,"menuView");
         add(newCharView, "chooseName");
         add(chooseProfessionView, "professionView");
         //add(chooseRaceView, "chooseRace");
@@ -50,6 +52,9 @@ public class MainFrame extends JFrame {
         //add(characterSheetView, "characterSheet");
         cardLayout.show(this.getContentPane(), "chooseName");
         // switch view according to its constraints on click
+        menuView.createNewClick(e -> {
+            changeView("chooseName");
+        });
         newCharView.continueButtonClick(e -> {
             if (newCharController.validateAndSave()) {
                 changeView("professionView");
