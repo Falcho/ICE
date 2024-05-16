@@ -30,6 +30,7 @@ public class ChooseRaceView extends JPanel {
     DefaultTableModel statBonusTableModel;
     DefaultTableModel resistanceTableModel;
     DefaultTableModel healthAndDevTableModel;
+    private String[] defaultColumnNames;
 
     //Map<String, Race> races ---- skal ind i constructor som argument
     public ChooseRaceView() {
@@ -60,6 +61,7 @@ public class ChooseRaceView extends JPanel {
         statBonusTable = new JTable();
         resistanceTable = new JTable();
         healthAndDevTable = new JTable();
+        defaultColumnNames = new String[]{"","","",""};
 
         dropDown = new JComboBox<>();
         previousButton = new JButton("Previous");
@@ -167,6 +169,35 @@ public class ChooseRaceView extends JPanel {
         panel.add(continueButton);
         return panel;
     }
+
+    //Getters
+    public Race getChosenRace(){
+        return races.get(dropDown.getSelectedItem());
+    }
+
+
+    //Setters
+    public void setDescription(String description){
+        this.description.setText(description);
+    }
+    public void setTAndFlawDescription(String tAndFlawDescription){
+        this.tAndFlawDescription.setText(tAndFlawDescription);
+    }
+    public void setSizeTable(String[][] sizeData){
+        this.sizeTableModel.setDataVector(sizeData, this.defaultColumnNames);
+    }
+    public void setStatsBonusTable(String[][] statBonusData){
+        this.statBonusTableModel.setDataVector(statBonusData, this.defaultColumnNames);
+    }
+    public void setResistanceTable(String[][] resistanceData){
+        this.resistanceTableModel.setDataVector(resistanceData, this.defaultColumnNames);
+    }
+    public void setHealthAndDevTable(String[][] healthAndDevData){
+        this.healthAndDevTableModel.setDataVector(healthAndDevData, this.defaultColumnNames);
+    }
+
+
+    //Action Listeners
 
 
 }
