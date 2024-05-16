@@ -4,6 +4,7 @@ import Models.CharacterSheet;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 import java.awt.*;
 
 public class CharacterSheetView extends JPanel {
@@ -14,9 +15,11 @@ public class CharacterSheetView extends JPanel {
     JButton skills;
     JButton returnButton;
     DefaultTableModel tableModel;
-    private CharacterSheet model = null;
+    private CharacterSheet model;
+    String[] statBlockColumnNames = new String[]{"Stat", "Potent.", "Temp", "Bonus", "Racial", "Spec", "Total"};
 
-    public CharacterSheetView() {
+    public CharacterSheetView(CharacterSheet model) {
+        this.model = model;
         title = new JLabel("Character Sheet");
         levelUp = new JButton("Level Up");
         inventory = new JButton("Inventory");
@@ -263,11 +266,18 @@ public class CharacterSheetView extends JPanel {
     private JPanel statsPanel() {
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBorder(BorderFactory.createTitledBorder("Statistics"));
-        String[] columnNames = new String[]{"Stat", "Potent.", "Temp", "Bonus", "Racial", "Spec", "Total"};
-        tableModel = new DefaultTableModel(null, columnNames);
+        tableModel = new DefaultTableModel(model.getStatBlock(), statBlockColumnNames);
         JTable statsTable = new JTable(tableModel);
-        statsTable.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
-        panel.add(statsTable);
+        /*TableColumn statsColumn;
+        for (int i = 1; i < tableModel.getColumnCount(); i++) {
+            statsColumn = statsTable.getColumnModel().getColumn(i);
+            statsColumn.setPreferredWidth(70);
+        }
+        statsTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);*/
+        statsTable.setPreferredScrollableViewportSize(statsTable.getMinimumSize());
+
+        JScrollPane scrollPane = new JScrollPane(statsTable);
+        panel.add(scrollPane);
         return panel;
     }
 
@@ -345,22 +355,26 @@ public class CharacterSheetView extends JPanel {
         return "";
     }
     private String getRace() {
-        if (this.model!=null) {
+        if (this.model!=null && this.model.getRace()!=null) {
             return model.getRace().getName();
         }
         return "";
     }
     private String getCulture() {
-        if (this.model!=null) {
+        if (this.model!=null && this.model.getCulture()!=null) {
             return model.getCulture().getName();
         }
         return "";
     }
     private String getProfession() {
-        if (this.model!=null) {
+        if (this.model!=null && this.model.getProfession()!=null) {
             return model.getProfession().getName();
         }
         return "";
+    }
+    private void updateStatBlock() {
+        tableModel.setDataVector(model.getStatBlock(),statBlockColumnNames);
+        tableModel.fireTableDataChanged();
     }
 
 
