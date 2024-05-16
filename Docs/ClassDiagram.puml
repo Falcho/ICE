@@ -7,202 +7,167 @@ Class Main{
 +static void main(String[] args)
 }
 
-
-Class RoleMaster{}
-
-Class Rules{
-+static Map<String, SkillCategory> getEmptySkillList()
-+static Map<String, String> getTalentsAndFlaws()
-}
-Class Dice{
- Random random = new Random()
-+int rollD4()
-+int rollD8()
-+int rollD10()
-+int rollD12()
-+int rollD20()
-+int rollD100()
-
-}
-
 package controllers{
-Class CharacterSheetController{
--CreateStatsView view;
-+CharacterSheetController(CreateStatsView view)
-}
-Class ChooseProffessionController{
--final CharacterSheet model;
--ChooseProfessionView view;
-+ChooseProfessionController(CharacterSheet model, ChooseProfessionView view)
--boolean validate(Profession profession)
--void saveDataToModel(Profession profession)
-}
-Class CreateNewCharController{
--CreateNewCharView view;
--final CharacterSheet model;
-+CreateNewCharController(CreateNewCharView view, CharacterSheet model)
-+boolean validate(String name)
-+void saveDataToModel(String name)
-+boolean validateAndSave()
-}
-Class CreateStatsController{
- CharacterSheet model;
- CreateStatsView view;
- +CreateStatsController(CharacterSheet model, CreateStatsView view)
- -boolean validate(String input)
- -void saveDataToModel(String data)
- +boolean validateAndSave()
- -int[] generateStat()
- -List<int[]> generateStats()
-}
-CLass TalentsAndFlawsController{
--final CharacterSheet model;
--final TalentsAndFlawsView view;
--final Rules rules;
-+TalentsAndFlawsController(CharacterSheet model, TalentsAndFlawsView view)
-}
+    Class CharacterSheetController{
+        -CreateStatsView view;
+        +CharacterSheetController(CreateStatsView view)
+    }
+    Class ChooseProffessionController{
+        -final CharacterSheet model;
+        -ChooseProfessionView view;
+        +ChooseProfessionController(CharacterSheet model, ChooseProfessionView view)
+        -boolean validate(Profession profession)
+        -void saveDataToModel(Profession profession)
+    }
+    Class CreateNewCharController{
+        -CreateNewCharView view;
+        -final CharacterSheet model;
+        +CreateNewCharController(CreateNewCharView view, CharacterSheet model)
+        +boolean validate(String name)
+        +void saveDataToModel(String name)
+        +boolean validateAndSave()
+    }
+    Class CreateStatsController{
+         CharacterSheet model;
+         CreateStatsView view;
+         +CreateStatsController(CharacterSheet model, CreateStatsView view)
+         -boolean validate(String input)
+         -void saveDataToModel(String data)
+         +boolean validateAndSave()
+         -int[] generateStat()
+         -List<int[]> generateStats()
+    }
+    Class TalentsAndFlawsController{
+        -final CharacterSheet model;
+        -final TalentsAndFlawsView view;
+        -final Rules rules;
+        +TalentsAndFlawsController(CharacterSheet model, TalentsAndFlawsView view)
+    }
 
 }
 
 
 package views{
-Class StartMenuView{}
-Class CharacterSheetView{}
-Class CharacterInfoView{}
-Class SkillListView{}
-Class SpellListView{}
-Class InventoryView{}
-Class TalentsAndFlawsView{
--List<JLabel> labels;
--List<JTextField> fields;
--JPanel detailPanel;
--JSplitPane splitPane;
--Map<String, Integer> selectedTalents;
--JLabel pointsLabel;
--int totalPoints = 10;
--Map<String, String> talentDescriptionMap;
-+TalentsAndFlawsView(Map<String, String> talentDescriptionMap)
--void showDetailPanel(String text)
--JScrollPane createScrollPane()
--JPanel createTopPanel()
--JPanel createBottomPanel()
--void addTalents()
--void updatePoints()
--void saveTalents()
--String escapeHtml(String text)
+    Class MainFrame{
+        -final CardLayout cardLayout;
+        +MainFrame()
+    }
+    Class CharacterSheetView{}
+    Class ChooseCultureView{}
+    Class ChooseProffessionView{
+        -JLabel title;
+        -String[] proffessionList
+        -JList<String>proffessionJList
+        -List<SkillCategory>skillAndCostList
+        -List<Skill>proffessionalSkill
+        -JTextArea proffessionDescription
+        -JCheckBox proffessionalBonusButton
+        -JCheckBox KnackButton
+        -JButton returnToCharacterName
+        -JButton saveAndContinueToRace
+        +ChooseProffessionView()
+        -Panel createTitlePanel()
+        -JPanel createProfessionListPanel()
+        -JPanel createProfessionInfoPanel()
+        -JPanel createProfessionTopInfoPanel()
+        -JPanel createProfessionDescriptionPanel()
+        -JPanel createProfessionSkillCostPanel()
+        -JPanel createProfessionalSkillsPanel()
+        -JPanel createButtonsPanel()
+        +void setProfessionalSkill(List<Skill> professionalSkill)
+        +void setProfessionDescription(String professionDescription)
+        +void setProfessionJList(List<Profession> professionList)
+        +void setSkillAndCostList(List<SkillCategory> skillAndCostList)
+        +void returnToCharacterName(ActionListener actionListener)
+        +void saveAndContinueToRace(ActionListener actionListener)
+        +void updateSkillAndCostList(Profession profession)
+        +void updateProfessionalSkills(Profession profession)
+        +void updateProfessionSkillCostPanel()
+        +void updateProfessionalSkillsPanel()
+        }
+    Class ChooseRaceView{}
+    Class CreateBackgroundView{}
+    Class CreateNewCharView{
+        -JLabel title;
+        -JTextField nameField;
+        -JLabel label;
+        #JButton saveAndContinueButton;
+        +CreateNewCharView()
+        -JPanel createTopPanel()
+        -JPanel createMiddlePanel()
+        -JPanel createBottomPanel()
+        +String getNameField()
+        +void saveAndContinue(ActionListener actionListener)
+        +void reset(boolean bln)
+        +void setNameField(String setText)
+    }
+    Class CreateStatsView{
+        -final JLabel title;
+        -final List<JLabel> labels;
+        -final List<JTextField[]> fields;
+        -final JButton returnToCharacterInfo;
+        -final JButton saveAndContinueToSkills;
+        -final JButton rollStatsForMe;
+        +CreateStatsView()
+        +JPanel createMiddlePanel()
+        -JPanel createTopPanel()
+        -JPanel createBottomPanel()
+        +int[] getStat(int i)
+        +int[] getAgility()
+        +int[] getConstitution()
+        +int[] getEmpathy()
+        +int[] getIntuition()
+        +int[] getMemory()
+        +int[] getPresence()
+        +int[] getQuickness()
+        +int[] getReasoning()
+        +int[] getSelfDiscipline()
+        +int[] getStrength()
+        +List<int[]> getStats()
+        +void setStats(List<int[]> stats)
+        +void returnToCharacterButtonClick (ActionListener actionListener)
+        + void saveAndContinueButtonClick(ActionListener actionListener)
+        +void rollStatsForMeButtonClick (ActionListener actionListener)
+        + void reset()
+        +int getMax(int a, int b, int c)
+        + int getMiddle(int a, int b, int c)
+    }
+    Class StartMenuView{}
+    Class TalentsAndFlawsView{
+    -List<JLabel> labels;
+    -List<JTextField> fields;
+    -JPanel detailPanel;
+    -JSplitPane splitPane;
+    -Map<String, Integer> selectedTalents;
+    -JLabel pointsLabel;
+    -int totalPoints = 10;
+    -Map<String, String> talentDescriptionMap;
+    +TalentsAndFlawsView(Map<String, String> talentDescriptionMap)
+    -void showDetailPanel(String text)
+    -JScrollPane createScrollPane()
+    -JPanel createTopPanel()
+    -JPanel createBottomPanel()
+    -void addTalents()
+    -void updatePoints()
+    -void saveTalents()
+    -String escapeHtml(String text)
+    }
 }
-Class MovementView{}
-Class PrimaryStatsView{}
-Class WeaponAttackSetupView{}
-Class DefenseView{}
-Class MagicItemsView{}
-Class GeneralEquipmentView{}
-Class MainFrame{
--final CardLayout cardLayout;
-+MainFrame()
-}
-Class CreateStatsView{
--final JLabel title;
--final List<JLabel> labels;
--final List<JTextField[]> fields;
--final JButton returnToCharacterInfo;
--final JButton saveAndContinueToSkills;
--final JButton rollStatsForMe;
-+CreateStatsView()
-+JPanel createMiddlePanel()
--JPanel createTopPanel()
--JPanel createBottomPanel()
-+int[] getStat(int i)
-+int[] getAgility()
-+int[] getConstitution()
-+int[] getEmpathy()
-+int[] getIntuition()
-+int[] getMemory()
-+int[] getPresence()
-+int[] getQuickness()
-+int[] getReasoning()
-+int[] getSelfDiscipline()
-+int[] getStrength()
-+List<int[]> getStats()
-+void setStats(List<int[]> stats)
-+void returnToCharacterButtonClick (ActionListener actionListener)
-+ void saveAndContinueButtonClick(ActionListener actionListener)
-+void rollStatsForMeButtonClick (ActionListener actionListener)
-+ void reset()
-+int getMax(int a, int b, int c)
-+ int getMiddle(int a, int b, int c)
-}
-Class CreateNewCharView{
--JLabel title;
--JTextField nameField;
--JLabel label;
-#JButton saveAndContinueButton;
-+CreateNewCharView()
--JPanel createTopPanel()
--JPanel createMiddlePanel()
--JPanel createBottomPanel()
-+String getNameField()
-+void saveAndContinue(ActionListener actionListener)
-+void reset(boolean bln)
-+void setNameField(String setText)
-}
-Class ChooseProffessionView{
--JLabel title;
--String[] proffessionList
--JList<String>proffessionJList
--List<SkillCategory>skillAndCostList
--List<Skill>proffessionalSkill
--JTextArea proffessionDescription
--JCheckBox proffessionalBonusButton
--JCheckBox KnackButton
--JButton returnToCharacterName
--JButton saveAndContinueToRace
-+ChooseProffessionView()
--Panel createTitlePanel()
--JPanel createProfessionListPanel()
--JPanel createProfessionInfoPanel()
--JPanel createProfessionTopInfoPanel()
--JPanel createProfessionDescriptionPanel()
--JPanel createProfessionSkillCostPanel()
--JPanel createProfessionalSkillsPanel()
--JPanel createButtonsPanel()
-+List<Skill> getProfessionalSkill()
-+void setProfessionalSkill(List<Skill> professionalSkill)
-+JTextArea getProfessionDescription()
-+ void setProfessionDescription(JTextArea professionDescription)
-+List<Profession> getProfessionJList()
-+void setProfessionJList(List<Profession> professionList)
-+ List<SkillCategory> getSkillAndCostList()
-+void setSkillAndCostList(List<SkillCategory> skillAndCostList)
-+JLabel getTitle()
-+void setTitle(JLabel title)
-+void returnToCharacterName(ActionListener actionListener)
-+void saveAndContinueToRace(ActionListener actionListener)
-+ void updateSkillAndCostList(Profession profession)
-+void updateProfessionalSkills(Profession profession)
-+void updateProfessionSkillCostPanel()
-+void updateProfessionalSkillsPanel()
--createTopPanel()
--createLeftPanel()
--createRightPanel()
--createRightTopPanel()
--createRightTopLeftPanel()
--createRightTopRightPanel()
--createRightBottomPanel()
--createBottomPanel()
-
-}
-}
-CharacterSheetView *-- CharacterInfoView
-CharacterSheetView *-- PrimaryStatsView
-CharacterSheetView *-- MovementView
-CharacterSheetView *-- WeaponAttackSetupView
-CharacterSheetView *-- DefenseView
-InventoryView o-- MagicItemsView
-InventoryView o-- GeneralEquipmentView
-
+MainFrame *-- StartMenuView
+MainFrame *-- CreateNewCharView
+MainFrame *-- ChooseProfessionView
+MainFrame *-- ChooseRaceView
+MainFrame *-- ChooseCultureView
+MainFrame *-- TalentsAndFlawsView
+MainFrame *-- CreateStatsView
+MainFrame *-- CreateBackgroundView
+MainFrame *-- CharacterSheetView
 
 package models{
+    Class Rules{
+        +static Map<String, SkillCategory> getEmptySkillList()
+        +static Map<String, String> getTalentsAndFlaws()
+    }
     Class CharacterSheet{
         - int level;
         - int xp
@@ -218,8 +183,7 @@ package models{
         # Map SkillList <String, Skill>;
         # Map SpellList <String, Spell>;
         # Set <TalentsAndFlaws> TalentsAndFlaws;
-        +CharacterSheet(){}
-        +CharacterSheet(int level, int xp, String name, String background, Culture culture, Race race, Profession profession, PrimaryStats stats, Defense defense, ManeuversMovementAndEncumbrance MME, Inventory inventory, Map skillList, Map spellList, Set<TalentsAndFlaws> talentsAndFLaws)
+        +CharacterSheet()
         +String getName()
         +void setName()
         +void setStat(String statName,int[]values)
@@ -251,31 +215,27 @@ package models{
         +int getXp()
         +void setXp(int xp)
         +Stat getStat(String statName)
-
-
-
        }
-    Class GeneralEquipment{}
     Class Skill{
-    -String name;
-    -int firstCost;
-    -int secondCost;
-    +Skill()
-    +String getName()
-    +void setName(String name)
-    -boolean proffesionalSkill
-    -String name
-    -String specialization
-    -int cultureRanks
-    -String stats
-    -int statBonus
-    -int totalRanks
-    -int rankBonus
-    -int proffesionalBonus
-    -int knack
-    -int totalBonus
-    -boolean firstRankBought
-    -boolean secondRankBought
+        -String name;
+        -int firstCost;
+        -int secondCost;
+        +Skill()
+        +String getName()
+        +void setName(String name)
+        -boolean proffesionalSkill
+        -String name
+        -String specialization
+        -int cultureRanks
+        -String stats
+        -int statBonus
+        -int totalRanks
+        -int rankBonus
+        -int proffesionalBonus
+        -int knack
+        -int totalBonus
+        -boolean firstRankBought
+        -boolean secondRankBought
     }
     Class SkillCategory{
         #String name
@@ -325,7 +285,6 @@ package models{
         +Map<String, Spell> getSkills()
         +void addSpell()
     }
-    Class Inventory{}
     Class MME{
         # Map<String,Pace> paces
         # Map<String,double> featsOfStrength
@@ -341,111 +300,102 @@ package models{
         # int endurance
         # int power
     }
-    Class Pace {
-        # String name
-        # double prRound
-        # double prPhase
-        # String penaltyAp
-        # String loadLimit
-    }
     Class PrimaryStats{
-     # Stat agility;
-     # Stat constitution;
-     # Stat empathy;
-     # Stat intuition;
-     # Stat memory;
-     # Stat presence;
-     # Stat quickness;
-     # Stat reasoning;
-     # Stat selfDiscipline;
-     # Stat strength;
-     +PrimaryStats()
-     +void setStat(String statNavn, int[] values)
-     +void setStats(List<int[]> stats)
-     +Stat getStat(String statName)
+         # Stat agility;
+         # Stat constitution;
+         # Stat empathy;
+         # Stat intuition;
+         # Stat memory;
+         # Stat presence;
+         # Stat quickness;
+         # Stat reasoning;
+         # Stat selfDiscipline;
+         # Stat strength;
+         +PrimaryStats()
+         +void setStat(String statNavn, int[] values)
+         +void setStats(List<int[]> stats)
+         +Stat getStat(String statName)
     }
     Class Defense{}
-    Class MagicItems{}
     Class Race{
-    - String race
-    - int bonusDps;
-    - int agility;
-    - int constitution;
-    - int empathy;
-    - int intuition;
-    - int memory;
-    - int presence;
-    - int quickness;
-    - int reasoning;
-    - int selfDisc;
-    - int strength;
-    - int channeling;
-    - int essence;
-    - int mentalism;
-    - int physical;
-    - int endurance;
-    - int baseHits;
-    - int recoveryMult;
-    + getBonusDps();
-    + getAgility();
-    + getConstitution();
-    + getEmpathy();
-    + getIntuition();
-    + getMemory();
-    + getPresence();
-    + getQuickness();
-    + getReasoning();
-    + getSelfDisc();
-    + getStrength();
-    + getChanneling();
-    + getEssence();
-    + getMentalism();
-    + getPhysical();
-    + getEndurance();
-    + getBaseHits();
-    + getRecoveryMult();
-    + getRaceBonus(String statName);
-
+        - String race
+        - int bonusDps;
+        - int agility;
+        - int constitution;
+        - int empathy;
+        - int intuition;
+        - int memory;
+        - int presence;
+        - int quickness;
+        - int reasoning;
+        - int selfDisc;
+        - int strength;
+        - int channeling;
+        - int essence;
+        - int mentalism;
+        - int physical;
+        - int endurance;
+        - int baseHits;
+        - int recoveryMult;
+        + getBonusDps();
+        + getAgility();
+        + getConstitution();
+        + getEmpathy();
+        + getIntuition();
+        + getMemory();
+        + getPresence();
+        + getQuickness();
+        + getReasoning();
+        + getSelfDisc();
+        + getStrength();
+        + getChanneling();
+        + getEssence();
+        + getMentalism();
+        + getPhysical();
+        + getEndurance();
+        + getBaseHits();
+        + getRecoveryMult();
+        + getRaceBonus(String statName);
     }
     Class Culture{
-    - String cultureName
-    - Map <String, Integer> skillMap;
-    +Culture(String cultureName, Map<String, Integer> skillMap)
-    +String getCultureName()
-    + Map<String, Integer> getSkillMap()
-    + getSkillMap();
+        - String cultureName
+        - Map <String, Integer> skillMap;
+        +Culture(String cultureName, Map<String, Integer> skillMap)
+        +String getCultureName()
+        + Map<String, Integer> getSkillMap()
+        + getSkillMap();
     }
     Class Profession{
-    #String name;
-    #String description;
-    #Map<String, List<Integer>> professionSkillCost;
-    #List<String> availableRealms;
-    #List<Skill> availableProfessionalSkillList;
-    #Map<String, List<Spell>> professionSpell;
-    #List<Skill> chosenProfessionalSkills;
-    #List<Skill> chosenKnacks;
-    #protected List<Skill> chosenRealms;
-    +Profession(String name, String description, Map<String, List<Integer>> professionSkillCost, List<String> realms, List<Skill> availableProfessionalSkillList)
-    + Map<String, List<Integer>> getSkillCost()
-    +List<Skill> getProfessionalSkill()
-    +Map<String, List<Integer>> getProfessionSkillCost()
-    +List<String> getAvailableRealms()
-    +Map<String, List<Spell>> getSpellList()
-    +String getName()
-    +String getDescription()
-    +List<Skill> getChosenProfessionalSkills()
-    +List<Skill> getChosenKnacks()
-    +List<Skill> getChosenRealms()
+        #String name;
+        #String description;
+        #Map<String, List<Integer>> professionSkillCost;
+        #List<String> availableRealms;
+        #List<Skill> availableProfessionalSkillList;
+        #Map<String, List<Spell>> professionSpell;
+        #List<Skill> chosenProfessionalSkills;
+        #List<Skill> chosenKnacks;
+        #protected List<Skill> chosenRealms;
+        +Profession()
+        + Map<String, List<Integer>> getSkillCost()
+        +List<Skill> getProfessionalSkill()
+        +Map<String, List<Integer>> getProfessionSkillCost()
+        +List<String> getAvailableRealms()
+        +Map<String, List<Spell>> getSpellList()
+        +String getName()
+        +String getDescription()
+        +List<Skill> getChosenProfessionalSkills()
+        +List<Skill> getChosenKnacks()
+        +List<Skill> getChosenRealms()
     }
     Class TalentsAndFlaws{
-    -String name;
-    -String description;
-    +TalentsAndFlaws()
-    +TalentsAndFlaws(String name, String description)
-    +String getName()
-    +String getDescription()
-    +void setName(String name)
-    +void setDescription(String description)
+        -String name;
+        -String description;
+        +TalentsAndFlaws()
+        +TalentsAndFlaws(String name, String description)
+        +String getName()
+        +String getDescription()
+        +void setName(String name)
+        +void setDescription(String description)
     }
     Class Stat{
         - String name
@@ -464,35 +414,20 @@ package models{
 }
 
 CharacterSheet *-- PrimaryStats
+PrimaryStats *-- Stat
 CharacterSheet *-- MME
 CharacterSheet *-- Defense
-Inventory o-- MagicItems
-Inventory o-- GeneralEquipment
 CharacterSheet *-- TalentsAndFlaws
 CharacterSheet *-- SkillCategory
 SkillCategory *-- Skill
 CharacterSheet *-- SpellCategory
 SpellCategory *-- Spell
-CharacterSheet *-- Inventory
 CharacterSheet *-- Race
 CharacterSheet *-- Culture
 CharacterSheet *-- Profession
-PrimaryStats *-- Stat
 
-
-package util {
-    Class FileIO{}
-    Class TextUI{}
-    Class dataLoader{}
-    Class parseJson
-}
-
-Main *--- RoleMaster
-RoleMaster *-- CharacterSheet
-RoleMaster *-- views
-RoleMaster *-- Dice
-RoleMaster *-- util
-RoleMaster *-- Rules
+Main *-- CharacterSheet
+Main --> MainFrame
 @enduml
 
 implements ..|>
