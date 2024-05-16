@@ -1,9 +1,12 @@
 package Models;
 
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.NoSuchElementException;
 
-public class PrimaryStats {
+public class PrimaryStats implements Iterable<Stat>{
+    private CharacterSheet cs;
     protected Stat agility;
     protected Stat constitution;
     protected Stat empathy;
@@ -15,17 +18,18 @@ public class PrimaryStats {
     protected Stat selfDiscipline;
     protected Stat strength;
 
-    public PrimaryStats() {
-        this.agility = new Stat("agility");
-        this.constitution = new Stat("constitution");
-        this.empathy = new Stat("empathy");
-        this.intuition = new Stat("intuition");
-        this.memory = new Stat("memory");
-        this.presence = new Stat("presence");
-        this.quickness = new Stat("quickness");
-        this.reasoning = new Stat("reasoning");
-        this.selfDiscipline = new Stat("selfDiscipline");
-        this.strength = new Stat("strength");
+    public PrimaryStats(CharacterSheet cs) {
+        this.cs = cs;
+        this.agility = new Stat("agility", cs);
+        this.constitution = new Stat("constitution", cs);
+        this.empathy = new Stat("empathy", cs);
+        this.intuition = new Stat("intuition", cs);
+        this.memory = new Stat("memory", cs);
+        this.presence = new Stat("presence", cs);
+        this.quickness = new Stat("quickness", cs);
+        this.reasoning = new Stat("reasoning", cs);
+        this.selfDiscipline = new Stat("selfDiscipline", cs);
+        this.strength = new Stat("strength", cs);
     }
 
     public void setStat(String statNavn, int[] values) {
@@ -96,6 +100,31 @@ public class PrimaryStats {
     }
 
 
+    @Override
+    public Iterator<Stat> iterator() {
+        return new PrimaryStatsIterator();
+    }
+
+    private class PrimaryStatsIterator implements Iterator<Stat> {
+        private int index = 0;
+        private final Stat[] stats = {
+                agility, constitution, empathy, intuition, memory,
+                presence, quickness, reasoning, selfDiscipline, strength
+        };
+
+        @Override
+        public boolean hasNext() {
+            return index < stats.length;
+        }
+
+        @Override
+        public Stat next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
+            return stats[index++];
+        }
+    }
 }
 
 
