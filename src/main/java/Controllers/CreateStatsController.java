@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class CreateStatsController {
+public class CreateStatsController implements RmController {
     CharacterSheet model;
     CreateStatsView view;
     public CreateStatsController(CreateStatsView view, CharacterSheet model) {

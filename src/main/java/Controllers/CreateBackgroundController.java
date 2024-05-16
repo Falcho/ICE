@@ -3,10 +3,10 @@ package Controllers;
 import Models.CharacterSheet;
 import Views.CreateBackgroundView;
 
-public class CreateBackgroundController {
+public class CreateBackgroundController implements RmController {
 
-   private CreateBackgroundView view;
-   private CharacterSheet model;
+   private final CreateBackgroundView view;
+   private final CharacterSheet model;
 
    public CreateBackgroundController(CreateBackgroundView view,CharacterSheet model){
        this.view= view;

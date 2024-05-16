@@ -6,7 +6,7 @@ import Views.ChooseCultureView;
 
 import java.util.Map;
 
-public class ChooseCultureController {
+public class ChooseCultureController implements RmController {
     private final ChooseCultureView view;
     private final CharacterSheet model;
 

@@ -3,7 +3,7 @@ package Controllers;
 import Models.CharacterSheet;
 import Views.CreateNewCharView;
 
-public class CreateNewCharController {
+public class CreateNewCharController implements RmController {
     private final CreateNewCharView view;
     private final CharacterSheet model;
 

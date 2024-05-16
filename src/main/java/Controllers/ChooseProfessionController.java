@@ -5,7 +5,7 @@ import Models.Profession;
 import Views.ChooseProfessionView;
 import Views.CreateNewCharView;
 
-public class ChooseProfessionController {
+public class ChooseProfessionController implements RmController{
     private final CharacterSheet model;
     private final ChooseProfessionView view;
 
