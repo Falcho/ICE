@@ -187,6 +187,7 @@ public class CharacterSheet {
             statBlock[i][4] = String.valueOf(stat.getRaceBonus());
             statBlock[i][5] = ""; //String.valueOf(stat.getSpecial());
             statBlock[i][6] = String.valueOf(stat.getTotalBonus());
+            i++;
         }
         return statBlock;
     }
