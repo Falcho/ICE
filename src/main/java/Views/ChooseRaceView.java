@@ -34,10 +34,10 @@ public class ChooseRaceView extends JPanel {
     private String[] defaultColumnNames;
 
     //Map<String, Race> races ---- skal ind i constructor som argument
-    public ChooseRaceView() {
-        //this.races = races;
+    public ChooseRaceView(Map<String, Race> races) {
+        this.races = races;
 
-        //String[] availableRaces = races.keySet().toArray(new String[0]);
+        String[] availableRaces = races.keySet().toArray(new String[0]);
         columnNames = new String[]{"Name", "Skill Points", "Name", "Skill Points"};
         data = new String [][]{
                 {"Skill", "1", "Skill", "1"},
@@ -64,7 +64,7 @@ public class ChooseRaceView extends JPanel {
         healthAndDevTable = new JTable();
         defaultColumnNames = new String[]{"","","",""};
 
-        chooseRaceDropDown = new JComboBox<>();
+        chooseRaceDropDown = new JComboBox<>(availableRaces);
         previousButton = new JButton("Previous");
         continueButton = new JButton("Continue to Culture");
 
