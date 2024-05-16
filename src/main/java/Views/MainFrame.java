@@ -30,6 +30,7 @@ public class MainFrame extends JFrame {
 
         // initialize user controller
         CharacterSheet model = new CharacterSheet();
+        characterSheetView.setModel(model);
         CreateNewCharController newCharController = new CreateNewCharController(newCharView, model);
         ChooseProfessionController chooseProfessionController = new ChooseProfessionController(chooseProfessionView, model);
         ChooseRaceController chooseRaceController = new ChooseRaceController(chooseRaceView, model);
@@ -49,7 +50,7 @@ public class MainFrame extends JFrame {
         add(generateStatsView, "generateStats");
         add(createBackgroundView, "createBackground");
         add(characterSheetView,"characterSheet");
-        cardLayout.show(this.getContentPane(), "menuView");
+        cardLayout.show(this.getContentPane(), "characterSheet");
 
         // switch view according to its constraints on click
         menuView.createNewClick(e -> {

@@ -1,6 +1,9 @@
 package Views;
 
+import Models.CharacterSheet;
+
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
 public class CharacterSheetView extends JPanel {
@@ -10,6 +13,8 @@ public class CharacterSheetView extends JPanel {
     JButton spellBook;
     JButton skills;
     JButton returnButton;
+    DefaultTableModel tableModel;
+    private CharacterSheet model = null;
 
     public CharacterSheetView() {
         title = new JLabel("Character Sheet");
@@ -128,13 +133,13 @@ public class CharacterSheetView extends JPanel {
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.weightx = 1.0;
 
-        JLabel nameLabel = new JLabel("Character Name:");
-        JLabel playerNameLabel = new JLabel("Player Name:");
-        JLabel campaignLabel = new JLabel("Campaign:");
-        JLabel levelLabel = new JLabel("Level:");
-        JLabel xpLabel = new JLabel("Current XP:");
-        JLabel xpNextLevelLabel = new JLabel("XP for next level:");
-        JLabel realmsLabel = new JLabel("Realms:");
+        JLabel nameLabel = new JLabel("Character Name: " + getCharacterName());
+        JLabel playerNameLabel = new JLabel("Player Name: " + getPlayerName());
+        JLabel campaignLabel = new JLabel("Campaign: " + getCampaignName());
+        JLabel levelLabel = new JLabel("Level: " + getCharacterLevel());
+        JLabel xpLabel = new JLabel("Current XP: " + getCurrentXP());
+        JLabel xpNextLevelLabel = new JLabel("XP for next level: " + getNextLvlXP());
+        JLabel realmsLabel = new JLabel("Realms: " + getRealms());
 
         // Row 0
         gbc.gridx = 0;
@@ -208,9 +213,9 @@ public class CharacterSheetView extends JPanel {
         backgroundGbc.fill = GridBagConstraints.HORIZONTAL;
         backgroundGbc.weightx = 1.0;
 
-        JLabel raceLabel = new JLabel("Race:");
-        JLabel cultureLabel = new JLabel("Culture:");
-        JLabel professionLabel = new JLabel("Profession:");
+        JLabel raceLabel = new JLabel("Race: " + getRace());
+        JLabel cultureLabel = new JLabel("Culture: " + getCulture());
+        JLabel professionLabel = new JLabel("Profession: " + getProfession());
 
         // Add background fields
         backgroundGbc.gridx = 0;
@@ -229,6 +234,7 @@ public class CharacterSheetView extends JPanel {
 
         return panel;
     }
+
 
     private JPanel upperInfoPanel() {
         JPanel panel = new JPanel(new GridBagLayout());
@@ -257,6 +263,11 @@ public class CharacterSheetView extends JPanel {
     private JPanel statsPanel() {
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBorder(BorderFactory.createTitledBorder("Statistics"));
+        String[] columnNames = new String[]{"Stat", "Potent.", "Temp", "Bonus", "Racial", "Spec", "Total"};
+        tableModel = new DefaultTableModel(null, columnNames);
+        JTable statsTable = new JTable(tableModel);
+        statsTable.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+        panel.add(statsTable);
         return panel;
     }
 
@@ -288,6 +299,74 @@ public class CharacterSheetView extends JPanel {
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBorder(BorderFactory.createTitledBorder("Movement"));
         return panel;
+    }
+
+
+    private String getCharacterName() {
+        if (this.model!=null) {
+            return model.getName();
+        }
+        return "";
+    }
+    private String getPlayerName() {
+        if (this.model!=null) {
+            //return model.getPlayerName();
+        }
+        return "";
+    }
+    private String getCampaignName(){
+        if (this.model!=null) {
+            //return model.getCampaignName();
+        }
+        return "";
+    }
+    private String getCharacterLevel() {
+        if (this.model!=null) {
+            return String.valueOf(model.getLevel());
+        }
+        return "";
+    }
+    private String getCurrentXP() {
+        if (this.model!=null) {
+            return String.valueOf(model.getXp());
+        }
+        return "";
+    }
+    private String getNextLvlXP() {
+        if (this.model!=null) {
+            //return Rules.NextLvlXP(model.getLevel());
+        }
+        return "";
+    }
+    private String getRealms() {
+        if (this.model!=null) {
+            //return model.getRealms();
+        }
+        return "";
+    }
+    private String getRace() {
+        if (this.model!=null) {
+            return model.getRace().getName();
+        }
+        return "";
+    }
+    private String getCulture() {
+        if (this.model!=null) {
+            return model.getCulture().getName();
+        }
+        return "";
+    }
+    private String getProfession() {
+        if (this.model!=null) {
+            return model.getProfession().getName();
+        }
+        return "";
+    }
+
+
+
+    public void setModel(CharacterSheet model) {
+        this.model = model;
     }
 
 }
