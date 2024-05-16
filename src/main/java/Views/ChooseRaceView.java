@@ -125,26 +125,24 @@ public class ChooseRaceView extends JPanel {
 
         JPanel racialOuterPanel = new JPanel(new BorderLayout());
         JPanel racialTopInner = new JPanel(new BorderLayout());
-        //sizeLabel = new JLabel("Race Size");
+
         sizeTableModel = new DefaultTableModel(this.data, this.columnNames);
         sizeTable = new JTable(sizeTableModel);
-        //statBonusLabel = new JLabel("Stat Bonus");
+
         statBonusTableModel = new DefaultTableModel(this.data, this.columnNames);
         statBonusTable = new JTable(statBonusTableModel);
-        //racialTopInner.add(sizeLabel,BorderLayout.LINE_START);
-        //racialTopInner.add(statBonusLabel,BorderLayout.LINE_END);
+
         racialTopInner.add(sizeTable, BorderLayout.WEST);
         racialTopInner.add(statBonusTable, BorderLayout.EAST);
 
         JPanel racialBottomInner = new JPanel(new BorderLayout());
-        //resistanceLabel = new JLabel("Resistances");
+
         resistanceTableModel = new DefaultTableModel(this.data, this.columnNames);
         resistanceTable = new JTable(resistanceTableModel);
-        //healthAndDevLabel = new JLabel("Health and Dev");
+
         healthAndDevTableModel = new DefaultTableModel(this.data, this.columnNames);
         healthAndDevTable = new JTable(healthAndDevTableModel);
-        //racialBottomInner.add(resistanceLabel,BorderLayout.LINE_START);
-        //racialBottomInner.add(healthAndDevLabel,BorderLayout.LINE_END);
+
         racialBottomInner.add(resistanceTable, BorderLayout.WEST);
         racialBottomInner.add(healthAndDevTable, BorderLayout.EAST);
 
