@@ -21,7 +21,7 @@ public class CreateStatsController implements RmController {
         List<int[]> data = view.getStats();
         boolean valid = true;
         for (int[] stat : data){
-            valid = valid && stat[0] > 10 && stat[1] > 10 && stat[0] < 100 && stat[1] < 100;
+            valid = valid && stat[0] > 10 && stat[1] > 10 && stat[0] < 101 && stat[1] < 101;
         }
         return valid;
     }
