@@ -9,18 +9,29 @@ public class ChooseProfessionController {
     private final CharacterSheet model;
     private final ChooseProfessionView view;
 
-    public ChooseProfessionController(CharacterSheet model, ChooseProfessionView view) {
+    public ChooseProfessionController(ChooseProfessionView view, CharacterSheet model) {
         this.model = model;
         this.view = view;
 
-        view.returnToCharacterName(e -> {
+    }
 
-        });
+    private boolean validate() {
+        return view.isProfessionSelected();
+
     }
-    private boolean validate(Profession profession) {
-        return false;
-    }
+
     private void saveDataToModel(Profession profession) {
         model.setProfession(profession);
+
+    }
+
+    public boolean validateAndSave() {
+        Profession profession = view.getSelectedProfession();
+        if (validate()) {
+            saveDataToModel(profession);
+            System.out.println("Selected Profession: " + profession.getName());
+            return true;
+        }
+        return false;
     }
 }

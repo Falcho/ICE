@@ -1,7 +1,7 @@
 {
-  "header": "Fighter",
+  "name": "Fighter",
   "description": "Fighters are the primary combat specialists. A fighter may be a heavily armored mounted knight, a swashbuckling musketeer, a big brute with a massive bronze-bound club, an honor-obsessed samurai, or a master archer. The face of battle may change with technology and social organization, but there will always be those who specialize in being in the middle of it all.",
-  "professional_skills": [
+  "availableProfessionalSkillList": [
     "Riding",
     "Body Development",
     "Fortitude",
@@ -18,7 +18,7 @@
     "Running",
     "Leadership"
   ],
-  "skills": [
+  "professionSkillCost": [
     {
       "name": "Animal",
       "cost1": 2,

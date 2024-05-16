@@ -2,8 +2,8 @@ package Models;
 
 public class Skill {
     String name;
-    int firstCost;
-    int secondCost;
+    int cost1;
+    int cost2;
 
     public Skill() {}
 

@@ -9,24 +9,29 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 
 public class ChooseProfessionView extends JPanel {
 
     private JLabel title;
-    private List<Profession> professionList;
-    private List<SkillCategory> skillAndCostList;
-    private List<Skill> professionalSkill;
+    private JList<String> professionJList;
     private JTextArea professionDescription;
+    private List<Map<String, Object>> professionList;
+    private JPanel skillCostTextArea;
+    private JPanel panel;
     private JCheckBox professionalBonusButton;
     private JCheckBox knackButton;
-    private JButton returnToCharacterName;
-    private JButton saveAndContinueToRace;
+    private JButton previousButton;
+    private JButton continueButton;
 
-    public ChooseProfessionView() {
+    private List<SkillCategory> skillAndCostList;
+    private List<Skill> professionalSkill;
+
+    public ChooseProfessionView(List<Map<String, Object>> professionList) {
         //Initialize all components
         title = new JLabel("Choose Profession");
-        professionList = new ArrayList<>();
+        this.professionList = professionList;
         skillAndCostList = new ArrayList<>();
         professionalSkill = new ArrayList<>();
         professionDescription = new JTextArea();
@@ -34,15 +39,15 @@ public class ChooseProfessionView extends JPanel {
         knackButton = new JCheckBox("Knack");
 
 
-        returnToCharacterName = new JButton("Return to Character Name");
-        saveAndContinueToRace = new JButton("Save and Continue to Race");
+        previousButton = new JButton("Return to Character Name");
+        continueButton = new JButton("Continue to Race");
 
 
         this.setLayout(new BorderLayout());
         this.add(createTitlePanel(), BorderLayout.NORTH);
-        this.add(createProfessionListPanel(), BorderLayout.WEST);
-        this.add(createProfessionInfoPanel(), BorderLayout.EAST);
+        this.add(panelPanel(), BorderLayout.CENTER);
         this.add(createButtonsPanel(), BorderLayout.SOUTH);
+
 
     }
 
@@ -51,30 +56,38 @@ public class ChooseProfessionView extends JPanel {
         panel.add(title);
         return panel;
     }
+    private JPanel panelPanel(){
+        JPanel panel = new JPanel();
+        panel.add(createProfessionListPanel(), BorderLayout.NORTH);
+        panel.add(createProfessionInfoPanel(), BorderLayout.EAST);
+        return panel;
+    }
 
     private JPanel createProfessionListPanel() {
         JPanel panel = new JPanel(new BorderLayout());
-
+        JLabel panelTitle = new JLabel("Professions");
         DefaultListModel<String> model = new DefaultListModel<>();
-        for (Profession profession : professionList) {
-            model.addElement(profession.getName());
+        for (Map<String, Object> profession : professionList) {
+            model.addElement((String) profession.get("name"));
         }
 
-        JList<String> professionJList = new JList<>(model);
+        professionJList = new JList<>(model);
         professionJList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         professionJList.addListSelectionListener(e -> {
             if (!e.getValueIsAdjusting()) {
                 int selectedIndex = professionJList.getSelectedIndex();
                 if (selectedIndex != -1) {
-                    Profession selectedProfession = professionList.get(selectedIndex);
-                    professionDescription.setText(selectedProfession.getDescription());
-                    updateSkillAndCostList(selectedProfession);
-                    updateProfessionalSkills(selectedProfession);
+                    Map<String, Object> selectedProfession = professionList.get(selectedIndex);
+                    professionDescription.setText((String) selectedProfession.get("description"));
+                    updateSkillAndCostList((Map<String, Object>) selectedProfession);
+                    updateProfessionalSkills((Map<String, Object>) selectedProfession);
                 }
             }
         });
 
         JScrollPane scrollPane = new JScrollPane(professionJList);
+        scrollPane.setPreferredSize(new Dimension(500, 500));
+        panel.add(panelTitle, BorderLayout.NORTH);
         panel.add(scrollPane, BorderLayout.CENTER);
 
         return panel;
@@ -84,158 +97,140 @@ public class ChooseProfessionView extends JPanel {
         JPanel panel = new JPanel();
         BorderLayout layout = new BorderLayout();
         panel.setLayout(layout);
-        panel.add(createProfessionTopInfoPanel(), BorderLayout.NORTH);
-        panel.add(createProfessionalSkillsPanel(), BorderLayout.SOUTH);
+        panel.add(createProfessionTopInfoPanel(), BorderLayout.WEST);
+        panel.add(createProfessionSkillCostPanel(), BorderLayout.EAST);
         return panel;
     }
 
     private JPanel createProfessionTopInfoPanel() {
         JPanel panel = new JPanel();
-        BorderLayout layout = new BorderLayout();
-        panel.setLayout(layout);
-        panel.add(createProfessionDescriptionPanel(), BorderLayout.WEST);
-        panel.add(createProfessionSkillCostPanel(), BorderLayout.EAST);
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        panel.add(createProfessionDescriptionPanel());
+        panel.add(Box.createVerticalStrut(10)); // Add space between panels
+        panel.add(createProfessionalSkillsPanel());
         return panel;
     }
 
     private JPanel createProfessionDescriptionPanel() {
-        JPanel panel = new JPanel();
-        panel.add(professionDescription);
+        JPanel panel = new JPanel(new BorderLayout());
+        JLabel panelTitle = new JLabel("Profession description");
+        professionDescription = new JTextArea(10, 30);
+        professionDescription.setLineWrap(true);
+        professionDescription.setWrapStyleWord(true);
+        professionDescription.setEditable(false);
+        JScrollPane scrollPane = new JScrollPane(professionDescription);
+        panel.add(panelTitle, BorderLayout.NORTH);
+        panel.add(scrollPane, BorderLayout.CENTER);
         return panel;
     }
+
 
     private JPanel createProfessionSkillCostPanel() {
-        JPanel panel = new JPanel();
-        panel.setLayout(new BorderLayout());
+        JPanel panel = new JPanel(new BorderLayout());
+        JLabel panelTitle = new JLabel("Profession skill costs");
+        JPanel skillCostContainer = new JPanel();
+        skillCostContainer.setLayout(new BoxLayout(skillCostContainer, BoxLayout.Y_AXIS));
 
-        JTextArea textArea = new JTextArea();
-        textArea.setEditable(false);
-        JScrollPane scrollPane = new JScrollPane(textArea);
+        JScrollPane scrollPane = new JScrollPane(skillCostContainer);
+        panel.add(panelTitle, BorderLayout.NORTH);
         panel.add(scrollPane, BorderLayout.CENTER);
 
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < skillAndCostList.size(); i += 2) {
-            SkillCategory category1 = skillAndCostList.get(i);
-            sb.append(category1.getName()).append(" (").append(category1.getDPCostFirst()).append(", ")
-                    .append(category1.getDPCostSecond()).append(")");
-            if (i + 1 < skillAndCostList.size()) { // Check if there's a second category
-                SkillCategory category2 = skillAndCostList.get(i + 1);
-                sb.append("   ");
-                sb.append(category2.getName()).append(" (").append(category2.getDPCostFirst()).append(", ")
-                        .append(category2.getDPCostSecond()).append(")");
-            }
-            sb.append("\n");
-        }
-        textArea.setText(sb.toString());
+        skillCostTextArea = skillCostContainer;
         return panel;
     }
 
-    private JPanel createProfessionalSkillsPanel() {
-        JPanel panel = new JPanel();
-        panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
-        for (Skill skill : professionalSkill){
-            JPanel skillPanel = new JPanel();
-            skillPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
-            skillPanel.add(professionalBonusButton);
-            skillPanel.add(knackButton);
-            JLabel skillLabel = new JLabel(String.valueOf(skill));
-            skillPanel.add(skillLabel);
-            panel.add(skillPanel);
-        }
 
-        return panel;
+    private JPanel createProfessionalSkillsPanel() {
+        panel = new JPanel();
+        JLabel panelTitle = new JLabel("Professional skills and knacks");
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        JPanel containerPanel = new JPanel();
+        containerPanel.add(panel, BorderLayout.NORTH);
+        return containerPanel;
     }
 
     private JPanel createButtonsPanel() {
         JPanel panel = new JPanel();
-        panel.add(returnToCharacterName);
-        panel.add(saveAndContinueToRace);
+        panel.add(previousButton);
+        panel.add(continueButton);
         return panel;
     }
 
-    public List<Skill> getProfessionalSkill() {
-        return professionalSkill;
+    public boolean isProfessionSelected() {
+        int selectedIndex = professionJList.getSelectedIndex();
+        return selectedIndex != -1;
     }
 
-    public void setProfessionalSkill(List<Skill> professionalSkill) {
-        this.professionalSkill = professionalSkill;
-    }
-
-    public JTextArea getProfessionDescription() {
-        return professionDescription;
-    }
-
-    public void setProfessionDescription(JTextArea professionDescription) {
-        this.professionDescription = professionDescription;
-    }
-
-    public List<Profession> getProfessionJList() {
-        return professionList;
-    }
-
-    public void setProfessionJList(List<Profession> professionList) {
-        this.professionList = professionList;
-    }
-
-    public List<SkillCategory> getSkillAndCostList() {
-        return skillAndCostList;
-    }
-
-    public void setSkillAndCostList(List<SkillCategory> skillAndCostList) {
-        this.skillAndCostList = skillAndCostList;
-    }
-
-    public JLabel getTitle() {
-        return title;
-    }
-
-    public void setTitle(JLabel title) {
-        this.title = title;
-    }
-
-    public void returnToCharacterName(ActionListener actionListener) {
-        returnToCharacterName.addActionListener(actionListener);
-    }
-
-    public void saveAndContinueToRace(ActionListener actionListener) {
-        saveAndContinueToRace.addActionListener(actionListener);
-    }
-
-    private void updateSkillAndCostList(Profession profession) {
-        skillAndCostList.clear();
-        //Linje her er muligvis ikke nødvendig?
-        //skillAndCostList.addAll(profession.getSkillCategory());
-        updateProfessionSkillCostPanel();
-    }
-
-    private void updateProfessionalSkills(Profession profession) {
-        professionalSkill.clear();
-        professionalSkill.addAll(profession.getProfessionalSkill());
-        updateProfessionalSkillsPanel();
-    }
-
-    private void updateProfessionSkillCostPanel() {
-        StringBuilder sb = new StringBuilder();
-        for (SkillCategory category : skillAndCostList) {
-            sb.append(category.getName()).append(" (").append(category.getDPCostFirst()).append(", ").
-                    append(category.getDPCostSecond()).append(")\n");
+    public Profession getSelectedProfession() {
+        int selectedIndex = professionJList.getSelectedIndex();
+        if (selectedIndex != -1) {
+            return (Profession) professionList.get(selectedIndex);
         }
-        professionDescription.setText(sb.toString());
+        return null;
     }
 
-    private void updateProfessionalSkillsPanel() {
-        professionDescription.removeAll();
-        for (Skill skill : professionalSkill) {
-            JPanel skillPanel = new JPanel();
-            skillPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
-            skillPanel.add(professionalBonusButton);
-            skillPanel.add(knackButton);
-            JLabel skillLabel = new JLabel(skill.getName());
-            skillPanel.add(skillLabel);
-            professionDescription.add(skillPanel);
+    public void previousButtonClick(ActionListener actionListener) {
+        previousButton.addActionListener(actionListener);
+    }
+
+    public void continueButtonClick(ActionListener actionListener) {
+        continueButton.addActionListener(actionListener);
+    }
+
+
+
+   private void updateSkillAndCostList(Map<String, Object> profession) {
+       skillCostTextArea.removeAll(); // Clear existing components
+
+       Map<String, List<Integer>> skillCosts = (Map<String, List<Integer>>) profession.get("professionSkillCost");
+
+       if (skillCosts == null) {
+           System.out.println("Warning: professionSkillCost is null for profession " + profession.get("name"));
+           JLabel noCostsLabel = new JLabel("No skill costs available.");
+           skillCostTextArea.add(noCostsLabel);
+       } else {
+           for (Map.Entry<String, List<Integer>> entry : skillCosts.entrySet()) {
+               JPanel skillPanel = new JPanel(new BorderLayout());
+               JLabel skillNameLabel = new JLabel(entry.getKey());
+               JLabel skillCostLabel = new JLabel(entry.getValue().get(0) + ", " + entry.getValue().get(1));
+
+               skillNameLabel.setPreferredSize(new Dimension(200,20));
+               skillCostLabel.setPreferredSize(new Dimension(100, 20));
+
+               skillPanel.add(skillNameLabel, BorderLayout.WEST);
+               skillPanel.add(skillCostLabel, BorderLayout.EAST);
+
+               skillCostTextArea.add(skillPanel);
+           }
+       }
+
+       skillCostTextArea.revalidate();
+       skillCostTextArea.repaint();
+   }
+
+
+    private void updateProfessionalSkills(Map<String, Object> profession) {
+        panel.removeAll();
+        List<String> skills = (List<String>) profession.get("availableProfessionalSkillList");
+        for (String skill : skills) {
+            JPanel skillPanel = new JPanel(new BorderLayout());
+            JLabel skillLabel = new JLabel(skill);
+            JCheckBox professionalBonusButton = new JCheckBox("Bonus"); // Create new instance
+            JCheckBox knackButton = new JCheckBox("Knack"); // Create new instance
+
+            skillPanel.add(skillLabel, BorderLayout.WEST);
+
+            // Create a sub-panel for the checkboxes to align them together
+            JPanel checkboxPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+            checkboxPanel.add(professionalBonusButton);
+            checkboxPanel.add(knackButton);
+
+            skillPanel.add(checkboxPanel, BorderLayout.EAST);
+
+            panel.add(skillPanel);
         }
-        professionDescription.revalidate();
-        professionDescription.repaint();
+        panel.revalidate();
+        panel.repaint();
     }
 }
 

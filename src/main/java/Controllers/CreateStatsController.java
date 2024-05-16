@@ -10,34 +10,35 @@ import java.util.Random;
 public class CreateStatsController {
     CharacterSheet model;
     CreateStatsView view;
-    public CreateStatsController(CharacterSheet model, CreateStatsView view) {
+    public CreateStatsController(CreateStatsView view, CharacterSheet model) {
         this.model = model;
         this.view = view;
 
-        view.rollStatsForMeButtonClick(e -> {
-            view.setStats(generateStats());
-        });
+        view.rollStatsForMeButtonClick(e -> view.setStats(generateStats()));
     }
 
-    private boolean validate(String input) {
-        return false;
+    private boolean validate() {
+        List<int[]> data = view.getStats();
+        boolean valid = true;
+        for (int[] stat : data){
+            valid = valid && stat[0] > 10 && stat[1] > 10 && stat[0] < 100 && stat[1] < 100;
+        }
+        return valid;
     }
 
-    private void saveDataToModel(String data) {
-
+    private void saveDataToModel(List<int[]> data) {
+        model.setStats(data);
     }
 
     public boolean validateAndSave() {
         //get data from view
         List<int[]> data = view.getStats();
 
-        //validate data
-
-        //if valid:
-        // save data
-        // return true;
-
-        // else
+        if (validate()) {
+            saveDataToModel(data);
+            System.out.println("Stats saved" + data);
+            return true;
+        }
         return false;
     }
 

@@ -12,8 +12,8 @@ public class CreateStatsView extends JPanel {
     private final List<JLabel> labels;
     private final List<JTextField[]> fields;
 
-    private final JButton returnToCharacterInfo;
-    private final JButton saveAndContinueToSkills;
+    private final JButton previousButton;
+    private final JButton continueButton;
     private final JButton rollStatsForMe;
 
     public CreateStatsView() {
@@ -39,8 +39,8 @@ public class CreateStatsView extends JPanel {
             fields.add(statFields);
 
         }
-        returnToCharacterInfo = new JButton("Return to Character Info");
-        saveAndContinueToSkills = new JButton("Save and Continue to Skills");
+        previousButton = new JButton("Return to Character Info");
+        continueButton = new JButton("Continue to Skills");
         rollStatsForMe = new JButton("Roll Stats For Me");
 
         this.setLayout(new BorderLayout());
@@ -95,8 +95,8 @@ public class CreateStatsView extends JPanel {
     }
     private JPanel createBottomPanel() {
         JPanel panel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        panel.add(returnToCharacterInfo);
-        panel.add(saveAndContinueToSkills);
+        panel.add(previousButton);
+        panel.add(continueButton);
         return panel;
     }
 
@@ -163,12 +163,12 @@ public class CreateStatsView extends JPanel {
     }
 
     //Action Listeners
-    public void returnToCharacterButtonClick (ActionListener actionListener) {
-        returnToCharacterInfo.addActionListener(actionListener);
+    public void previousButtonClick(ActionListener actionListener) {
+        previousButton.addActionListener(actionListener);
     }
 
-    public void saveAndContinueButtonClick(ActionListener actionListener) {
-        saveAndContinueToSkills.addActionListener(actionListener);
+    public void continueButtonClick(ActionListener actionListener) {
+        continueButton.addActionListener(actionListener);
     }
 
     public void rollStatsForMeButtonClick (ActionListener actionListener) {
