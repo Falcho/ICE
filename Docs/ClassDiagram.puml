@@ -26,6 +26,7 @@ Class Dice{
 }
 
 package controllers{
+
 Class CharacterSheetController{
 -CreateStatsView view;
 +CharacterSheetController(CreateStatsView view)
@@ -36,6 +37,15 @@ Class ChooseProffessionController{
 +ChooseProfessionController(CharacterSheet model, ChooseProfessionView view)
 -boolean validate(Profession profession)
 -void saveDataToModel(Profession profession)
+}
+
+Class CreateBackgroundController{
+-CreateBackgroundView view;
+-CharacterSheet model;
++CreateBackgroundController(CreateBackgroundView view,CharacterSheet model)
+-boolean validate()
+-void saveDataToModel(String data)
+-boolean validateAndSave()
 }
 Class CreateNewCharController{
 -CreateNewCharView view;
@@ -66,12 +76,34 @@ CLass TalentsAndFlawsController{
 
 
 package views{
-Class StartMenuView{}
+
+Class StartMenuView{
+-JPanel buttonPanel;
+-JButton createNewButton;
+-JButton loadExistingButton;
++StartMenuView()
++JPanel createButtonPanel()
++void createNewClick(ActionListener actionListener)
++void loadCharacterClick(ActionListener actionListener)
+}
 Class CharacterSheetView{}
 Class CharacterInfoView{}
 Class SkillListView{}
 Class SpellListView{}
 Class InventoryView{}
+
+Class CreateBackgroundView{
+-JLabel titleLabel;
+-JTextArea textArea;
+-JPanel buttonPanel;
+-JButton previousButton;
+-JButton continueButton;
++CreateBackgroundView()
++Panel createButtonPanel()
++void previousButtonClick
++void continueButtonClick(ActionListener actionListener)
++String getWrittenBackground()
+}
 
 Class TalentsAndFlawsView{
 -List<JLabel> labels;
