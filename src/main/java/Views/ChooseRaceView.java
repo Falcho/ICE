@@ -66,7 +66,7 @@ public class ChooseRaceView extends JPanel {
 
         chooseRaceDropDown = new JComboBox<>();
         previousButton = new JButton("Previous");
-        continueButton = new JButton("Continue to Race");
+        continueButton = new JButton("Continue to Culture");
 
         setLayout(new BorderLayout());
 
