@@ -57,6 +57,8 @@ public class CharacterSheetView extends JPanel {
 
     private JPanel characterInfoPanel() {
         JPanel panel = new JPanel();
+        JTable table = new JTable();
+
         return panel;
     }
 
