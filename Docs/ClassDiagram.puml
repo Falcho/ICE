@@ -12,7 +12,7 @@ package controllers{
         -CreateStatsView view;
         +CharacterSheetController(CreateStatsView view)
     }
-    Class ChooseProffessionController{
+    Class ChooseProfessionController{
         -final CharacterSheet model;
         -ChooseProfessionView view;
         +ChooseProfessionController(CharacterSheet model, ChooseProfessionView view)
@@ -54,7 +54,7 @@ package views{
     }
     Class CharacterSheetView{}
     Class ChooseCultureView{}
-    Class ChooseProffessionView{
+    Class ChooseProfessionView{
         -JLabel title;
         -String[] proffessionList
         -JList<String>proffessionJList
