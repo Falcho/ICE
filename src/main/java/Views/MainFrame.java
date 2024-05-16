@@ -113,6 +113,8 @@ public class MainFrame extends JFrame {
         });
         createBackgroundView.continueButtonClick(e -> {
             if (createBackgroundController.validateAndSave())
+                characterSheetView.revalidate();
+                characterSheetView.repaint();
                 changeView("characterSheet");
         });
 
@@ -132,5 +134,6 @@ public class MainFrame extends JFrame {
 
     public void changeView(String viewName) {
         cardLayout.show(this.getContentPane(), viewName);
+
     }
 }
