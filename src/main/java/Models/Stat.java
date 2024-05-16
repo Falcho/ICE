@@ -79,7 +79,10 @@ public class Stat {
     }
 
     protected int getRaceBonus(){
-        return characterSheet.race.getRaceBonus(this.name);
+        if (characterSheet!=null && characterSheet.getRace()!=null) {
+            return characterSheet.race.getRaceBonus(this.name);
+        }
+        return 0;
     }
 
     public int getTotalBonus() {
