@@ -9,6 +9,7 @@ public class CharacterSheetView extends JPanel {
     JButton inventory;
     JButton spellBook;
     JButton skills;
+    JButton returnButton;
 
     public CharacterSheetView() {
         title = new JLabel("Character Sheet");
@@ -16,12 +17,14 @@ public class CharacterSheetView extends JPanel {
         inventory = new JButton("Inventory");
         spellBook = new JButton("Spell Book");
         skills = new JButton("Skills");
+        returnButton = new JButton("Return");
 
         this.setLayout(new BorderLayout());
         JScrollPane scrollPane = new JScrollPane(mainPanel());
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         this.add(scrollPane, BorderLayout.CENTER);
         this.add(buttonsPanel(), BorderLayout.SOUTH);
+
     }
 
     private JPanel mainPanel() {
@@ -32,10 +35,55 @@ public class CharacterSheetView extends JPanel {
     }
 
     private JPanel buttonsPanel() {
-        JPanel panel = new JPanel();
-        panel.add(inventory);
-        panel.add(spellBook);
-        panel.add(skills);
+        // Create the main panel with GridBagLayout
+        JPanel panel = new JPanel(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+
+        // Set common properties for buttons
+        Dimension buttonSize = new Dimension(100, 25);
+        returnButton.setPreferredSize(buttonSize);
+        inventory.setPreferredSize(buttonSize);
+        spellBook.setPreferredSize(buttonSize);
+        skills.setPreferredSize(buttonSize);
+        levelUp.setPreferredSize(buttonSize);
+
+        // Add the left button
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.insets = new Insets(0, 0, 0, 0);
+        gbc.anchor = GridBagConstraints.LINE_START;
+        panel.add(returnButton, gbc);
+
+        // Add a horizontal spacer to push center panel to the middle
+        gbc.gridx = 1;
+        gbc.weightx = 1;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        panel.add(Box.createHorizontalGlue(), gbc);
+
+        // Add the center buttons in a separate panel with FlowLayout
+        JPanel centerPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 0));
+        centerPanel.add(inventory);
+        centerPanel.add(spellBook);
+        centerPanel.add(skills);
+
+        gbc.gridx = 2;
+        gbc.weightx = 0;
+        gbc.fill = GridBagConstraints.NONE;
+        panel.add(centerPanel, gbc);
+
+        // Add a horizontal spacer to push right button to the end
+        gbc.gridx = 3;
+        gbc.weightx = 1;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        panel.add(Box.createHorizontalGlue(), gbc);
+
+        // Add the right button
+        gbc.gridx = 4;
+        gbc.weightx = 0;
+        gbc.fill = GridBagConstraints.NONE;
+        gbc.anchor = GridBagConstraints.LINE_END;
+        panel.add(levelUp, gbc);
+
         return panel;
     }
 
