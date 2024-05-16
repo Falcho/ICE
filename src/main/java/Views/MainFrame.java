@@ -1,9 +1,6 @@
 package Views;
 
-import Controllers.ChooseCultureController;
-import Controllers.ChooseProfessionController;
-import Controllers.CreateNewCharController;
-import Controllers.CreateStatsController;
+import Controllers.*;
 import Models.CharacterSheet;
 import Models.Rules;
 
@@ -19,13 +16,14 @@ public class MainFrame extends JFrame {
         super("Rolemaster Character Generator");
         cardLayout = new CardLayout();
 
+        StartMenuView menuView= new StartMenuView();
         CreateNewCharView newCharView = new CreateNewCharView();
         ChooseProfessionView chooseProfessionView = new ChooseProfessionView(Rules.getProfessionList("data/professions/professions.json"));
         //ChooseRaceView chooseRaceView = new ChooseRaceView();
         ChooseCultureView chooseCultureView = new ChooseCultureView(Rules.getCultures());
         TalentsAndFlawsView talentsAndFlawsView = new TalentsAndFlawsView(Rules.getTalentsAndFlaws());
         CreateStatsView generateStatsView = new CreateStatsView();
-        //CreateBackgroundView createBackgroundView = new CreateBackgroundView();
+        CreateBackgroundView createBackgroundView = new CreateBackgroundView();
         //CharacterSheetView characterSheetView = new CharacterSheetView();
         // sets our layout as a card layout
         setLayout(cardLayout);
@@ -36,20 +34,25 @@ public class MainFrame extends JFrame {
         ChooseProfessionController chooseProfessionController = new ChooseProfessionController(chooseProfessionView, model);
         CreateStatsController createStatsController = new CreateStatsController(generateStatsView, model);
         ChooseCultureController cultureController = new ChooseCultureController(chooseCultureView, model);
+        CreateBackgroundController createBackgroundController= new CreateBackgroundController(createBackgroundView,model);
         //new CharacterSheetController(generateStatsView);
 
 
         // adds view to card layout with unique constraints
+        add(menuView,"menuView");
         add(newCharView, "chooseName");
         add(chooseProfessionView, "professionView");
         //add(chooseRaceView, "chooseRace");
         add(chooseCultureView, "cultureView");
         add(talentsAndFlawsView, "talentsAndFlaws");
         add(generateStatsView, "generateStats");
-        //add(createBackgroundView, "createBackground");
+        add(createBackgroundView, "createBackground");
         //add(characterSheetView, "characterSheet");
-        cardLayout.show(this.getContentPane(), "chooseName");
+        cardLayout.show(this.getContentPane(), "menuView");
         // switch view according to its constraints on click
+        menuView.createNewClick(e -> {
+            changeView("chooseName");
+        });
         newCharView.continueButtonClick(e -> {
             if (newCharController.validateAndSave()) {
                 changeView("professionView");
@@ -102,13 +105,13 @@ public class MainFrame extends JFrame {
                 changeView("createBackground");
         });
 
-        /*createBackgroundView.previousButtonClick(e -> {
+        createBackgroundView.previousButtonClick(e -> {
             changeView("generateStats");
         });
         createBackgroundView.continueButtonClick(e -> {
             if (createBackgroundController.validateAndSave())
                 changeView("characterSheet");
-        });*/
+        });
 
 
 
