@@ -16,6 +16,8 @@ public class MainFrame extends JFrame {
         super("Rolemaster Character Generator");
         cardLayout = new CardLayout();
 
+        CharacterSheet model = new CharacterSheet();
+
         StartMenuView menuView= new StartMenuView();
         CreateNewCharView newCharView = new CreateNewCharView();
         ChooseProfessionView chooseProfessionView = new ChooseProfessionView(Rules.getProfessionList("data/professions/professions.json"));
@@ -24,13 +26,11 @@ public class MainFrame extends JFrame {
         TalentsAndFlawsView talentsAndFlawsView = new TalentsAndFlawsView(Rules.getTalentsAndFlaws());
         CreateStatsView generateStatsView = new CreateStatsView();
         CreateBackgroundView createBackgroundView = new CreateBackgroundView();
-        CharacterSheetView characterSheetView = new CharacterSheetView();
+        CharacterSheetView characterSheetView = new CharacterSheetView(model);
         // sets our layout as a card layout
         setLayout(cardLayout);
 
         // initialize user controller
-        CharacterSheet model = new CharacterSheet();
-        characterSheetView.setModel(model);
         CreateNewCharController newCharController = new CreateNewCharController(newCharView, model);
         ChooseProfessionController chooseProfessionController = new ChooseProfessionController(chooseProfessionView, model);
         ChooseRaceController chooseRaceController = new ChooseRaceController(chooseRaceView, model);
@@ -50,7 +50,7 @@ public class MainFrame extends JFrame {
         add(generateStatsView, "generateStats");
         add(createBackgroundView, "createBackground");
         add(characterSheetView,"characterSheet");
-        cardLayout.show(this.getContentPane(), "characterSheet");
+        cardLayout.show(this.getContentPane(), "menuView");
 
         // switch view according to its constraints on click
         menuView.createNewClick(e -> {
