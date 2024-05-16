@@ -50,7 +50,7 @@ public class MainFrame extends JFrame {
         add(generateStatsView, "generateStats");
         //add(createBackgroundView, "createBackground");
         //add(characterSheetView, "characterSheet");
-        cardLayout.show(this.getContentPane(), "chooseName");
+        cardLayout.show(this.getContentPane(), "menuView");
         // switch view according to its constraints on click
         menuView.createNewClick(e -> {
             changeView("chooseName");
