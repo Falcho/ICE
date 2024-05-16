@@ -40,12 +40,7 @@ public class ChooseRaceView extends JPanel {
         String[] availableRaces = races.keySet().toArray(new String[0]);
         columnNames = new String[]{"Name", "Skill Points", "Name", "Skill Points"};
         data = new String [][]{
-                {"Skill", "1", "Skill", "1"},
-                {"Skill", "1", "Skill", "1"},
-                {"Skill", "1", "Skill", "1"},
-                {"Skill", "1", "Skill", "1"},
-                {"Skill", "1", "Skill", "1"},
-                {"NEW TABLE UNDER", "1", "NEW TABLE UNDER", "1"},
+                {"", "", "", ""},
         };
 
         //Initialize all Components
@@ -99,11 +94,7 @@ public class ChooseRaceView extends JPanel {
     }
 
     private JPanel createDescriptionPane(){
-        description = new JTextArea("Choose a race from the dropdown, Choose a race from the dropdown, Choose a race from the dropdown, " +
-                "Choose a race from the dropdown, Choose a race from the dropdown, Choose a race from the dropdown, " +
-                "Choose a race from the dropdown, Choose a race from the dropdown, Choose a race from the dropdown, " +
-                "Choose a race from the dropdown, Choose a race from the dropdown, Choose a race from the dropdown, " +
-                "Choose a race from the dropdown, Choose a race from the dropdown, Choose a race from the dropdown, ");
+        description = new JTextArea("Choose a race from the dropdown");
         description.setEditable(false);
         description.setLineWrap(true);
         description.setWrapStyleWord(true);
