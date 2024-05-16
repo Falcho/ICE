@@ -26,7 +26,7 @@ public class MainFrame extends JFrame {
         TalentsAndFlawsView talentsAndFlawsView = new TalentsAndFlawsView(Rules.getTalentsAndFlaws());
         CreateStatsView generateStatsView = new CreateStatsView();
         //CreateBackgroundView createBackgroundView = new CreateBackgroundView();
-        //CharacterSheetView characterSheetView = new CharacterSheetView();
+        CharacterSheetView characterSheetView = new CharacterSheetView();
         // sets our layout as a card layout
         setLayout(cardLayout);
 
@@ -46,9 +46,10 @@ public class MainFrame extends JFrame {
         add(chooseCultureView, "cultureView");
         add(talentsAndFlawsView, "talentsAndFlaws");
         add(generateStatsView, "generateStats");
+
         //add(createBackgroundView, "createBackground");
-        //add(characterSheetView, "characterSheet");
-        cardLayout.show(this.getContentPane(), "chooseName");
+        add(characterSheetView,"characterSheet");
+        cardLayout.show(this.getContentPane(), "characterSheet");
         // switch view according to its constraints on click
         newCharView.continueButtonClick(e -> {
             if (newCharController.validateAndSave()) {
@@ -122,6 +123,8 @@ public class MainFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }
+
+
 
     public void changeView(String viewName) {
         cardLayout.show(this.getContentPane(), viewName);
