@@ -106,7 +106,8 @@ public class MainFrame extends JFrame {
             changeView("generateStats");
         });
         createBackgroundView.continueButtonClick(e -> {
-            changeView("characterSheet");
+            if (createBackgroundController.validateAndSave())
+                changeView("characterSheet");
         });*/
 
 
