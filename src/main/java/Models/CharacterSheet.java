@@ -28,7 +28,7 @@ public class CharacterSheet {
         this.xp = 0;
         this.name = "";
         this.background = "";
-        this.stats = new PrimaryStats();
+        this.stats = new PrimaryStats(this);
         this.skillList = Rules.getEmptySkillList();
     }
 
@@ -174,6 +174,21 @@ public class CharacterSheet {
     public Stat getStat(String statName){
 
         return stats.getStat(statName);
+    }
+
+    public String[][] getStatBlock() {
+        String[][] statBlock = new String[10][7];
+        int i=0;
+        for (Stat stat : getStats()) {
+            statBlock[i][0] = stat.getName();
+            statBlock[i][1] = String.valueOf(stat.getPotentionel());
+            statBlock[i][2] = String.valueOf(stat.getTemp());
+            statBlock[i][3] = String.valueOf(stat.getBonus());
+            statBlock[i][4] = String.valueOf(stat.getRaceBonus());
+            statBlock[i][5] = ""; //String.valueOf(stat.getSpecial());
+            statBlock[i][6] = String.valueOf(stat.getTotalBonus());
+        }
+        return statBlock;
     }
 
 
