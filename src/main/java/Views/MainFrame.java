@@ -25,6 +25,8 @@ public class MainFrame extends JFrame {
         CreateStatsView generateStatsView = new CreateStatsView();
         CreateBackgroundView createBackgroundView = new CreateBackgroundView();
         //CharacterSheetView characterSheetView = new CharacterSheetView();
+        //CreateBackgroundView createBackgroundView = new CreateBackgroundView();
+        CharacterSheetView characterSheetView = new CharacterSheetView();
         // sets our layout as a card layout
         setLayout(cardLayout);
 
@@ -49,6 +51,10 @@ public class MainFrame extends JFrame {
         add(createBackgroundView, "createBackground");
         //add(characterSheetView, "characterSheet");
         cardLayout.show(this.getContentPane(), "menuView");
+
+        //add(createBackgroundView, "createBackground");
+        add(characterSheetView,"characterSheet");
+        cardLayout.show(this.getContentPane(), "characterSheet");
         // switch view according to its constraints on click
         menuView.createNewClick(e -> {
             changeView("chooseName");
