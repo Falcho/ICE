@@ -19,13 +19,11 @@ public class MainFrame extends JFrame {
         StartMenuView menuView= new StartMenuView();
         CreateNewCharView newCharView = new CreateNewCharView();
         ChooseProfessionView chooseProfessionView = new ChooseProfessionView(Rules.getProfessionList("data/professions/professions.json"));
-        //ChooseRaceView chooseRaceView = new ChooseRaceView();
+        ChooseRaceView chooseRaceView = new ChooseRaceView(Rules.getRaces());
         ChooseCultureView chooseCultureView = new ChooseCultureView(Rules.getCultures());
         TalentsAndFlawsView talentsAndFlawsView = new TalentsAndFlawsView(Rules.getTalentsAndFlaws());
         CreateStatsView generateStatsView = new CreateStatsView();
         CreateBackgroundView createBackgroundView = new CreateBackgroundView();
-        //CharacterSheetView characterSheetView = new CharacterSheetView();
-        //CreateBackgroundView createBackgroundView = new CreateBackgroundView();
         CharacterSheetView characterSheetView = new CharacterSheetView();
         // sets our layout as a card layout
         setLayout(cardLayout);
@@ -34,6 +32,7 @@ public class MainFrame extends JFrame {
         CharacterSheet model = new CharacterSheet();
         CreateNewCharController newCharController = new CreateNewCharController(newCharView, model);
         ChooseProfessionController chooseProfessionController = new ChooseProfessionController(chooseProfessionView, model);
+        ChooseRaceController chooseRaceController = new ChooseRaceController(chooseRaceView, model);
         CreateStatsController createStatsController = new CreateStatsController(generateStatsView, model);
         ChooseCultureController cultureController = new ChooseCultureController(chooseCultureView, model);
         CreateBackgroundController createBackgroundController= new CreateBackgroundController(createBackgroundView,model);
@@ -44,17 +43,14 @@ public class MainFrame extends JFrame {
         add(menuView,"menuView");
         add(newCharView, "chooseName");
         add(chooseProfessionView, "professionView");
-        //add(chooseRaceView, "chooseRace");
+        add(chooseRaceView, "chooseRace");
         add(chooseCultureView, "cultureView");
         add(talentsAndFlawsView, "talentsAndFlaws");
         add(generateStatsView, "generateStats");
         add(createBackgroundView, "createBackground");
-        //add(characterSheetView, "characterSheet");
+        add(characterSheetView,"characterSheet");
         cardLayout.show(this.getContentPane(), "menuView");
 
-        //add(createBackgroundView, "createBackground");
-        add(characterSheetView,"characterSheet");
-        cardLayout.show(this.getContentPane(), "characterSheet");
         // switch view according to its constraints on click
         menuView.createNewClick(e -> {
             changeView("chooseName");
@@ -73,21 +69,21 @@ public class MainFrame extends JFrame {
         });
         chooseProfessionView.continueButtonClick(e -> {
             //if (chooseProfessionController.validateAndSave()) {
-                changeView("cultureView");
+                changeView("chooseRace");
             //}
         });
 
-        /*chooseRaceView.previousButtonClick(e -> {
+        chooseRaceView.previousButtonClick(e -> {
             changeView("professionView");
         });
         chooseRaceView.continueButtonClick(e -> {
             if (chooseRaceController.validateAndSave()) {
                 changeView("cultureView");
             }
-        });*/
+        });
 
         chooseCultureView.previousButtonClick(e -> {
-            changeView("professionView");
+            changeView("chooseRace");
         });
         chooseCultureView.continueButtonClick(e -> {
             if (cultureController.validateAndSave()) {
