@@ -20,16 +20,16 @@ public class PrimaryStats implements Iterable<Stat>{
 
     public PrimaryStats(CharacterSheet cs) {
         this.cs = cs;
-        this.agility = new Stat("agility", cs);
-        this.constitution = new Stat("constitution", cs);
-        this.empathy = new Stat("empathy", cs);
-        this.intuition = new Stat("intuition", cs);
-        this.memory = new Stat("memory", cs);
-        this.presence = new Stat("presence", cs);
-        this.quickness = new Stat("quickness", cs);
-        this.reasoning = new Stat("reasoning", cs);
-        this.selfDiscipline = new Stat("selfDiscipline", cs);
-        this.strength = new Stat("strength", cs);
+        this.agility = new Stat("Agility", cs);
+        this.constitution = new Stat("Constitution", cs);
+        this.empathy = new Stat("Empathy", cs);
+        this.intuition = new Stat("Intuition", cs);
+        this.memory = new Stat("Memory", cs);
+        this.presence = new Stat("Presence", cs);
+        this.quickness = new Stat("Quickness", cs);
+        this.reasoning = new Stat("Reasoning", cs);
+        this.selfDiscipline = new Stat("Self Discipline", cs);
+        this.strength = new Stat("Strength", cs);
     }
 
     public void setStat(String statNavn, int[] values) {
