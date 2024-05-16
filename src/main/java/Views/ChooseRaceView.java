@@ -5,6 +5,7 @@ import Models.Race;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.util.Map;
 
 public class ChooseRaceView extends JPanel {
@@ -16,7 +17,7 @@ public class ChooseRaceView extends JPanel {
     private JLabel statBonusLabel;
     private JLabel resistanceLabel;
     private JLabel healthAndDevLabel;
-    private JComboBox<String> dropDown;
+    private JComboBox<String> chooseRaceDropDown;
     private JTextArea description;
     private JLabel tAndFlawTitle;
     private JTextArea tAndFlawDescription;
@@ -63,7 +64,7 @@ public class ChooseRaceView extends JPanel {
         healthAndDevTable = new JTable();
         defaultColumnNames = new String[]{"","","",""};
 
-        dropDown = new JComboBox<>();
+        chooseRaceDropDown = new JComboBox<>();
         previousButton = new JButton("Previous");
         continueButton = new JButton("Continue to Race");
 
@@ -81,7 +82,7 @@ public class ChooseRaceView extends JPanel {
         JPanel titlePanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         titlePanel.add(title);
         JPanel dropDownPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        dropDownPanel.add(dropDown);
+        dropDownPanel.add(chooseRaceDropDown);
 
         JPanel borderPanel = new JPanel(new BorderLayout());
         borderPanel.add(titlePanel, BorderLayout.NORTH);
@@ -172,7 +173,7 @@ public class ChooseRaceView extends JPanel {
 
     //Getters
     public Race getChosenRace(){
-        return races.get(dropDown.getSelectedItem());
+        return races.get(chooseRaceDropDown.getSelectedItem());
     }
 
 
@@ -198,6 +199,17 @@ public class ChooseRaceView extends JPanel {
 
 
     //Action Listeners
+    public void previousButtonClick(ActionListener actionListener) {
+        previousButton.addActionListener(actionListener);
+    }
+
+    public void continueButtonClick(ActionListener actionListener) {
+        continueButton.addActionListener(actionListener);
+    }
+
+    public void dropDownSelection(ActionListener actionListener) {
+        chooseRaceDropDown.addActionListener(actionListener);
+    }
 
 
 }
