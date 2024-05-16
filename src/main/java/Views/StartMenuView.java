@@ -13,13 +13,17 @@ public class StartMenuView extends JPanel {
     private JButton loadExistingButton;
 
     public StartMenuView(){
+        this.setLayout(new BorderLayout());
+        JLabel logo = new JLabel(new ImageIcon("data/android-chrome-512x512.png"));
+        this.add(logo, BorderLayout.NORTH);
         GridBagLayout layout= new GridBagLayout();
-        this.setLayout(layout);
+        JPanel panel = new JPanel(layout);
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridx=0;
         gbc.gridy=0;
         gbc.anchor=GridBagConstraints.CENTER;
-        this.add(createButtonPanel(),gbc);
+        panel.add(createButtonPanel(),gbc);
+        this.add(panel,BorderLayout.CENTER);
     }
 
     private JPanel createButtonPanel(){
