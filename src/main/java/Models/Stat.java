@@ -6,10 +6,11 @@ public class Stat {
     private int temp;
     protected CharacterSheet characterSheet;
 
-    public Stat(String name){
+    public Stat(String name, CharacterSheet cs){
         this.name= name;
+        this.characterSheet = cs;
     }
-    protected int bonus() {
+    protected int getBonus() {
         int bonus = 0;
         if (this.temp == 1)
             bonus = -15;
@@ -81,6 +82,13 @@ public class Stat {
         return characterSheet.race.getRaceBonus(this.name);
     }
 
+    public int getTotalBonus() {
+        return getBonus()+getRaceBonus()+getSpecialBonus();
+    }
+    public int getSpecialBonus() {
+        return 0;
+    }
+
     public void setStat(int[] stat){
         this.potentionel=stat[0];
         this.temp=stat[1];
@@ -93,6 +101,10 @@ public class Stat {
 
     public int getTemp(){
         return temp;
+    }
+
+    public String getName() {
+        return name;
     }
 
 }
