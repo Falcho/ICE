@@ -1,0 +1,116 @@
+[
+  {
+    "name": "Human, average",
+    "description": "Common mortal men are the same race we are familiar\nwith in the real world and come in the same variations\nof size, build, skin/hair colors and facial features as the\nhumans we know. Highly adaptable, they can be found\nin just about any climate or environment and develop\nwidely-varied cultures. Skin color tends to be darker\nin sunny climates and lighter as one moves towards\nthe poles, but these shifts take millenia and large-scale\nmigrations and individual travel may result in notable\nexceptions and mixed populations. In any case, common men have the same stat bonuses and other traits\nregardless of their place of origin or particular ancestry. In addition to these common men, several other\nstrains of humanity might be encountered.",
+    "tAndFlawDescription": "•None.\nHumans are the standard against which all\nother races are compared. However, humans do\nbenefit from a high number of bonus DP (as shown\non Table 2-1). Even the more powerful High men,\ndespite their stature, are essentially human.",
+    "race_sizes": {
+      "size": "M",
+      "weight_male": "185 lbs",
+      "stride": "0'",
+      "weight_female": "154 lbs",
+      "height_male": "5'10\"",
+      "variance": "+/- 5 lbs/in.",
+      "height_female": "5'5\""
+    },
+    "stat_bonuses": {
+      "agility": 0,
+      "constitution": 0,
+      "empathy": 0,
+      "intuition": 0,
+      "memory": 0,
+      "presence": 0,
+      "quickness": 0,
+      "reasoning": 0,
+      "self_discipline": 0,
+      "strength": 0
+    },
+    "resistances": {
+      "channeling": 0,
+      "mentalism": 0,
+      "essence": 0,
+      "physical": 0
+    },
+    "health_and_dev": {
+      "endurance": 0,
+      "recovery_multiplier": "1x",
+      "base_hits": 25,
+      "bonus_dev_points": 50
+    }
+  },
+  {
+    "name": "Human, large",
+    "description": "Common mortal men are the same race we are familiar\nwith in the real world and come in the same variations\nof size, build, skin/hair colors and facial features as the\nhumans we know. Highly adaptable, they can be found\nin just about any climate or environment and develop\nwidely-varied cultures. Skin color tends to be darker\nin sunny climates and lighter as one moves towards\nthe poles, but these shifts take millenia and large-scale\nmigrations and individual travel may result in notable\nexceptions and mixed populations. In any case, common men have the same stat bonuses and other traits\nregardless of their place of origin or particular ancestry. In addition to these common men, several other\nstrains of humanity might be encountered.",
+    "tAndFlawDescription": "•None.\nHumans are the standard against which all\nother races are compared. However, humans do\nbenefit from a high number of bonus DP (as shown\non Table 2-1). Even the more powerful High men,\ndespite their stature, are essentially human.",
+    "race_sizes": {
+      "size": "M",
+      "weight_male": "230 lbs",
+      "stride": "+1'",
+      "weight_female": "180 lbs",
+      "height_male": "6'4\"",
+      "variance": "+/- 5 lbs/in.",
+      "height_female": "5'9\""
+    },
+    "stat_bonuses": {
+      "agility": 0,
+      "constitution": 1,
+      "empathy": 0,
+      "intuition": 0,
+      "memory": 0,
+      "presence": 1,
+      "quickness": 0,
+      "reasoning": 0,
+      "self_discipline": 0,
+      "strength": 1
+    },
+    "resistances": {
+      "channeling": 0,
+      "mentalism": 0,
+      "essence": 0,
+      "physical": 0
+    },
+    "health_and_dev": {
+      "endurance": 0,
+      "recovery_multiplier": "1x",
+      "base_hits": 30,
+      "bonus_dev_points": 34
+    }
+  },
+  {
+    "name": "High Elf",
+    "description": "Though similar to mortal men in most ways, all types of\nElves share several important, if subtle, differences. As a\nrace, they are taller than most humans, although slender.\nElven men have no facial hair, and as a rule, they have less\nbody hair than humans. Generally, Elves are fairer in appearance than their mortal brothers, having finer features,\nunmarred skin, and pointed ears with no earlobes. ",
+    "tAndFlawDescription": "•Efficient Sleeper II: Elves meditate rather than sleeping. Two hours of meditation replaces four hours of sleep.\n•Immune to Disease I: Elves are immune to all non-magical disease.\n• Nightvision: Elves can see in dim light, equivalent to nighttime conditions, as well as a human can see in daylight. All penalties for darkness are reduced by 40, except in pitch dark conditions.",
+    "race_sizes": {
+      "size": "M",
+      "weight_male": "215 lbs",
+      "stride": "+2'",
+      "weight_female": "175 lbs",
+      "height_male": "6'7\"",
+      "variance": "+/- 4 lbs/in.",
+      "height_female": "6'3\""
+    },
+    "stat_bonuses": {
+      "agility": 3,
+      "constitution": -1,
+      "empathy": 2,
+      "intuition": 0,
+      "memory": 2,
+      "presence": 3,
+      "quickness": 2,
+      "reasoning": 1,
+      "self_discipline": -5,
+      "strength": -1
+    },
+    "resistances": {
+      "channeling": -5,
+      "mentalism": -5,
+      "essence": -5,
+      "physical": 10
+    },
+    "health_and_dev": {
+      "endurance": 10,
+      "recovery_multiplier": "2x",
+      "base_hits": 25,
+      "bonus_dev_points": 3
+    }
+  }
+]

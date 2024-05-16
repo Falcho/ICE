@@ -95,7 +95,6 @@ public class Rules {
 
     public static Map<String, Culture> getCultures(){
 
-
         Map<String, Culture> cultures = new TreeMap<>();
         ObjectMapper objectMapper = new ObjectMapper();
         File json = new File("data/cultures/cultures.json");
@@ -125,5 +124,23 @@ public class Rules {
         }
 
         return cultures;
+    }
+
+    public static Map<String, Race> getRaces(){
+
+        Map<String, Race> races = new HashMap<>();
+        ObjectMapper mapper = new ObjectMapper();
+        File json = new File("data/Race/races.json");
+
+        try {
+            List<Race> tempRaceList = mapper.readValue(json, new TypeReference<List<Race>>(){});
+            for (Race race : tempRaceList) {
+                races.put(race.getName(), race);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return races;
     }
 }
