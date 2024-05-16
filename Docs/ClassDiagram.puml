@@ -11,7 +11,38 @@ package controllers{
     Class CharacterSheetController{
         -CreateStatsView view;
         +CharacterSheetController(CreateStatsView view)
+
     }
+
+    Class ChooseCultureController{
+       -final ChooseCultureView view;
+        -final CharacterSheet model;
+       + ChooseCultureController(ChooseCultureView view, CharacterSheet model)
+       -boolean validate()
+       -void saveDataToModel(Culture culture)
+       -boolean validateAndSave()
+    }
+
+    Class ChooseRaceController{
+   - final ChooseRaceView view;
+    -final CharacterSheet model;
+    +ChooseRaceController(ChooseRaceView view, CharacterSheet model)
+    -boolean validate()
+    - void saveDataToModel(Race race)
+    +boolean validateAndSave()
+
+    }
+
+    Class CreateBackgroundController{
+    - final CreateBackgroundView view;
+    - final CharacterSheet model
+    +CreateBackgroundController(CreateBackgroundView view,CharacterSheet model)
+    -boolean validate()
+    -void saveDataToModel
+    -boolean validateAndSave()
+
+    }
+
     Class ChooseProfessionController{
         -final CharacterSheet model;
         -ChooseProfessionView view;
@@ -52,8 +83,75 @@ package views{
         -final CardLayout cardLayout;
         +MainFrame()
     }
-    Class CharacterSheetView{}
-    Class ChooseCultureView{}
+    Class CharacterSheetView{
+    -JLabel title;
+    - JButton levelUp;
+    -JButton inventory;
+    -JButton spellBook;
+    -JButton skills;
+    -JButton returnButton;
+    - DefaultTableModel tableModel;
+    -CharacterSheet model;
+    String[] statBlockColumnNames = new String[]{"Stat", "Potent.", "Temp", "Bonus", "Racial", "Spec", "Total"};
+    +CharacterSheetView(CharacterSheet model)
+    +JPanel mainPanel()
+    -JPanel buttonsPanel()
+    -JPanel sheetPanel()
+    -JPanel characterInfoPanel()
+    -JPanel upperInfoPanel()
+    -JPanel statsPanel()
+    -JPanel encumbrancePanel()
+    -JPanel quickInfoPanel()
+    -JPanel defencePanel()
+    -JPanel fosPanel()
+    -JPanel movementPanel()
+    -String getCharacterName()
+    -String getPlayerName()
+    -String getCampaignName()
+    -String getCharacterLevel()
+    -String getCurrentXP()
+    -String getNextLvlXP()
+    -String getRealms()
+    -String getRace()
+    -String getCulture()
+    -String getProfession()
+    -void updateStatBlock()
+    -setModel(CharacterSheet model)
+
+    }
+    Class ChooseCultureView{
+    Label title;
+          - List<JLabel> labels;
+         -JTextArea description;
+         -JTextArea crafts;
+        -JTextArea vocations;
+        -List<JTextField[]> field;
+         -JComboBox<String> chooseCultureDropdown;
+        -Map<String, Culture> cultures;
+        -JButton continueButton;
+        -JButton previousButton;
+        -JTable skillTable;
+        -String[] columnNames;
+        -String[][] data;
+       - DefaultTableModel tableModel;
+       +ChooseCultureView(Map<String, Culture> cultures)
+       -JPanel createTopPanel()
+       -JSplitPane createCenterPanel()
+       -JPanel createSkillListPane()
+       -JPanel createDescriptionPane()
+       -JPanel createBottomPanel()
+       -Culture getChosenCulture()
+       +void previousButtonClick(ActionListener actionListener)
+       +void continueButtonClick(ActionListener actionListener)
+       +void dropDownSelection(ActionListener actionListener)
+       -void reset()
+       +void setDescription(String description)
+       +void setCrafts(String crafts)
+       +void setVocations(String vocations)
+       +void setSkillTable(String[][] data)
+
+
+    }
     Class ChooseProfessionView{
         -JLabel title;
         -String[] proffessionList
@@ -85,8 +183,71 @@ package views{
         +void updateProfessionSkillCostPanel()
         +void updateProfessionalSkillsPanel()
         }
-    Class ChooseRaceView{}
-    Class CreateBackgroundView{}
+    Class ChooseRaceView{
+    final String[] columnNames;
+        - final String[][] data;
+        - Map<String, Race> races;
+        - JLabel title;
+        - JLabel sizeLabel;
+        - JLabel statBonusLabel;
+        - JLabel resistanceLabel;
+        - JLabel healthAndDevLabel;
+        - JComboBox<String> chooseRaceDropDown;
+        - JTextArea description;
+        - JLabel tAndFlawTitle;
+        - JTextArea tAndFlawDescription;
+        - JTable sizeTable;
+        - JTable statBonusTable;
+        - JTable resistanceTable;
+        - JTable healthAndDevTable;
+        - JButton previousButton;
+        - JButton continueButton;
+        -DefaultTableModel sizeTableModel;
+        -DefaultTableModel statBonusTableModel;
+        -DefaultTableModel resistanceTableModel;
+        -DefaultTableModel healthAndDevTableModel;
+        -private String[] defaultColumnNames;
+        +ChooseRaceView(Map<String, Race> races)
+        -JPanel createTopPane()
+        -JSplitPane createCenterSplitPane()
+        -JPanel createDescriptionPane()
+        -JPanel createRightOuterPane()
+        -JPanel createBottomPane()
+        -Race getChosenRace()
+        + void setDescription(String description)
+        +void setTAndFlawDescription(String tAndFlawDescription)
+        +void setSizeTable(String[][] sizeData)
+        +void setStatsBonusTable(String[][] statBonusData)
+        +void setResistanceTable(String[][] resistanceData)
+        +void setHealthAndDevTable(String[][] healthAndDevData)
+        + void previousButtonClick(ActionListener actionListener)
+        +void continueButtonClick(ActionListener actionListener)
+        +void dropDownSelection(ActionListener actionListener)
+    }
+    Class CreateBackgroundView{
+        - JLabel titleLabel;
+        -JTextArea textArea;
+        - JPanel buttonPanel;
+        - JButton previousButton;
+        - JButton continueButton;
+        +CreateBackgroundView()
+        +JPanel createButtonPanel()
+        +void previousButtonClick(ActionListener actionListener)
+        +void continueButtonClick(ActionListener actionListener)
+        +String getWrittenBackground()
+
+     CLass CreateStartMenuView{
+     -button1;
+     -JButton button2;
+     +CreateStartMenuView()
+     -JPanel createTopPanel()
+     -JPanel createButtonAboveEactOther()
+     -JPanel createMiddlePanel()
+
+
+
+
+    }
     Class CreateNewCharView{
         -JLabel title;
         -JTextField nameField;
@@ -132,7 +293,17 @@ package views{
         +int getMax(int a, int b, int c)
         + int getMiddle(int a, int b, int c)
     }
-    Class StartMenuView{}
+    Class StartMenuView{
+   - JPanel buttonPanel;
+   - JButton createNewButton;
+   - JButton loadExistingButton;
+   +StartMenuView()
+   -JPanel createButtonPanel()
+   +void createNewClick(ActionListener actionListener)
+   +void loadCharacterClick(ActionListener actionListener)
+
+
+    }
     Class TalentsAndFlawsView{
     -List<JLabel> labels;
     -List<JTextField> fields;
